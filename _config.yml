@@ -1,23 +1,35 @@
-# Site settings
-title: cosy-sun
-email: 737387998@qq.com
-description: cosy-sun的博客
-# > # this means to ignore newlines until "baseurl:"
-#   Write an awesome description for your new site here. You can edit this
-#   line in _config.yml. It will appear in your document head meta (for
-#   Google search results) and in your feed.xml site description.
+# Permalinks
+permalink:           pretty
 
-# baseurl: "" # the subpath of your site, e.g. /blog/
-# url: "http://yourdomain.com" # the base hostname & protocol for your site
-# twitter_username: jekyllrb
-github_username:  cosy-sun
-permalink: /:year/:month/:day/:title/
+# Setup
+title:               cosy-sun
+tagline:             
+url:                 http://cosy-sun.github.io
+baseurl:             /cosy-sun.github.io
+analytics_id:
 
-# Build settings
-markdown: kramdown
+# Owner/author information
+owner:
+  name:           Alex Russell
+  avatar:         avatar.png
+  bio:            "Designer."
+  email:          737387998@qq.com
+  twitter:        alexanderussell
+  github:         alexanderussell
+  instagram:      alexanderussell
+  dribbble:       alexanderussell
+  location:       "Lincoln, NE"
 
-# highlight
-# 本地用rouge, github上用pygments
-# highlighter: pygments
-# highlighter: rouge
-# highlighter: false
+
+# Custom vars
+version:             2.0.0
+github:
+  repo:              
+
+# Pagination
+paginate: 5
+paginate_path: "blog/page:num"
+
+# Gems
+gems:
+  - jekyll-paginate
