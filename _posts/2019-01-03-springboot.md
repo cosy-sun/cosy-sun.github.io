@@ -1,3 +1,7 @@
+
+---
+layout: post
+---
 <center><font size="5">spring boot</center>
 
 - ÅÅ³ı´«µİÒÀÀµ

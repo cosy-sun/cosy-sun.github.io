@@ -1,3 +1,7 @@
+
+---
+layout: post
+---
 spring data 
 
 - spring data jpa
