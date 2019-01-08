@@ -23,6 +23,7 @@ github_username:  cosy-sun
 
 # Build settings
 markdown: kramdown
+input: GFM
 theme: minima
 plugins:
   - jekyll-feed
