@@ -1,4 +1,4 @@
-
+ï»¿
 ---
 layout: post
 ---
@@ -7,20 +7,20 @@ mysql
 - jdbc
 
         driver:com.mysql.jdbc.Driver
-        url:jdbc:mysql://localhost:3306/Êı¾İ¿â?user=root&password=123456&useUnicode=true&characterEncoding=utf-8
- ²ÎÊıÏê½â:
+        url:jdbc:mysql://localhost:3306/æ•°æ®åº“?user=root&password=123456&useUnicode=true&characterEncoding=utf-8
+ å‚æ•°è¯¦è§£:
  
-        user Êı¾İ¿âÓÃ»§Ãû
-        password ÃÜÂë
-        useUnicode ÊÇ·ñÊ¹ÓÃUnicode×Ö·û¼¯
-        autoReconnect ÊÇ·ñ×Ô¶¯ÖØĞÂÁ¬½Ó
-        autoReconnectForPools ÊÇ·ñÊ¹ÓÃÕë¶ÔÊı¾İ¿âÁ¬½Ó³ØµÄÖØÁ¬²ßÂÔ
-        maxReconnects autoReconnectÉèÖÃÎªtrueÊ±,ÖØÊÔÁ¬½ÓµÄ´ÎÊı
-        failOverReadOnly ×Ô¶¯ÖØÁ¬³É¹¦ºó,Á¬½ÓÊÇ·ñÉèÖÃÎªÖ»¶Á
-        connectTimeout ºÍÊı¾İ¿â·şÎñÆ÷½¨Á¢socketÁ¬½ÓÊ±µÄ³¬Ê±,µ¥Î»:ºÁÃë
+        user æ•°æ®åº“ç”¨æˆ·å
+        password å¯†ç 
+        useUnicode æ˜¯å¦ä½¿ç”¨Unicodeå­—ç¬¦é›†
+        autoReconnect æ˜¯å¦è‡ªåŠ¨é‡æ–°è¿æ¥
+        autoReconnectForPools æ˜¯å¦ä½¿ç”¨é’ˆå¯¹æ•°æ®åº“è¿æ¥æ± çš„é‡è¿ç­–ç•¥
+        maxReconnects autoReconnectè®¾ç½®ä¸ºtrueæ—¶,é‡è¯•è¿æ¥çš„æ¬¡æ•°
+        failOverReadOnly è‡ªåŠ¨é‡è¿æˆåŠŸå,è¿æ¥æ˜¯å¦è®¾ç½®ä¸ºåªè¯»
+        connectTimeout å’Œæ•°æ®åº“æœåŠ¡å™¨å»ºç«‹socketè¿æ¥æ—¶çš„è¶…æ—¶,å•ä½:æ¯«ç§’
         
 
-     springbootÅäÖÃjdbc
+     springbooté…ç½®jdbc
      
         spring.datasource.driver-class-name
         spring.datasource.url
@@ -28,9 +28,9 @@ mysql
         spring.datasource.password
      
 x
-    ²»ÒªÊ¹ÓÃdata-usernameºÍdata-password
+    ä¸è¦ä½¿ç”¨data-usernameå’Œdata-password
         
-        data-username ÓÃÓÚÖ´ĞĞdml½Å±¾µÄÊı¾İ¿âµÄÓÃ»§Ãû
-        data-password ÓÃÓÚÖ´ĞĞdml½Å±¾µÄÊı¾İ¿âµÄÃÜÂë
+        data-username ç”¨äºæ‰§è¡Œdmlè„šæœ¬çš„æ•°æ®åº“çš„ç”¨æˆ·å
+        data-password ç”¨äºæ‰§è¡Œdmlè„šæœ¬çš„æ•°æ®åº“çš„å¯†ç 
         
 

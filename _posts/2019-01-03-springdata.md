@@ -1,4 +1,4 @@
-
+ï»¿
 ---
 layout: post
 ---
@@ -6,7 +6,7 @@ spring data
 
 - spring data jpa
 
-    spring data ×ÓÏîÄ¿
+    spring data å­é¡¹ç›®
          
          spring data commons
          spring data gemfire
@@ -17,17 +17,17 @@ spring data
          spring data rest
          spring data redis
          
-    spring data ¶¥²ãÀà repository
+    spring data é¡¶å±‚ç±» repository
     
-·½·¨µÄ²éÑ¯²ßÂÔµÄÉèÖÃ
+æ–¹æ³•çš„æŸ¥è¯¢ç­–ç•¥çš„è®¾ç½®
 
     @EnableJpaRepositories(queryLookupStrategy=QueryLookupStrategy.Key.(..))
-    keyÖµÒ»¹²ÓĞÈı¸ö
-    create:Ö±½Ó¸ù¾İ·½·¨Ãû´´½¨
-    use_declared_query:ÉùÃû·½Ê½´´½¨
-    create_if_not_found:ÉÏÃæÁ½ÖÖµÄ½áºÏ°æ,ÏÈÊ¹ÓÃÉùÃ÷Ê½²éÕÒ,ÈôÃ»ÓĞÕÒµ½¾ÍÊ¹ÓÃ·½·¨Ãû´´½¨.
+    keyå€¼ä¸€å…±æœ‰ä¸‰ä¸ª
+    create:ç›´æ¥æ ¹æ®æ–¹æ³•ååˆ›å»º
+    use_declared_query:å£°åæ–¹å¼åˆ›å»º
+    create_if_not_found:ä¸Šé¢ä¸¤ç§çš„ç»“åˆç‰ˆ,å…ˆä½¿ç”¨å£°æ˜å¼æŸ¥æ‰¾,è‹¥æ²¡æœ‰æ‰¾åˆ°å°±ä½¿ç”¨æ–¹æ³•ååˆ›å»º.
     
-²éÑ¯·½·¨µÄ´´½¨
+æŸ¥è¯¢æ–¹æ³•çš„åˆ›å»º
 
     find...By
     read...By
@@ -38,196 +38,196 @@ spring data
     remove...By
     
     
-¹Ø¼ü×Ö
+å…³é”®å­—
 
     and    findByNameAndEmail
     Or    findByNameOrEmail
     ...
     
-²éÑ¯½á¹ûµÄ´¦Àí
+æŸ¥è¯¢ç»“æœçš„å¤„ç†
 
-    ÔÚ²éÑ¯·½·¨ÖĞÊ¹ÓÃÌØ¶¨ÀàĞÍµÄ²ÎÊı,¿ÉÒÔ´ïµ½·ÖÒ³»òÕßÅÅĞòµÄÄ¿µÄ,ÀıÈç:Pageable
+    åœ¨æŸ¥è¯¢æ–¹æ³•ä¸­ä½¿ç”¨ç‰¹å®šç±»å‹çš„å‚æ•°,å¯ä»¥è¾¾åˆ°åˆ†é¡µæˆ–è€…æ’åºçš„ç›®çš„,ä¾‹å¦‚:Pageable
     
-ÏŞÖÆ²éÑ¯½á¹û
+é™åˆ¶æŸ¥è¯¢ç»“æœ
 
-    ¿ÉÒÔÔÚ·½·¨ÃûÉÏ¼ÓÉÏ¹Ø¼ü×Öfirst»òÕßtop
+    å¯ä»¥åœ¨æ–¹æ³•åä¸ŠåŠ ä¸Šå…³é”®å­—firstæˆ–è€…top
     
-²éÑ¯½á¹ûµÄ²»Í¬ĞÎÊ½
+æŸ¥è¯¢ç»“æœçš„ä¸åŒå½¢å¼
 
     page
     list
     stream
     future
     
-×¢½â²éÑ¯´óÈ«
+æ³¨è§£æŸ¥è¯¢å¤§å…¨
 
-<font size = "5"><b>Ò»¶¨×¢ÒâjpqlÖĞµÄÊµÌå²»ÊÇÊı¾İ¿âÖĞµÄ±í,¶øÊÇ×Ô¼º´´½¨µÄÊµÌåÀà,Ê±Çø·Ö´óĞ¡Ğ´µÄ</font></b>
+<font size = "5"><b>ä¸€å®šæ³¨æ„jpqlä¸­çš„å®ä½“ä¸æ˜¯æ•°æ®åº“ä¸­çš„è¡¨,è€Œæ˜¯è‡ªå·±åˆ›å»ºçš„å®ä½“ç±»,æ—¶åŒºåˆ†å¤§å°å†™çš„</font></b>
 
     @Query 
-    value Ö¸¶¨jpqlµÄ²éÑ¯Óï·¨
-    countQuery Ö¸¶¨countµÄjpqlÓï¾ä
-    nativeQuery Ä¬ÈÏÊ±false,±íÊ¾valueÀïÃæÊÇ²»ÊÇÔ­ÉúµÄsql
+    value æŒ‡å®šjpqlçš„æŸ¥è¯¢è¯­æ³•
+    countQuery æŒ‡å®šcountçš„jpqlè¯­å¥
+    nativeQuery é»˜è®¤æ—¶false,è¡¨ç¤ºvalueé‡Œé¢æ˜¯ä¸æ˜¯åŸç”Ÿçš„sql
     
 
-    @QueryÅÅĞò
-    Ö±½ÓÊ¹ÓÃjpql,ÔÚ²ÎÊıÖĞ¼ÓÈësort
+    @Queryæ’åº
+    ç›´æ¥ä½¿ç”¨jpql,åœ¨å‚æ•°ä¸­åŠ å…¥sort
     
 
-    @Query·ÖÒ³
-    Ö±½ÓÓÃpage¶ÔÏó½ÓÊÜ½Ó¿Ú,ÔÚ²ÎÊıÖĞ¼ÓÈëpageable
+    @Queryåˆ†é¡µ
+    ç›´æ¥ç”¨pageå¯¹è±¡æ¥å—æ¥å£,åœ¨å‚æ•°ä¸­åŠ å…¥pageable
     
 @param
     
-    ÔÚ·½·¨µÄ²ÎÊıÉÏ¼ÓÉÏ@param("×Ö¶ÎÃû") String name
-    ÔÚ²éÑ¯Óï¾äÖĞÊ¹ÓÃ²ÎÊıÊ±,:²ÎÊıÃû
+    åœ¨æ–¹æ³•çš„å‚æ•°ä¸ŠåŠ ä¸Š@param("å­—æ®µå") String name
+    åœ¨æŸ¥è¯¢è¯­å¥ä¸­ä½¿ç”¨å‚æ•°æ—¶,:å‚æ•°å
     
 ```
 	@Query(value = "select u from User u where u.name = :name")
 	User findByName2(@Param("name") String name);
 ```
 
-@Query×¢½âÖĞÊ¹ÓÃspel±í´ïÊ½
+@Queryæ³¨è§£ä¸­ä½¿ç”¨spelè¡¨è¾¾å¼
 <table>
-<th>±äÁ¿Ãû</th><th>Ê¹ÓÃ·½Ê½</th><th>ÃèÊö</th><tr><td>entityName</td><td>select x from  #{#entityName} x</td><td>¸ù¾İÖ¸¶¨µÄrepository²åÈëÏà¹ØµÄentityName(1)Èç¹û¶¨ÒåÁËentity×¢½â,Ö±½ÓÊ¹ÓÃentityÊôĞÔÃû,(2)Èç¹ûÃ»ÓĞ¶¨Òå,Ê¹ÓÃÊµÌåÀàµÄÃû³Æ
+<th>å˜é‡å</th><th>ä½¿ç”¨æ–¹å¼</th><th>æè¿°</th><tr><td>entityName</td><td>select x from  #{#entityName} x</td><td>æ ¹æ®æŒ‡å®šçš„repositoryæ’å…¥ç›¸å…³çš„entityName(1)å¦‚æœå®šä¹‰äº†entityæ³¨è§£,ç›´æ¥ä½¿ç”¨entityå±æ€§å,(2)å¦‚æœæ²¡æœ‰å®šä¹‰,ä½¿ç”¨å®ä½“ç±»çš„åç§°
 </td></tr></table>
 
-@ModifyingĞŞ¸Ä²éÑ¯
+@Modifyingä¿®æ”¹æŸ¥è¯¢
 
-@procedure´æ´¢¹ı³Ì
+@procedureå­˜å‚¨è¿‡ç¨‹
 
-	²ÎÊı:
-	value Êı¾İ¿âÀïÖĞ´¢´æ¹ı³ÌµÄÃû³Æ
-	procedureNameÊı¾İ¿âÖĞ´¢´æ¹ı³ÌµÄÃû³Æ 
-	name jpaÖĞ´¢´æ¹ı³ÌµÄÃû³Æ
-	outputParameterName Êä³ö²ÎÊıµÄÃû×Ö
+	å‚æ•°:
+	value æ•°æ®åº“é‡Œä¸­å‚¨å­˜è¿‡ç¨‹çš„åç§°
+	procedureNameæ•°æ®åº“ä¸­å‚¨å­˜è¿‡ç¨‹çš„åç§° 
+	name jpaä¸­å‚¨å­˜è¿‡ç¨‹çš„åç§°
+	outputParameterName è¾“å‡ºå‚æ•°çš„åå­—
 	
-@NamedStoredProcedureQuery±ê×¢ÔÚÊµÌåÀàÉÏ,±íÊ¾ÆäÊÇÒ»¸ö´æ´¢¹ı³Ì
+@NamedStoredProcedureQueryæ ‡æ³¨åœ¨å®ä½“ç±»ä¸Š,è¡¨ç¤ºå…¶æ˜¯ä¸€ä¸ªå­˜å‚¨è¿‡ç¨‹
 
-ÔÚÕâ¸ö×¢½âÖĞĞèÒªÊ¹ÓÃ@StoredProcedureParameter×¢½âÀ´µÄ¶¨ÒåÔÚ´æ´¢¹ı³ÌÖĞ¶¨ÒåµÄÊäÈëÊä³ö²ÎÊı,ÔÚ´Ë×¢½âÖĞµÄ²ÎÊıÎªmode , type, name
+åœ¨è¿™ä¸ªæ³¨è§£ä¸­éœ€è¦ä½¿ç”¨@StoredProcedureParameteræ³¨è§£æ¥çš„å®šä¹‰åœ¨å­˜å‚¨è¿‡ç¨‹ä¸­å®šä¹‰çš„è¾“å…¥è¾“å‡ºå‚æ•°,åœ¨æ­¤æ³¨è§£ä¸­çš„å‚æ•°ä¸ºmode , type, name
 
 @NamedQuery
 
-	¶¨ÒåÔÚÊµÌåÀàÉÏ,Ô¤¶¨ÒåµÄ²éÑ¯
-	name ¹æÔò ÊµÌåÃû.·½·¨Ãû
-	query jpqlÓï·¨
+	å®šä¹‰åœ¨å®ä½“ç±»ä¸Š,é¢„å®šä¹‰çš„æŸ¥è¯¢
+	name è§„åˆ™ å®ä½“å.æ–¹æ³•å
+	query jpqlè¯­æ³•
 	
-	µ÷ÓÃµÄÊ±ºò Ö±½ÓÊ¹ÓÃ·½·¨µ÷ÓÃ
+	è°ƒç”¨çš„æ—¶å€™ ç›´æ¥ä½¿ç”¨æ–¹æ³•è°ƒç”¨
 	
-	repositoryÖĞ²»ĞèÒªÊ¹ÓÃ×¢½â,Ö±½Ó¶¨Òå·½·¨
+	repositoryä¸­ä¸éœ€è¦ä½¿ç”¨æ³¨è§£,ç›´æ¥å®šä¹‰æ–¹æ³•
 	
 
-»ù±¾×¢½â
+åŸºæœ¬æ³¨è§£
 
-	@Entity	±»´Ë×¢½â×¢ÊÍµÄ¶ÔÏó½«»á³ÉÎªjpa¹ÜÀíµÄÊµÌå,½«Ó³Éäµ½Ö¸¶¨µÄÊı¾İ¿â±í
-	@Table Ö¸¶¨Êı¾İ¿âÖĞµÄ±íÃû
-	@Id Êı¾İ¿âÖĞµÄÖ÷¼ü , Ò»¸öÊµÌåÀïÃæ±ØĞëÓĞÒ»¸öÖ÷¼ü 
-	@GeneratedValue Ö÷¼üÉú³É²ßÂÔ
-		table Í¨¹ı±íÉú³ÉÖ÷¼ü
-		sequence Í¨¹ıĞòÁĞÉú³ÉÖ÷¼ü
-		identity ²ÉÓÃÊı¾İ¿âid×ÔÔö³¤
-		auto×Ô¶¯Ñ¡ÔñºÏÊÊµÄ²ßÂÔ 
-	@IdClass ÀûÓÃÍâ²¿ÀàµÄÁªºÏÖ÷¼ü
-		×÷ÎªÁªºÏÖ÷¼ü,ĞèÒªÂú×ãÒ»ÏÂÌõ¼ş
-		±ØĞëÊµÏÖserializable½Ó¿Ú
-		±ØĞëÓĞÄ¬ÈÏµÄ publicÎŞ²ÎÊıµÄ¹¹Ôì·½·¨
-		±ØĞë¸²¸ÇequalsºÍhashcode·½·¨
+	@Entity	è¢«æ­¤æ³¨è§£æ³¨é‡Šçš„å¯¹è±¡å°†ä¼šæˆä¸ºjpaç®¡ç†çš„å®ä½“,å°†æ˜ å°„åˆ°æŒ‡å®šçš„æ•°æ®åº“è¡¨
+	@Table æŒ‡å®šæ•°æ®åº“ä¸­çš„è¡¨å
+	@Id æ•°æ®åº“ä¸­çš„ä¸»é”® , ä¸€ä¸ªå®ä½“é‡Œé¢å¿…é¡»æœ‰ä¸€ä¸ªä¸»é”® 
+	@GeneratedValue ä¸»é”®ç”Ÿæˆç­–ç•¥
+		table é€šè¿‡è¡¨ç”Ÿæˆä¸»é”®
+		sequence é€šè¿‡åºåˆ—ç”Ÿæˆä¸»é”®
+		identity é‡‡ç”¨æ•°æ®åº“idè‡ªå¢é•¿
+		autoè‡ªåŠ¨é€‰æ‹©åˆé€‚çš„ç­–ç•¥ 
+	@IdClass åˆ©ç”¨å¤–éƒ¨ç±»çš„è”åˆä¸»é”®
+		ä½œä¸ºè”åˆä¸»é”®,éœ€è¦æ»¡è¶³ä¸€ä¸‹æ¡ä»¶
+		å¿…é¡»å®ç°serializableæ¥å£
+		å¿…é¡»æœ‰é»˜è®¤çš„ publicæ— å‚æ•°çš„æ„é€ æ–¹æ³•
+		å¿…é¡»è¦†ç›–equalså’Œhashcodeæ–¹æ³•
 		
-		idcalss×¢½âÓÃÔÚentityÀàÉÏ
-	@Basic Êı¾İ¿â±íÖĞ×Ö¶ÎµÄÓ³Éä,Èç¹ûÊµÌåÀàÖĞÊôĞÔÉÏÃ»ÓĞ×¢½â,Ä¬ÈÏÊÇ@basic
-	@Transient ±íÊ¾´Ë×Ö¶Î²»ÊÇÒ»¸öÊı¾İ¿â¿â×Ö¶Î,Óë@basicÏà·´
-	@Colum ¶ÔÓ¦Êı¾İ¿âÖĞµÄÁĞÃû
-		ÔÚrepository½Ó¿ÚÖĞĞèÒªÊ¹ÓÃÊµÌåµÄÃû×ÖÈ¥²éÑ¯,Ó¦Îª¶¨ÒåÁËcolumnÃû×Ö,ËùÒÔĞèÒªÕâ¸ö×Ö¶ÎÈ»ºóÍ¨¹ı×¢½âÈ¥ÏìÓ¦µÄÊı¾İ¿â²éÑ¯ÏàÓ¦µÄ×Ö¶Î
-	@Temporal ÉèÖÃdataÀàĞÍµÄÊôĞÔ,
-	@Enumerated ²ÎÊıEnumType.ORDINAL(Ó³ÉäÃ¶¾ÙµÄÏÂ±ê)»òÕßSTRING(Ó³ÉäÃ¶¾ÙµÄname)
-	@Lob ½«ÊôĞÔÓ³Éä³ÉÊı¾İ¿âÖ§³ÖµÄ´ó¶ÔÏóÀàĞÍ
+		idcalssæ³¨è§£ç”¨åœ¨entityç±»ä¸Š
+	@Basic æ•°æ®åº“è¡¨ä¸­å­—æ®µçš„æ˜ å°„,å¦‚æœå®ä½“ç±»ä¸­å±æ€§ä¸Šæ²¡æœ‰æ³¨è§£,é»˜è®¤æ˜¯@basic
+	@Transient è¡¨ç¤ºæ­¤å­—æ®µä¸æ˜¯ä¸€ä¸ªæ•°æ®åº“åº“å­—æ®µ,ä¸@basicç›¸å
+	@Colum å¯¹åº”æ•°æ®åº“ä¸­çš„åˆ—å
+		åœ¨repositoryæ¥å£ä¸­éœ€è¦ä½¿ç”¨å®ä½“çš„åå­—å»æŸ¥è¯¢,åº”ä¸ºå®šä¹‰äº†columnåå­—,æ‰€ä»¥éœ€è¦è¿™ä¸ªå­—æ®µç„¶åé€šè¿‡æ³¨è§£å»å“åº”çš„æ•°æ®åº“æŸ¥è¯¢ç›¸åº”çš„å­—æ®µ
+	@Temporal è®¾ç½®dataç±»å‹çš„å±æ€§,
+	@Enumerated å‚æ•°EnumType.ORDINAL(æ˜ å°„æšä¸¾çš„ä¸‹æ ‡)æˆ–è€…STRING(æ˜ å°„æšä¸¾çš„name)
+	@Lob å°†å±æ€§æ˜ å°„æˆæ•°æ®åº“æ”¯æŒçš„å¤§å¯¹è±¡ç±»å‹
 	
 
-¹ØÁª¹ØÏµ×¢½â
+å…³è”å…³ç³»æ³¨è§£
 
-	@JoinColumn ¶¨ÒåÍâ¼ü¹ØÁªµÄ×Ö¶ÎÃû³Æ 
-		name Ä¿±ê±íµÄ×Ö¶ÎÃû ±ØÌî
-		referenceedColumnName ±¾ÊµÌåµÄ×Ö¶ÎÃû¸è,·Ç±ØÌî,Ä¬ÈÏÊÇ±¾±íµÄId
-		unique Íâ¼ü×Ö¶ÎÊÇ·ñÎ¨Ò»
-		nullable Íâ¼ü×Ö¶ÎÊÇ·ñÎª¿Õ
-		insertable ÊÇ·ñ¸úËæÒ»ÆğĞÂÔö
-		updateable ÊÇ·ñ¸úËæÒ»ÆğĞÂÔö
-	@OneToOne Ò»¶ÔÒ»
-		targetEntity ¹ØÏµÄ¿±êÊµÌå,·Ç±ØÌî
-		cascade ¼¶Áª²Ù×÷²ßÂÔ
-			cascadeType.persist ¼¶ÁªĞÂ½¨
-			cascadeType.REMOVE ¼¶ÁªÉ¾³ı
-			cascadeType.pefresh ¼¶ÁªË¢ĞÂ
-			cascadeType.MERGE ¼¶Áª¸üĞÂ
-			cascadeType.ALL ËÄÏîÈ«Ñ¡
-			Ä¬ÈÏ,¹ØÏµ±í²»»á²úÉúÈÎºÎÓ°Ïì
-		fetch Êı¾İ»ñÈ¡·½Ê½,eager(Á¢¼´¼ÓÔØ)/LAZYÑÓ³Ù¼ÓÔØ
-		optional ÊÇ·ñÔÊĞíÎª¿Õ
-		mappedBy  ²»ÄÜÓë@Joincolumn »òÕß@JoinTableÁªºÏÊ¹ÓÃ
-			mappedByÖ¸¶¨µÄÊÇÁíÍâÒ»¸öÌí¼ÓÁË@joinColumn»òÕß@JoinTable×¢½âµÄÊôĞÔµÄ×Ö¶ÎÃû³Æ,²»ÊÇÊı¾İ¿â×Ö¶Î,Ò²²»ÊÇÊµÌåµÄ¶ÔÏóµÄÃû×Ö.
+	@JoinColumn å®šä¹‰å¤–é”®å…³è”çš„å­—æ®µåç§° 
+		name ç›®æ ‡è¡¨çš„å­—æ®µå å¿…å¡«
+		referenceedColumnName æœ¬å®ä½“çš„å­—æ®µåæ­Œ,éå¿…å¡«,é»˜è®¤æ˜¯æœ¬è¡¨çš„Id
+		unique å¤–é”®å­—æ®µæ˜¯å¦å”¯ä¸€
+		nullable å¤–é”®å­—æ®µæ˜¯å¦ä¸ºç©º
+		insertable æ˜¯å¦è·Ÿéšä¸€èµ·æ–°å¢
+		updateable æ˜¯å¦è·Ÿéšä¸€èµ·æ–°å¢
+	@OneToOne ä¸€å¯¹ä¸€
+		targetEntity å…³ç³»ç›®æ ‡å®ä½“,éå¿…å¡«
+		cascade çº§è”æ“ä½œç­–ç•¥
+			cascadeType.persist çº§è”æ–°å»º
+			cascadeType.REMOVE çº§è”åˆ é™¤
+			cascadeType.pefresh çº§è”åˆ·æ–°
+			cascadeType.MERGE çº§è”æ›´æ–°
+			cascadeType.ALL å››é¡¹å…¨é€‰
+			é»˜è®¤,å…³ç³»è¡¨ä¸ä¼šäº§ç”Ÿä»»ä½•å½±å“
+		fetch æ•°æ®è·å–æ–¹å¼,eager(ç«‹å³åŠ è½½)/LAZYå»¶è¿ŸåŠ è½½
+		optional æ˜¯å¦å…è®¸ä¸ºç©º
+		mappedBy  ä¸èƒ½ä¸@Joincolumn æˆ–è€…@JoinTableè”åˆä½¿ç”¨
+			mappedByæŒ‡å®šçš„æ˜¯å¦å¤–ä¸€ä¸ªæ·»åŠ äº†@joinColumnæˆ–è€…@JoinTableæ³¨è§£çš„å±æ€§çš„å­—æ®µåç§°,ä¸æ˜¯æ•°æ®åº“å­—æ®µ,ä¹Ÿä¸æ˜¯å®ä½“çš„å¯¹è±¡çš„åå­—.
 			
-		orphanRemoval ÊÇ·ñ¼¶ÁªÉ¾³ı,ºÍcascadeType.REMOVEĞ§¹ûÊÇÒ»ÑùµÄ,ÅäÖÃÒ»¸ö¾Í¿ÉÒÔÁË.			
+		orphanRemoval æ˜¯å¦çº§è”åˆ é™¤,å’ŒcascadeType.REMOVEæ•ˆæœæ˜¯ä¸€æ ·çš„,é…ç½®ä¸€ä¸ªå°±å¯ä»¥äº†.			
 
-	@OneToMany Ò»¶Ô¶à
-	@OrderBy ¹ØÁª²éÑ¯Ê±ÅÅĞò
-		ÔÚonetomanyµÄÊ±ºòÊ¹ÓÃ¾Ó¶à,¿ÉÒÔ¶Ô²éÑ¯µ½µÄÊµÌå½øĞĞÅÅĞò,¹æÔò:property|database_column_name   desc|asc
+	@OneToMany ä¸€å¯¹å¤š
+	@OrderBy å…³è”æŸ¥è¯¢æ—¶æ’åº
+		åœ¨onetomanyçš„æ—¶å€™ä½¿ç”¨å±…å¤š,å¯ä»¥å¯¹æŸ¥è¯¢åˆ°çš„å®ä½“è¿›è¡Œæ’åº,è§„åˆ™:property|database_column_name   desc|asc
 		
-	@JoinTable  ¹ØÁª¹ØÏµ±í
+	@JoinTable  å…³è”å…³ç³»è¡¨
 		
-	@ManyToMany ¶à¶Ô¶à
+	@ManyToMany å¤šå¯¹å¤š
 	
-EntityManagerÖĞ³£ÓÃµÄ·½·¨
+EntityManagerä¸­å¸¸ç”¨çš„æ–¹æ³•
 
 ```
-	//¸ù¾İÖ÷¼ü²éÑ¯ÊµÌå¶ÔÏó
+	//æ ¹æ®ä¸»é”®æŸ¥è¯¢å®ä½“å¯¹è±¡
 	find(Class<T> entityClass, Object primarykey)
 	
-	//½«persistenceContextµÄĞÅÏ¢Í¬²½µ½Êı¾İ¿âÖĞ
+	//å°†persistenceContextçš„ä¿¡æ¯åŒæ­¥åˆ°æ•°æ®åº“ä¸­
 	flush
 	
-	//refreshµÄ×÷ÓÃÊÇ´ÓÊı¾İ¿âÖĞ½«entityµÄ×´Ì¬½øĞĞ¸üĞÂ²Ù×÷,Èç¹ûentityºÍÊı¾İ¿âÖĞµÄÊı¾İ²»Ò»ÖÂ,½«¸üĞÂÊı¾İ¿âÖĞµÄÊı¾İµ½entityÖĞ
+	//refreshçš„ä½œç”¨æ˜¯ä»æ•°æ®åº“ä¸­å°†entityçš„çŠ¶æ€è¿›è¡Œæ›´æ–°æ“ä½œ,å¦‚æœentityå’Œæ•°æ®åº“ä¸­çš„æ•°æ®ä¸ä¸€è‡´,å°†æ›´æ–°æ•°æ®åº“ä¸­çš„æ•°æ®åˆ°entityä¸­
 	refresh
 	
-	//Ìí¼ÓÊµÌåµ½Êı¾İ¿âÖĞ
-	persist(ÊµÌåÃû)
+	//æ·»åŠ å®ä½“åˆ°æ•°æ®åº“ä¸­
+	persist(å®ä½“å)
 	
-	//É¾³ı(ÒªÏÈ²éÑ¯)
+	//åˆ é™¤(è¦å…ˆæŸ¥è¯¢)
 	remove()
 	
-	//¸üĞÂ
+	//æ›´æ–°
 	merge()
 	
-	//²éÑ¯
+	//æŸ¥è¯¢
 	createQuery()
 	
 ```
 
-¿ÉÒÔ×Ô¶¨Òå×Ô¼ºµÄ Repository 
+å¯ä»¥è‡ªå®šä¹‰è‡ªå·±çš„ Repository 
 
-	@NoRepositoryBean ÉùÃ÷¶¨ÖÆ¹²ÏíĞĞÎªµÄ½Ó¿Ú
-	ÔÙjpaÖĞÌá¹©µÄrepositoryÒÑ¾­ÊµÏÖÁË´ó²¿·ÖµÄ¹¦ÄÜ,Èç¹û×Ô¼ºÊµÏÖµÄ»°,¿ÉÒÔ¼Ì³ĞÕâĞ©ÒÑ¾­ÊµÏÖµÄ·½·¨,¿ÉÒÔ¼õÉÙ¹¤×÷Á¿,Í¬Ê±ÔÚÊµÏÖÀàÖĞĞèÒª×¢ÒâµÄÊÇ±ØĞëÊµÏÖ¸¸ÀàµÄ¹¹Ôì·½·¨,Í¬Ê±Õû¸öÀàĞèÒªTÀàĞÍµÄ classÀàĞÍ,ËùÒÔĞèÒªÔÚ¹¹Ôì·½·¨ÖĞ´«ÈëclassÀàĞÍ.
+	@NoRepositoryBean å£°æ˜å®šåˆ¶å…±äº«è¡Œä¸ºçš„æ¥å£
+	å†jpaä¸­æä¾›çš„repositoryå·²ç»å®ç°äº†å¤§éƒ¨åˆ†çš„åŠŸèƒ½,å¦‚æœè‡ªå·±å®ç°çš„è¯,å¯ä»¥ç»§æ‰¿è¿™äº›å·²ç»å®ç°çš„æ–¹æ³•,å¯ä»¥å‡å°‘å·¥ä½œé‡,åŒæ—¶åœ¨å®ç°ç±»ä¸­éœ€è¦æ³¨æ„çš„æ˜¯å¿…é¡»å®ç°çˆ¶ç±»çš„æ„é€ æ–¹æ³•,åŒæ—¶æ•´ä¸ªç±»éœ€è¦Tç±»å‹çš„ classç±»å‹,æ‰€ä»¥éœ€è¦åœ¨æ„é€ æ–¹æ³•ä¸­ä¼ å…¥classç±»å‹.
 	
-	Ò²¿ÉÒÔÍêÈ«×Ô¼ºÊµÏÖ´ø·ºĞÍµÄrepository
-	×¢ÒâÔÚÀàÖĞÉùÃ÷×î¼òµ¥µÄÁ½¸ö±äÁ¿class<T>ÒÔ¼°entityManager
-	ÔÚentityManagerÉÏÊ¹ÓÃ×¢½â@PersistenceContextÊµÏÖÈİÆ÷¹ÜÀíµÄentitymanager
+	ä¹Ÿå¯ä»¥å®Œå…¨è‡ªå·±å®ç°å¸¦æ³›å‹çš„repository
+	æ³¨æ„åœ¨ç±»ä¸­å£°æ˜æœ€ç®€å•çš„ä¸¤ä¸ªå˜é‡class<T>ä»¥åŠentityManager
+	åœ¨entityManagerä¸Šä½¿ç”¨æ³¨è§£@PersistenceContextå®ç°å®¹å™¨ç®¡ç†çš„entitymanager
 	
-auditing£¨Éó¼Æ£©
+auditingï¼ˆå®¡è®¡ï¼‰
 
-	entityÊµÌåÀàÖĞĞèÒªÌí¼Ó×¢½â
-		@CreatedBy ´´½¨Õß
-		@CreatedDate ´´½¨ÈÕÆÚ
-		@LastModifiedDate ×îºóĞŞ¸ÄÈÕÆÚ
-		@LastModifiedBy ×îºóĞŞ¸ÄÕß
+	entityå®ä½“ç±»ä¸­éœ€è¦æ·»åŠ æ³¨è§£
+		@CreatedBy åˆ›å»ºè€…
+		@CreatedDate åˆ›å»ºæ—¥æœŸ
+		@LastModifiedDate æœ€åä¿®æ”¹æ—¥æœŸ
+		@LastModifiedBy æœ€åä¿®æ”¹è€…
 		
-	ÔÚÊµÌåÀàÉÏÌí¼Ó@EntityListeners£¨AuditingEntityListeners.class£©
+	åœ¨å®ä½“ç±»ä¸Šæ·»åŠ @EntityListenersï¼ˆAuditingEntityListeners.classï¼‰
 
-	ÊµÏÖAuditorAware½Ó¿Ú¸æËßjpaÊÇË­ÔÚĞŞ¸Ä»òÕß´´½¨Êı¾İ
-	Æô¶¯auditing
+	å®ç°AuditorAwareæ¥å£å‘Šè¯‰jpaæ˜¯è°åœ¨ä¿®æ”¹æˆ–è€…åˆ›å»ºæ•°æ®
+	å¯åŠ¨auditing
 	
 @MappedSupperclass
 
-	Ïàµ±ÓëÌí¼ÓÁË×¢½âentityµÄÊµÌåµÄ¸¸Àà£¬¿ÉÒÔÔÚÕâ¸ö¸¸ÀàÖĞÌí¼Ó¹«¹²µÄ·½·¨
+	ç›¸å½“ä¸æ·»åŠ äº†æ³¨è§£entityçš„å®ä½“çš„çˆ¶ç±»ï¼Œå¯ä»¥åœ¨è¿™ä¸ªçˆ¶ç±»ä¸­æ·»åŠ å…¬å…±çš„æ–¹æ³•
 	
 
-×Ô¶¨ÒåentityListener
+è‡ªå®šä¹‰entityListener
 
 	

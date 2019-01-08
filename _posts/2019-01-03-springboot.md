@@ -1,10 +1,10 @@
-
+ï»¿
 ---
 layout: post
 ---
 <center><font size="5">spring boot</center>
 
-- ÅÅ³ı´«µİÒÀÀµ
+- æ’é™¤ä¼ é€’ä¾èµ–
 
         <depenency>
             <groupId>org.springframework.boot</groupId>
@@ -14,7 +14,7 @@ layout: post
                     <groupId>com.fasterxml.jackon.core\</exclusion>
             <exclusions>
         <dependency>
-- ¸²¸ÇÁíÍâ°æ±¾µÄÒÀÀµ(maven×ÜÊÇÊ¹ÓÃ×î½üµÄÒÀÀµ)
+- è¦†ç›–å¦å¤–ç‰ˆæœ¬çš„ä¾èµ–(mavenæ€»æ˜¯ä½¿ç”¨æœ€è¿‘çš„ä¾èµ–)
 
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
@@ -22,17 +22,17 @@ layout: post
             <version>2.4.3</version>
         <dependency>
         
-- springbootÌØ¶¨µÄÌõ¼ş»¯×¢½â
+- springbootç‰¹å®šçš„æ¡ä»¶åŒ–æ³¨è§£
 
-        @ConditionalOnBean ÅäÖÃÁËÄ³¸öÌØ¶¨µÄBean
-        @ConditionalOnMissingBean Ã»ÓĞÅäÖÃÄ³¸öÌØ¶¨µÄBean
-        @ConditionalOnClass  classpathÀïÃæÓĞÖ¸¶¨µÄÀà
-        @ConditionalOnMissingClass classpathÀïÈ±ÉÙÖ¸¶¨µÄÀà
-        @ConditionalOnExpression ¸ø¶¨µÄspel±í´ïÊ½µÄÖµÊÇtrue
-        @ConditionalOnJava javaµÄ°æ±¾Æ¥ÅäÖ¸¶¨µÄÖµ»òÕßÒ»¸ö·¶Î§µÄÖµ
+        @ConditionalOnBean é…ç½®äº†æŸä¸ªç‰¹å®šçš„Bean
+        @ConditionalOnMissingBean æ²¡æœ‰é…ç½®æŸä¸ªç‰¹å®šçš„Bean
+        @ConditionalOnClass  classpathé‡Œé¢æœ‰æŒ‡å®šçš„ç±»
+        @ConditionalOnMissingClass classpathé‡Œç¼ºå°‘æŒ‡å®šçš„ç±»
+        @ConditionalOnExpression ç»™å®šçš„spelè¡¨è¾¾å¼çš„å€¼æ˜¯true
+        @ConditionalOnJava javaçš„ç‰ˆæœ¬åŒ¹é…æŒ‡å®šçš„å€¼æˆ–è€…ä¸€ä¸ªèŒƒå›´çš„å€¼
         @ConditionalOnJndi 
-        @ConditionalOnProperty ¸ø¶¨µÄÅäÖÃÊôĞÔÒªÓĞÒ»¸öÃ÷È·µÄÖµ
-        @ConditionalOnResource classpathÀïÓĞÓĞÖ¸¶¨µÄ×ÊÔ´
-        @ConditionalOnWebApplication Ö¸¶¨ÕâÊÇÒ»¸öwebÓ¦ÓÃ³ÌĞò
-        @ConditionalOnNotwebApplication Ö¸¶¨Õâ²»ÊÇÒ»¸öwebÓ¦ÓÃ³ÌĞò
+        @ConditionalOnProperty ç»™å®šçš„é…ç½®å±æ€§è¦æœ‰ä¸€ä¸ªæ˜ç¡®çš„å€¼
+        @ConditionalOnResource classpathé‡Œæœ‰æœ‰æŒ‡å®šçš„èµ„æº
+        @ConditionalOnWebApplication æŒ‡å®šè¿™æ˜¯ä¸€ä¸ªwebåº”ç”¨ç¨‹åº
+        @ConditionalOnNotwebApplication æŒ‡å®šè¿™ä¸æ˜¯ä¸€ä¸ªwebåº”ç”¨ç¨‹åº
         
