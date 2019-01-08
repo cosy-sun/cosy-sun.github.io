@@ -61,7 +61,7 @@ spring data
     
 注解查询大全
 
-<font size = "5"><b>一定注意jpql中的实体不是数据库中的表,而是自己创建的实体类,时区分大小写的</font></b>
+<font size = "5"><b>一定注意jpql中的实体不是数据库中的表,而是自己创建的实体类,时区分大小写的</b></font>
 
     @Query 
     value 指定jpql的查询语法
