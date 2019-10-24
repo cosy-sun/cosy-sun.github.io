@@ -1,0 +1,3244 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2019-10-24T18:58:59+08:00</updated><id>/feed.xml</id><title type="html">cosy-sun</title><subtitle>孙振华的博客</subtitle><entry><title type="html">C语言</title><link href="/2019/10/24/C%E8%AF%AD%E8%A8%80.html" rel="alternate" type="text/html" title="C语言" /><published>2019-10-24T00:00:00+08:00</published><updated>2019-10-24T00:00:00+08:00</updated><id>/2019/10/24/C%E8%AF%AD%E8%A8%80</id><content type="html" xml:base="/2019/10/24/C%E8%AF%AD%E8%A8%80.html">&lt;p&gt;#C语言程序设计&lt;/p&gt;
+
+&lt;p&gt;#####hello world&lt;/p&gt;
+
+&lt;p&gt;#####变量和算数表达式&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;变量在使用之前需要声明&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;格式声明
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  %d 打印十进制整数
+    
+  %5d 打印十进制整数
+    
+  %f 打印浮点数
+    
+  %.4f 小数点后4位小数
+     
+  %o 八进制
+    
+  %x 十六进制
+    
+  %c 字符
+    
+  %s字符串
+    
+  %% 表示%本身的%
+    
+  %p 指针类型
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;循环语句&lt;/p&gt;
+
+    &lt;p&gt;for&lt;/p&gt;
+
+    &lt;p&gt;while&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;符号常量&lt;/p&gt;
+
+    &lt;p&gt;#define 名字 替换文本&lt;/p&gt;
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  ps:  #define LOWER 0
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;输入输出字符&lt;/p&gt;
+
+    &lt;p&gt;getchar()&lt;/p&gt;
+
+    &lt;p&gt;putchar()&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;函数
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  返回值类型 函数名(可能有的参数说明) {
+      说明序列 
+      语句序列     
+  }
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+
+    &lt;p&gt;函数可以提前声明,在程序最开始&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;变元,按值调用&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;字符数组&lt;/p&gt;
+
+    &lt;p&gt;char line[1000];&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;外部变量和作用域&lt;/p&gt;
+
+    &lt;p&gt;如果放在了文件的前面,不需要使用extern,如果放在了头文件中,类似的.h文件,需要使用extern&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;#####类型、运算符与表达式&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;变量名&lt;/p&gt;
+
+    &lt;p&gt;字母数字组成&lt;/p&gt;
+
+    &lt;p&gt;第一个字符必须是字母,下划线也是字母&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;数据类型与大小&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; char 单字节 1
+ int         4
+ short       2
+ long        4|8
+ float       4
+ double      8
+ long double 
+ signed 
+ unsigned 无符号限定符
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;常量&lt;/p&gt;
+
+    &lt;p&gt;普通常量&lt;/p&gt;
+
+    &lt;p&gt;枚举常量&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;算数运算符&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  + - * / %
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;关系运算符和逻辑运算符&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  关系运算符:(下面按照优先级排序)
+      &amp;gt;
+      &amp;gt;=
+      &amp;lt;
+      &amp;lt;=
+        
+      ==
+      !=
+        
+  逻辑运算符:
+      &amp;amp;&amp;amp;(优先级高于||)
+      ||
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;++ –运算符&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;位运算符&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &amp;amp;
+  |
+  ^
+  &amp;lt;&amp;lt;
+  &amp;gt;&amp;gt;
+    
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;赋值表达式和赋值运算符&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;条件表达式&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;三目运算符&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;#####控制流&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;if else  语句&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;switch语句&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;for 语句&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;while 语句&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;do while 语句&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;break&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;continue&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;goto语句和标号&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  PS:
+  gotoPoint:
+  for() {
+      goto gotoPoint;
+  }
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;#####函数与程序结构&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;逆波兰式&lt;/p&gt;
+
+    &lt;p&gt;(1-2) * (4+5)&lt;/p&gt;
+
+    &lt;p&gt;1 2 - 4 5 + *&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;外部变量&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;作用域规则&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;静态变量
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  static修饰
+    
+  静态全局变量的作用域是本源文件
+    
+  动态全局变量的作用域是程序
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;寄存器变量&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  register关键字
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;初始化&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;递归调用&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;预处理程序&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;文件包含:&lt;/p&gt;
+
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  #include&amp;lt;&amp;gt;
+  #include &quot;&quot;
+  如果文件名用&quot;&quot;括起来,那么先在源程序位置查找文件,如果找不到或者使用&amp;lt;&amp;gt;括起来,那么使用按实现定义的规则查找文件,
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;宏替换&lt;/p&gt;
+
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  #define 名字  替换文本
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;条件包含&lt;/p&gt;
+
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  #if
+  #endif
+  #else
+  #elif
+        
+  #if表达式中包含一个常量整数表达式(其中不能包含sizeof, 类型强制转换,枚举常量)
+  可以使用一个特殊的函数defined(名字)
+  当名字定义了,返回1,否则返回0;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;b&gt;&amp;lt;font size = 6&amp;gt;指针与数组&amp;lt;/font&amp;gt;&lt;/b&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;指针与地址&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;&amp;amp;&lt;/p&gt;
+
+        &lt;p&gt;&amp;amp;用于取一个对象的地址&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;*&lt;/p&gt;
+
+        &lt;p&gt;*是间接寻址或者间接引用运算符,用于指针,将访问指针所指向的对象.&lt;/p&gt;
+
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  PS:
+       int i = 0;
+       int *inti;
+       inti = &amp;amp;i;//inti代表i的地址
+       *inti == i;//*inti代表i对象
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;指针与函数变元(参数)&lt;/p&gt;
+
+    &lt;p&gt;使用指针会直接操作参数&lt;/p&gt;
+
+    &lt;p&gt;不使用指针不会直接操作参数,指挥操作函数内的临时变量,&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;指针与数组&lt;/p&gt;
+
+    &lt;p&gt;指针加1代表数组中的对象的下一个对象&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;地址算数运算&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;将指针,数组,地址运算集成在一起,&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;sizeof和strlen()的区别&lt;/p&gt;
+
+        &lt;p&gt;sizeof是关键字, 参数可以是基本数据类型, 数组,指针, 对象, 函数.&lt;/p&gt;
+
+        &lt;p&gt;strlen是函数, 计算字符串长度的&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;malloc函数和free函数&lt;/p&gt;
+
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  malloc函数和free函数
+  int *addr = (int *)malloc(100 * sizeof(char));
+  printf(&quot;%p&quot;, addr);
+  free(addr);
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;字符指针与函数&lt;/p&gt;
+
+    &lt;p&gt;直接定义指针,不要使用初值,例如,使用NULL,不会分配指针,&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;指针数组与指向指针的指针&lt;/p&gt;
+
+    &lt;p&gt;示例: C_test中的CommonTest.C&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;二维数组&lt;/p&gt;
+
+    &lt;p&gt;int a[10][10];&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;指针数组的初始化&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;指针与多维数组&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;命令行变元&lt;/p&gt;
+
+    &lt;p&gt;main函数加入参数,在命令行执行的时候加入参数&lt;/p&gt;
+
+    &lt;p&gt;两个参数,argc, *argv[]&lt;/p&gt;
+
+    &lt;p&gt;第一个参数表示命令行命令的个数,第二个参数表示命令行 的字符串&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;指向函数的指针&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  int (*fun)(int, int);//定义一个函数指针
+  (*fun)表示一个函数
+  fun 表示一个指针
+  (*fun)(a,b) 对一个函数的调用
+    
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;复杂说明&lt;/p&gt;
+
+    &lt;div class=&quot;language-c highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;**&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;argv&lt;/span&gt;  
+      &lt;span class=&quot;n&quot;&gt;argv&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;指向字符指针的指针&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        
+  &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;daytab&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;13&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;daytab&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;指向由&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;13&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;个整数类型元素组成的一维数组的指针&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+  &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;daytab&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;13&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;daytab&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;由&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;13&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;个指向整数类型对象的指针组成的一维数组&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        
+  &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;comp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;comp&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;返回值为指针的函数&lt;/span&gt;
+        
+  &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;comp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)()&lt;/span&gt;
+      &lt;span class=&quot;n&quot;&gt;comp&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;指向返回值为通用类型的函数的指针&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;#####结构&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;#####对结构的合法操作只有拷贝, 作为一个单元对其赋值,通过&amp;amp;操作符以及访问结构成员这几种&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;结构的基本知识&lt;/p&gt;
+
+    &lt;div class=&quot;language-c highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;k&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;point&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+
+  &lt;span class=&quot;k&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;reat&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;point&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pt1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;point&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pt2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+
+  &lt;span class=&quot;k&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;reat&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;screen&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+  &lt;span class=&quot;n&quot;&gt;test&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;screen&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pt1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;screen&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pt2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;11&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;结构与函数&lt;/p&gt;
+
+    &lt;div class=&quot;language-c highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;k&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;point&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;makePoint&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;point&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;y&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+
+    &lt;div class=&quot;language-c highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;n&quot;&gt;pointStruct&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;point&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;pp&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;//pp是指向结构p的指针&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;//*pp是结构p, *pp加括号, .运                                算符比*优先级高&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;p是指向结构的指针,那么p-&amp;gt;结构成员可以访问结构成员&lt;/p&gt;
+
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  pp-&amp;gt;x;
+  pp-&amp;gt;y;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;结构运算符 . -&amp;gt; 函数调用 () 下表[]优先级最高,结合最紧密&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;结构数组&lt;/p&gt;
+
+    &lt;div class=&quot;language-c highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;k&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;key&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  	&lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;keyWord&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+      &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;keyCount&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;keytab&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+    
+  &lt;span class=&quot;k&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;key1&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;keyWord&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+      &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;keyCount&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+    
+  &lt;span class=&quot;k&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;key1&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;keys&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+
+  &lt;span class=&quot;k&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;key2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;keyword&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+      &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;keyCount&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;keyss&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;a&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},{&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;b&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+
+    &lt;p&gt;sizeof(keys)/sizeof(struct key1)
+  可以计算数组大小&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;结构指针&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;类型定义&lt;/p&gt;
+
+    &lt;p&gt;typedef int Length;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;联合&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;位字段&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;#####输入和输出&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;标准输入和输出&lt;/p&gt;
+
+    &lt;p&gt;getchar   putchar&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;格式化输出printf函数&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  d, i int类型, 十进制
+  o    int类型, 无符号八进制(不以0开头)
+  x,X  int类型, 无符号十六进制(不以0x或0X开头)
+  u    int类型, 无符号十进制
+  c    int类型, 单个字符
+  s    char*类型
+  f    double类型
+  e, E double类型, 指数形式
+  g,G  double类型, 如果指数小于-4或大于等于精度,则用%e或%E格式输出,否则用%f格式输出,尾部的0和小数点不打印
+  p    void * 类型
+  %    不转换变元, 打印一个百分号
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;变长变元表&lt;/p&gt;
+
+    &lt;p&gt;int printf(char *frt, …)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;格式化输入-scanf函数&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;文件访问&lt;/p&gt;
+
+    &lt;p&gt;fopen(name, mode);&lt;/p&gt;
+
+    &lt;p&gt;getc(file * fp);&lt;/p&gt;
+
+    &lt;p&gt;fclose(name);&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;行输入输出&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;字符串处理函数&lt;/p&gt;
+
+    &lt;div class=&quot;language-c highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;n&quot;&gt;strcat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;链接&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;strncat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;的前&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;个字符串连接到&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;上&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;strcmp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;比较&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;t&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;strncmp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; 
+  &lt;span class=&quot;n&quot;&gt;strcpy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;将&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;所指向的字符串赋值到&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;所指向的位置&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;strncpy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;strlen&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;返回&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;所指向字符串的长度&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;strchr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;中查找&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;c&lt;/span&gt; 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;字符类测试和转换函数&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;######unix系统界面&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;文件描述符&lt;/li&gt;
+&lt;/ul&gt;</content><author><name></name></author><summary type="html">#C语言程序设计</summary></entry><entry><title type="html">Cyrpto</title><link href="/2019/10/24/cyrpto.html" rel="alternate" type="text/html" title="Cyrpto" /><published>2019-10-24T00:00:00+08:00</published><updated>2019-10-24T00:00:00+08:00</updated><id>/2019/10/24/cyrpto</id><content type="html" xml:base="/2019/10/24/cyrpto.html"></content><author><name></name></author><summary type="html"></summary></entry><entry><title type="html">Design Mode</title><link href="/2019/10/24/design-mode.html" rel="alternate" type="text/html" title="Design Mode" /><published>2019-10-24T00:00:00+08:00</published><updated>2019-10-24T00:00:00+08:00</updated><id>/2019/10/24/design-mode</id><content type="html" xml:base="/2019/10/24/design-mode.html">&lt;p&gt;####设计模式&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;原则&lt;/p&gt;
+
+    &lt;ol&gt;
+      &lt;li&gt;单一职责&lt;/li&gt;
+      &lt;li&gt;开闭原则, 开放扩展, 关闭修改,&lt;/li&gt;
+      &lt;li&gt;里氏替换,&lt;/li&gt;
+      &lt;li&gt;依赖倒置, 调用者和被调用者都依赖抽象, 这样具体实现类如何修改, 不会影响,&lt;/li&gt;
+      &lt;li&gt;接口隔离,&lt;/li&gt;
+      &lt;li&gt;最少知道,&lt;/li&gt;
+      &lt;li&gt;合成/聚合复用,&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;分类&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;创建模型&lt;/p&gt;
+
+        &lt;p&gt;单例, 工厂方法, 抽象工厂, 静态工厂, 建造者模式, 原型模式,&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;结构性&lt;/p&gt;
+
+        &lt;p&gt;适配器, 桥接, 装饰, 组合, 外观, 享元, 代理,&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;行为型&lt;/p&gt;
+
+        &lt;p&gt;模板, 命令, 迭代器, 观察者, 中介者, 备忘录, 解释器, 状态模式, 策略, 责任链, 访问者,&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;模式&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;静态工厂模式&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;工厂方法模式&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;抽象工厂模式&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;单例模式(singleton)&lt;/p&gt;
+
+    &lt;ol&gt;
+      &lt;li&gt;饿汉式,&lt;code class=&quot;highlighter-rouge&quot;&gt;private static final singleton instance = new singleton();&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;懒汉式,&lt;code class=&quot;highlighter-rouge&quot;&gt;if(instance == null) instance = new singleton();&lt;/code&gt;&lt;/li&gt;
+    &lt;/ol&gt;
+
+    &lt;p&gt;在多个虚拟机里面, 会在每个虚拟机下面创建一个实例, 因此在分布式环境下, 应该避免使用,&lt;/p&gt;
+
+    &lt;p&gt;在多个类加载器中, 单例模式在多个类加载器中会存在不同的实例,&lt;/p&gt;
+
+    &lt;p&gt;使用饿汉式单例模式可以避免同步带来的死锁,&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;建造模式(builder)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;原型模型(prototype)&lt;/p&gt;
+
+    &lt;p&gt;通过clone来实现的,clone来实现对象的复制, 动态的抽取当前工作对象的运行机制的状态并克隆到新的对象中,&lt;/p&gt;
+
+    &lt;p&gt;###深拷贝, 基本数据类型值传递, 引用数据类型, 创建一个新的对象,&lt;/p&gt;
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;     //可以进行多次克隆, 或者利用序列化技术,
+     public Object clone() {
+		
+     ByteArrayOutputStream baos = new ByteArrayOutputStream();
+     ObjectOutputStream oos;
+     Object readObject = null;
+     byte[] b = null;
+     try {
+         oos = new ObjectOutputStream(baos);
+         oos.writeObject(this);
+         ObjectInputStream ois = new ObjectInputStream(new ByteArrayInputStream(baos.toByteArray()));
+         readObject = ois.readObject();
+     } catch (Exception e) {
+         // TODO Auto-generated catch block
+         e.printStackTrace();
+     }
+     return readObject;
+		
+ }
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+    &lt;p&gt;###浅拷贝, 引用数据类型引用传递,&lt;/p&gt;
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; public void clone() {
+     super.clone();
+ }
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;适配器模式(adapter)&lt;/p&gt;
+
+    &lt;ol&gt;
+      &lt;li&gt;
+        &lt;p&gt;类适配器&lt;/p&gt;
+
+        &lt;p&gt;customer类, news接口, linuxNews继承customer实现news,&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;对象适配器&lt;/p&gt;
+
+        &lt;p&gt;loginEvent抽象类, 直接对此抽象类实现特殊的,&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;桥梁模式(bridge)&lt;/p&gt;
+
+    &lt;p&gt;将抽象和实现分离,&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;外观模式(facade)&lt;/p&gt;
+
+    &lt;p&gt;对客户屏蔽子系统组件,&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;组合模式(composite)&lt;/p&gt;
+
+    &lt;p&gt;将对象一属性结构组织起来,以达成’整体- 部分’的层次结构,是的客户端对单个对象和组合对象的使用具有一致性,&lt;/p&gt;
+
+    &lt;p&gt;用户不必关系自己处理的是那种对象, 都使用相同的方法,&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;装饰模式(decorator)&lt;/p&gt;
+
+    &lt;p&gt;在原有的功能上添加功能,&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;代理模式(proxy)&lt;/p&gt;
+
+    &lt;p&gt;查看cglib代理和jdk动态代理&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;享元模式(flyweight)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;命令模式(command)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;解释器模式(interpreter)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;状态模式(state)&lt;/p&gt;
+
+    &lt;p&gt;在状态较多的情况下, 对对象的状态进行集中管理, 通俗点, 就是在一个状态管理类中,注入需要状态管理的对象, 对对象进行操作,&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;策略模式(strategy)&lt;/p&gt;
+
+    &lt;p&gt;将一个操作分布在一组相关的类中,&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;模板模式(template)&lt;/p&gt;
+
+    &lt;p&gt;定义一个模板, 抽象类, 减轻子类的负担, 类如resttemplate, 有许多默认实现&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;备忘录模式&lt;/p&gt;
+
+    &lt;p&gt;发起者, 管理者, 备忘录bean, 类似与那种需要备份的东西, 在之后可以进行恢复&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;观察者模式&lt;/p&gt;
+
+    &lt;p&gt;发布订阅模式,java.util.observable, java.util.observer&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;责任链模式&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;中介者模式&lt;/p&gt;
+
+    &lt;p&gt;所有用户都持有一个中间者,&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;访问者模式&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;</content><author><name></name></author><summary type="html">####设计模式</summary></entry><entry><title type="html">Git</title><link href="/2019/10/24/git.html" rel="alternate" type="text/html" title="Git" /><published>2019-10-24T00:00:00+08:00</published><updated>2019-10-24T00:00:00+08:00</updated><id>/2019/10/24/git</id><content type="html" xml:base="/2019/10/24/git.html">&lt;h1 id=&quot;git-命令&quot;&gt;git 命令&lt;/h1&gt;
+
+&lt;h3 id=&quot;查看-添加-提交-删除-找回-重置-修改&quot;&gt;查看 添加 提交 删除 找回 重置 修改&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;git help &amp;lt;&amp;gt; 显示command的help&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;git show 显示某次提交的内容&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;git co –&amp;lt;file&amp;gt; 抛弃工作区修改&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;git co .   抛弃工作区修改&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;git add &amp;lt;file&amp;gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;git add .&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;git rm&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;git rm &amp;lt;file&amp;gt; –cached 从版本库中删除，但是不删除文件&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;git reset &amp;lt;file&amp;gt; 从暂存区回复到工作文件&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;git reset –.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;git reset –hard 回复最近一次提交过的状态&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;查看文件差异&quot;&gt;查看文件差异&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;git diff &amp;lt;file&amp;gt; 比较当前文件和暂存区文件差异&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;git diff &amp;lt;branch1&amp;gt;..&amp;lt;branch2&amp;gt; 比较两个分支的差异&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;git difff –staged 比较暂存区和版本库差异&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;git diff –cached 比较暂存区和版本库差异&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;git diff –stat 仅仅比较统计信息&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;###查看提交记录&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;git log &amp;lt;file&amp;gt; 查看该文件每次提交记录&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;git log -p &amp;lt;file&amp;gt; 查看每次修改内容的diff&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;git -p -2 查看最近两次详细修改内容的diff&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;git –stat 查看提交统计信息&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;git-本地分支管理&quot;&gt;git 本地分支管理&lt;/h3&gt;
+
+&lt;h3 id=&quot;查看-切换-创建-删除&quot;&gt;查看 切换 创建 删除&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;git br -r 查看远程分支&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;git br &amp;lt;new_branch&amp;gt; 创建信的分支&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;git br -v 查看各个分支最后提交信息&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;git br –merged 查看已经被合并到当前分支的分支&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;git br –no -merged 查看当前尚未被合并到当前分支的分支&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;git br -d ….. 删除某个分支&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;git br -D … 强制删除某个分支&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;合并分支和rebase&quot;&gt;合并分支和rebase&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;git merge &amp;lt;branch&amp;gt;  将branch分支合并到当前分支&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;git rebase master &amp;lt;branch&amp;gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;git远程分支管理&quot;&gt;git远程分支管理&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;git  pull  抓取远程仓库所有分支更新并合并到本地&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;git pull –no-ff 抓取远程仓库所有分支更新合并到本地，不快进合并&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;git fetch origin 抓取远程仓库更新&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;git merge origin/master  将远程主分支合并到本地分支&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;git push -u origin master 将本地主分支推送到远程分支，如果远程没有分支， 则创建分支&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;git push origin &amp;lt;local_branch&amp;gt; 创建远程分支， origin是远程分支名&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;git push origin &lt;local_branch&gt;:\&lt;remete_branch&gt;&lt;/remete_branch&gt;&lt;/local_branch&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;git push origin :&amp;lt;remote_branch&amp;gt; 先删除本地分支， 然后push删除远程分支&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;git远程仓库管理&quot;&gt;git远程仓库管理&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;git remote -v 查看远程服务器地址和仓库名称&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;git remote show origin 查看远程服务器仓库状态&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;git remote add origin git@github:cosy-sun/cosy-sun.github.io.git  添加远程仓库地址&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;git remote set-url origin&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;$a \ne b$&lt;/p&gt;</content><author><name></name></author><summary type="html">git 命令</summary></entry><entry><title type="html">Index</title><link href="/2019/10/24/index.html" rel="alternate" type="text/html" title="Index" /><published>2019-10-24T00:00:00+08:00</published><updated>2019-10-24T00:00:00+08:00</updated><id>/2019/10/24/index</id><content type="html" xml:base="/2019/10/24/index.html">&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;./mybatis.md&quot;&gt;mybatis&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;./java元注解.md&quot;&gt;java元注解&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;./oracle.md&quot;&gt;oracle&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;./redis.md&quot;&gt;redis&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;./regexps.md&quot;&gt;正则表达式&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;./seletpollepoll.md&quot;&gt;select, poll, epoll原理&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;./shell脚本.md&quot;&gt;shell脚本&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;./spring.md&quot;&gt;spring&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;./sprinbatch.md&quot;&gt;spring-batch&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;./springboot.md&quot;&gt;spring-boot&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;./springboot连接mysql数据库问题整理.md&quot;&gt;spring-boot连接数据库问题&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;./springcloud.md&quot;&gt;spring-cloud&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;./springdata.md&quot;&gt;spring-data&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;./spring源码解析.md&quot;&gt;spring源码解析&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;./xml与json介绍与解析.md&quot;&gt;xml与json&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;./算法.md&quot;&gt;算法&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;./索引建立规则.md&quot;&gt;索引建立规则&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;./网络协议.md&quot;&gt;网络协议&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;./文件描述符.md&quot;&gt;文件描述符&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;./juc包.md&quot;&gt;juc-java.util.concurrent&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><author><name></name></author><summary type="html">mybatis java元注解 oracle redis 正则表达式 select, poll, epoll原理 shell脚本 spring spring-batch spring-boot spring-boot连接数据库问题 spring-cloud spring-data spring源码解析 xml与json 算法 索引建立规则 网络协议 文件描述符 juc-java.util.concurrent</summary></entry><entry><title type="html">Java元注解</title><link href="/2019/10/24/java%E5%85%83%E6%B3%A8%E8%A7%A3.html" rel="alternate" type="text/html" title="Java元注解" /><published>2019-10-24T00:00:00+08:00</published><updated>2019-10-24T00:00:00+08:00</updated><id>/2019/10/24/java%E5%85%83%E6%B3%A8%E8%A7%A3</id><content type="html" xml:base="/2019/10/24/java%E5%85%83%E6%B3%A8%E8%A7%A3.html">&lt;p&gt;#&lt;center&gt; java元注解&lt;/center&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;@Retention&lt;/p&gt;
+
+    &lt;h5&gt;这个注解就是指定谁来使用这个注解&lt;/h5&gt;
+
+    &lt;p&gt;只能用来修饰一个Annotation定义, 用于指定该Annotation可以保留的域,&lt;/p&gt;
+
+    &lt;p&gt;通过赋值RetentionPolicy类型的值,指定可以保留的域,&lt;/p&gt;
+
+    &lt;p&gt;RetentionPolicy枚举类中的常量&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  SOURCE 给编译器使用,编译器不会将注解记录到class文件中.
+  CLASS 编译器使用,会将注解记录到class文件中.但是java运行的时候,jvm不会保留注解.
+  RUNTIME	编译器会将注解标记在class文件中,运行时,jvm会保留注解,可以通过反射来获取该注解.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;@Target&lt;/p&gt;
+
+    &lt;p&gt;用于修饰哪个类的成员,包含了一个名为value,类型为ElementType的成员变量,用于指定修饰目标对象的类型.&lt;/p&gt;
+
+    &lt;p&gt;ElementType枚举类&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  TYPE 接口.类.枚举.注解
+  FIELD 字段.枚举的常量
+  METHOD 方法
+  PARAMETER 方法的参数
+  CONSTRUCTOR 构造函数
+  LOCAL_VARIABLE 局部变量
+  ANNOTATION_TYPE 注解
+  PACKAGE 包
+  TYPE_PARAMETER 
+  TYPE_USE
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;@Documented&lt;/p&gt;
+
+    &lt;p&gt;用于指定被@Documented修饰的Annotation类将被javadoc工具提取生成doc文档,&lt;/p&gt;
+
+    &lt;p&gt;使用该注解,这个注解的信息会被提取到doc文档中.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;@Inherited&lt;/p&gt;
+
+    &lt;h5&gt;如果一个注解使用该元注解修饰,那么某个类使用了这个注解,其子类也自动的继承这个注解&lt;/h5&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;自定义注解&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;使用注解的方法&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;@WorkTime(value = 8)
+//@WorkTime(8)
+public void setWorkTime(int time) throws Exception{
+		//获得这个类的clazz对象
+		Class&amp;lt;? extends SetWorkTime&amp;gt; class1 = this.getClass();
+		//通过class对想获得方法
+		Method method = class1.getDeclaredMethod(&quot;setWorkTime&quot;, int.class);
+		//判断在这个方法上是否有注解
+		if(method.isAnnotationPresent(WorkTime.class)) {
+			//判断成功,通过方法获得在此方法上的注解
+			WorkTime workTime = method.getAnnotation(WorkTime.class);
+			//通过注解中的方法获取返回值,得到我们在使用注解的时候设置的值
+			int value = workTime.value();
+			if(time&amp;gt;value) {
+				throw new RuntimeException(&quot;超过最长时间了&quot;);
+			}else {
+				System.out.println(&quot;设置成功&quot;);
+			}
+		}
+	}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;自定义的注解:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;	&lt;span class=&quot;k&quot;&gt;package&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;com&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sun&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+	
+	&lt;span class=&quot;n&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;java&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;lang&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;annotation&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Documented&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+	&lt;span class=&quot;n&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;java&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;lang&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;annotation&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ElementType&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+	&lt;span class=&quot;n&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;java&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;lang&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;annotation&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Retention&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+	&lt;span class=&quot;n&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;java&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;lang&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;annotation&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;RetentionPolicy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+	&lt;span class=&quot;n&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;java&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;lang&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;annotation&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Target&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+	
+	&lt;span class=&quot;p&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Target&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;value&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ElementType&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;METHOD&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
+	&lt;span class=&quot;p&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Documented&lt;/span&gt;
+	&lt;span class=&quot;p&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Retention&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;value&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;RetentionPolicy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;RUNTIME&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+	&lt;span class=&quot;k&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;interface&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;WorkTime&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+		&lt;span class=&quot;p&quot;&gt;//&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;设置方法&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;返回值是整形&lt;/span&gt;
+		&lt;span class=&quot;n&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+		
+	&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name></name></author><summary type="html"># java元注解</summary></entry><entry><title type="html">Juc包</title><link href="/2019/10/24/juc%E5%8C%85.html" rel="alternate" type="text/html" title="Juc包" /><published>2019-10-24T00:00:00+08:00</published><updated>2019-10-24T00:00:00+08:00</updated><id>/2019/10/24/juc%E5%8C%85</id><content type="html" xml:base="/2019/10/24/juc%E5%8C%85.html">&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;java.util.concurrent&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;线程拒绝策略rejectedexecutionhandler&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;abortPolicy(threadpoolexecutor类中),线程池默认的拒绝策略, 如果添加到线程池失败, 那么会抛出异常, rejectedexecutionexception&lt;/li&gt;
+      &lt;li&gt;discardpolicy(threadpoolexecutor类中),如果添加失败, 那么直接放弃, 不做任何处理,&lt;/li&gt;
+      &lt;li&gt;callerrunspolicy(threadpoolexecutor类中), 如果添加失败, 那么主线程自己执行run方法,&lt;code class=&quot;highlighter-rouge&quot;&gt;Runnable.run()&lt;/code&gt;,&lt;/li&gt;
+      &lt;li&gt;discardoldestpolicy(threadpoolexecutor类中), 如果添加失败, 会移除队列中最早添加的任务, 然后将该任务添加, 如果还是添加失败, 那么会不断重试,&lt;/li&gt;
+      &lt;li&gt;自定义策略, 实现rejectedexecutionhandler接口, 并实现rejectedexecution方法, 同时将策略添加到池中, &lt;code class=&quot;highlighter-rouge&quot;&gt;pool.setrejectedexecution()&lt;/code&gt;;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;semaphore信号量&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;同时允许多少个线程执行,&lt;/li&gt;
+      &lt;li&gt;acquire(int), 使用多少个许可,进入前阻塞, 可中断&lt;/li&gt;
+      &lt;li&gt;release(int), 释放多少个许可,进入前阻塞, 可中断&lt;/li&gt;
+      &lt;li&gt;acquireuninterrupt(),使等待进入acquire的线程阻塞, 无法中断,&lt;/li&gt;
+      &lt;li&gt;avaliablepermits,获取可用许可数量&lt;/li&gt;
+      &lt;li&gt;drainpermits, 获取可用许可, 同时清零剩余可用许可&lt;/li&gt;
+      &lt;li&gt;getqueuelength, 获取等待获取许可的线程个数,&lt;/li&gt;
+      &lt;li&gt;公平和非公平信号量, 在构造中传入参数,&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;countdownlatch&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;实现等待和运行通过countdown和await方法来进行,&lt;/li&gt;
+      &lt;li&gt;减法计数, 无法被重置&lt;/li&gt;
+      &lt;li&gt;getcount, 获取当前计数&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;cyclicbarrier&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;对于中断线程的处理, 全有或者全无的破坏模型, 其中一个线程中断, 其他所有的线程都会抛出brokenbarrierexception或者interuptedexception异常,同时离开屏障点&lt;/li&gt;
+      &lt;li&gt;加法操作,&lt;/li&gt;
+      &lt;li&gt;getnumberwaiting, 获取有多少线程到达屏障点,&lt;/li&gt;
+      &lt;li&gt;isbroken, 判断屏障点是否损坏,&lt;/li&gt;
+      &lt;li&gt;await, 如果在规定时间内达到数量, 继续运行, 否则, 抛出超时异常&lt;/li&gt;
+      &lt;li&gt;reset重置屏障, 如果有正在等待的线程, 抛出异常,将破损标志为false&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;phaser, 升级版,1.7新增&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;cyclicbarrier升级版, 推荐使用,&lt;/li&gt;
+      &lt;li&gt;arriveandawaitadvance, 类似countdownlatch中的await&lt;/li&gt;
+      &lt;li&gt;arriveandderegister, 让当前线程退出,并且parties减一&lt;/li&gt;
+      &lt;li&gt;getphase, 到达第几个屏障&lt;/li&gt;
+      &lt;li&gt;onadvance, 实现此方法, 返回true, 取消屏障,&lt;/li&gt;
+      &lt;li&gt;register, 动态添加parties值&lt;/li&gt;
+      &lt;li&gt;builregister, 动态批量添加parties值,&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;executors,&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;newcachedthreadpool创建无界线程池&lt;/li&gt;
+      &lt;li&gt;可以指定threadfactory…&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;threadpoolexecutor&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;常见不同队列结合线程池,&lt;/li&gt;
+      &lt;li&gt;linkedblockingdeque队列,无界队列,当达到corepoolsize线程,会存储到队列中,知道有空闲线程,maxnumpoolsize相当于无效, 带参构造指定容量,超过容量出现异常, 不带参, 最大容量为interger.max_value&lt;/li&gt;
+      &lt;li&gt;arrayblockingqueue(), 有界缓存队列, 需要设置队列大小, 达到corepoolsize线程, 会进入队列中, 当队列满之后,添加任务, 加入队列失败, 会添加新线程, core+new thread &amp;gt; corepoolsize, 再添加任务会报错,&lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;synchronousqueue, 无缓冲等待队列, 不存储元素的阻塞队列, 直接将任务提交, 等待完成之后才能继续添加,&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;shutdown, 不会阻塞, 不会添加新任务, main结束, 任务执行完成之后池结束,&lt;/li&gt;
+      &lt;li&gt;shudownnow, 中断所有任务, 同时抛出异常, 需要使用thread.currentthread.isinterrupted ==true,添加异常处理代码, 否则, 运行的运行完毕, 未运行的清楚&lt;/li&gt;
+      &lt;li&gt;isterminating,  isterminated&lt;/li&gt;
+      &lt;li&gt;afterexecutor, beforeexecutor&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;future和callable&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;get方法具有阻塞特性,&lt;/li&gt;
+      &lt;li&gt;submit(runable, result), 可以直接添加返回结果的参数,&lt;/li&gt;
+      &lt;li&gt;execute没有返回值, submit可以有返回值, execute直接抛出异常, submit可以通过catch块处理异常,&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;completionservice&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;使用executor对象构造,&lt;/li&gt;
+      &lt;li&gt;take, 先执行完成的任务会先返回,没有执行完成的还是会被阻塞,&lt;/li&gt;
+      &lt;li&gt;poll, 不阻塞, 有任务执行完成, 获取并移除future, 没有完成, 返回null,&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;scheduleexecutorservice&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;使用callable和runnable任务,&lt;/li&gt;
+      &lt;li&gt;scheduleatfixedrate, 任务开始就开始计时, 等待周期时间之后, 如果任务完成, 那么开始下一个任务, 如果任务没有完成, 等待完成, 然后开始下一个,&lt;/li&gt;
+      &lt;li&gt;schedulewithfixeddelay, 任务结束之后开始计时, 等待周期之后, 运行心的任务,&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;fork-join分治&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;forkjoinpool提供任务池&lt;/li&gt;
+      &lt;li&gt;recursiveaction, 没有返回值, 实现compute方法&lt;/li&gt;
+      &lt;li&gt;recursivetask有返回值,&lt;/li&gt;
+      &lt;li&gt;invokeall, join, get&lt;/li&gt;
+      &lt;li&gt;execute&lt;/li&gt;
+      &lt;li&gt;submit&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;集合框架&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;非阻塞队列&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;concurrenthashmap&lt;/li&gt;
+      &lt;li&gt;concurrentskiplistmap&lt;/li&gt;
+      &lt;li&gt;concurrentlinkedqueue&lt;/li&gt;
+      &lt;li&gt;concurrentlinkeddeque&lt;/li&gt;
+      &lt;li&gt;copyonwritearraylist&lt;/li&gt;
+      &lt;li&gt;copyonwritearrayset&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;阻塞队列&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;arrayblockingqueue&lt;/li&gt;
+      &lt;li&gt;priorityblockingqueue&lt;/li&gt;
+      &lt;li&gt;linkedblockingqueue&lt;/li&gt;
+      &lt;li&gt;linkedblockingdeque&lt;/li&gt;
+      &lt;li&gt;synchronousqueue&lt;/li&gt;
+      &lt;li&gt;linkedtransferqueue&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</content><author><name></name></author><summary type="html">java.util.concurrent</summary></entry><entry><title type="html">Mybatis</title><link href="/2019/10/24/mybatis.html" rel="alternate" type="text/html" title="Mybatis" /><published>2019-10-24T00:00:00+08:00</published><updated>2019-10-24T00:00:00+08:00</updated><id>/2019/10/24/mybatis</id><content type="html" xml:base="/2019/10/24/mybatis.html">&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;mybatis&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;接口可以配合xml使用, 也可以配合注解使用, xml也可以单独使用,注解必须在接口中使用&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;全局配置setting元素中&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;mapunderscoretocamelcase true, 自动将下划线命名的列转化到java驼峰命名的属性中&lt;/li&gt;
+      &lt;li&gt;aggressivelazyloading, 对任意延迟属性的调用会使带有延迟加载属性的对象完整加载,&lt;/li&gt;
+      &lt;li&gt;cacheEnabled = true, 默认为true, 开启二级缓存&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;基本xml使用&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;创建对应表的mapper.xml文件&lt;/li&gt;
+      &lt;li&gt;创建对应的接口类&lt;/li&gt;
+      &lt;li&gt;在mapper.xml中添加namespace&lt;/li&gt;
+      &lt;li&gt;在mybatis.xml中添加mapper&lt;/li&gt;
+      &lt;li&gt;xml中的id值和接口中的方法名是一致的, 以此来进行关联&lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;resultmap&lt;/p&gt;
+
+        &lt;ul&gt;
+          &lt;li&gt;id&lt;/li&gt;
+          &lt;li&gt;type&lt;/li&gt;
+          &lt;li&gt;extends&lt;/li&gt;
+          &lt;li&gt;automapping,是否启用非映射字段的映射功能&lt;/li&gt;
+          &lt;li&gt;子元素id, 提高性能, 唯一键&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;insert&lt;/p&gt;
+
+        &lt;ul&gt;
+          &lt;li&gt;id&lt;/li&gt;
+          &lt;li&gt;parametertype&lt;/li&gt;
+          &lt;li&gt;flushcache, 默认清空一级和二级缓存&lt;/li&gt;
+          &lt;li&gt;timeout 超时事件&lt;/li&gt;
+          &lt;li&gt;statementtype,默认值为prepared&lt;/li&gt;
+          &lt;li&gt;在sql中可以使用jdbctype,指定类型, 例如 blob和timestamp类型&lt;/li&gt;
+          &lt;li&gt;
+            &lt;p&gt;主键&lt;/p&gt;
+
+            &lt;ul&gt;
+              &lt;li&gt;useGeneratedKeys,通过jdbc的getgeneratedkeys取出数据库中生成的主键,并赋值给keyproperty中的值,&lt;/li&gt;
+              &lt;li&gt;
+                &lt;p&gt;keyProperty,&lt;/p&gt;
+              &lt;/li&gt;
+              &lt;li&gt;selectkey生成主键, &lt;selectKey keyColumn=&quot;id&quot; resultType=&quot;long&quot; keyProperty=&quot;id&quot; order=&quot;after&quot;&gt;, oracle中为before, mysql为after,&lt;/selectKey&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;update&lt;/li&gt;
+      &lt;li&gt;delete&lt;/li&gt;
+      &lt;li&gt;多个参数, 使用@param(“”)&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;注解方式基本用法&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;属性字段映射问题&lt;/p&gt;
+
+        &lt;ul&gt;
+          &lt;li&gt;
+            &lt;p&gt;使用resultmap&lt;/p&gt;
+
+            &lt;ul&gt;
+              &lt;li&gt;@results&lt;/li&gt;
+              &lt;li&gt;@result&lt;/li&gt;
+              &lt;li&gt;@resultMap(),可以直接引用定义的results&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+          &lt;li&gt;
+            &lt;p&gt;mapUnderscoreToCamelcase&lt;/p&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;@insert&lt;/p&gt;
+
+        &lt;ul&gt;
+          &lt;li&gt;@options(useGeneratedKeys = true, keyProperty = “id”), 返回自增主键&lt;/li&gt;
+          &lt;li&gt;@selectkey(statement = “”, resutlType = Long.class, before = false, keyProperty = “”)&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;@update&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;@delete&lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;provider注解&lt;/p&gt;
+
+        &lt;ul&gt;
+          &lt;li&gt;@selectprovider&lt;/li&gt;
+          &lt;li&gt;@updateprovider&lt;/li&gt;
+          &lt;li&gt;@insertprovider&lt;/li&gt;
+          &lt;li&gt;@deleteprovider&lt;/li&gt;
+          &lt;li&gt;type属性和method属性,type指定的是包含method方法的类, method指定使用哪个方法&lt;/li&gt;
+          &lt;li&gt;method方法必须返回string, 可以使用new sql(), 或者直接返回sql字符串&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;mybatis动态sql&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;if&lt;/p&gt;
+
+        &lt;ul&gt;
+          &lt;li&gt;
+            &lt;p&gt;在where中使用if
+      select * from … where 
+      &lt;if test=&quot;username != null and/or username != null&quot;&gt; sql&lt;/if&gt;&lt;/p&gt;
+          &lt;/li&gt;
+          &lt;li&gt;
+            &lt;p&gt;在update中使用if,注意&amp;lt;,&amp;gt;&lt;/p&gt;
+
+            &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  update ... set if&amp;lt;...&amp;gt; ...
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;            &lt;/div&gt;
+          &lt;/li&gt;
+          &lt;li&gt;
+            &lt;p&gt;在insert中使用if, 如果在列上使用if, 那么在where中也必须使用if&lt;/p&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;choose when otherwise&lt;/p&gt;
+
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &amp;lt;choose&amp;gt;
+      &amp;lt;when test = &quot;&quot;&amp;gt;
+      &amp;lt;otherwise&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;where&gt;,如果后边的if没有可用条件,不存在where
+&lt;/where&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;set&gt;, 如果没有if可用, 那么set中没有元素, 那么没有&amp;lt;,&amp;gt;问题, 但是也会出现语法错误, 所以在使用set标签的时候, 需要添加一个默认的赋值
+&lt;/set&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;trim&gt;,
+
+  ```
+  &lt;trim prefix=&quot;&quot; suffix=&quot;&quot; prefixOverrides=&quot;&quot; suffixOverrides=&quot;&quot;&gt;
+  prefix, 如果有内容,添加前缀
+  suffix, 如果有内容, 添加后缀
+  prefixOverrides, 如果有内容, 会去掉匹配的前缀字符串
+  suffixOverrides, 如果有内容, 会去掉匹配的后缀字符串
+  ```
+        
+&lt;/trim&gt;&lt;/trim&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;foreach&gt;, 
+
+  - collection, 要迭代循环的属性名
+
+      - 只有一个数组或集合元素,如果是集合, 那么先转化为map,添加collection元素, 如果是list, 那么添加list元素, 当collection = list, 那么可以取出, 并进行循环, 如果为数组, 那么会添加array
+      - 有多个参数, 使用@param, 使用名字
+      - 参数是map类型, 指定为map的key, 如果使用map, 那么传入map参数
+      - 参数是一个对象, 使用属性.属性的方式
+  - item, 循环的元素
+  - index, 索引属性名
+  - open , 整个循环开始的内容
+  - close, 整个循环结束的内容
+  - separator, 间隔符
+        
+        
+  - foreach批量插入, 
+  - foreach动态udpate, 
+
+&lt;/foreach&gt;
+      &lt;/li&gt;
+      &lt;li&gt;bind用法,
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &amp;lt;if test=” userNarne != null and userNarne !=””&amp;gt;
+     &amp;lt;bind narne= &quot; userNarneLike ” value ＝ ”’ 草 ’＋ userNarne ＋ ’ 每 ’” ／ 〉
+         and user name like #{userNarneLike}
+ &amp;lt;/if&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;多数据库支持,&lt;/p&gt;
+
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &amp;lt;if test=” databaseid == ’ mysql ’”&amp;gt;
+  and user name l 工 ke concat （ ’ 毛 ’， ＃｛ userName ｝ ，’ 辈 ’ ）
+  &amp;lt;/if&amp;gt;
+  &amp;lt;if test= ” databaseid == ’ oracle ’”&amp;gt;
+  and user name like ’ 草 ’ I I# {userName} I I ’ 哇 ’
+  &amp;lt;/if&amp;gt;
+        
+  &amp;lt;databaseidProvider type=” DB VENDOR” &amp;gt;
+  &amp;lt;property name=” SQL Server” value=” sqlserver ” /&amp;gt;
+  &amp;lt;property name=” DB2 ” value=” db2 ” /&amp;gt;
+  &amp;lt;property name=” Oracle ” value=” oracle ” /&amp;gt;
+  &amp;lt;property name=”MySQL ” value=”rnysql”/&amp;gt;
+  &amp;lt;property name=” PostgreSQL” value=” postgresql ” /&amp;gt;
+  &amp;lt;property name=” Derby ” value=” derb y &quot; /&amp;gt;
+  &amp;lt;property name=” HSQL ” value=” hsqldb ” /&amp;gt;
+  &amp;lt;property name ＝ ” H2 ” value宁 ” h2 ” ／〉
+  &amp;lt;/databaseidProvider&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;ognl用法&lt;/p&gt;
+
+        &lt;ul&gt;
+          &lt;li&gt;or&lt;/li&gt;
+          &lt;li&gt;and&lt;/li&gt;
+          &lt;li&gt;==, eq&lt;/li&gt;
+          &lt;li&gt;!=, neq&lt;/li&gt;
+          &lt;li&gt;lt 小于&lt;/li&gt;
+          &lt;li&gt;lte 小于等于&lt;/li&gt;
+          &lt;li&gt;gt 大于&lt;/li&gt;
+          &lt;li&gt;gte 大于等于&lt;/li&gt;
+          &lt;li&gt;! 非&lt;/li&gt;
+          &lt;li&gt;e.method(args), 调用对象方法&lt;/li&gt;
+          &lt;li&gt;e.property , 对象属性值&lt;/li&gt;
+          &lt;li&gt;e[e1], list.map.shuzu, 按照索引取值&lt;/li&gt;
+          &lt;li&gt;@class@method(args), 调用类的静态方法&lt;/li&gt;
+          &lt;li&gt;@class@field, 调用类的静态字段&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;mybatis代码生成器(MybatisGenerator, MBG)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;mybatis高级查询&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;一对一映射&lt;/p&gt;
+
+        &lt;ul&gt;
+          &lt;li&gt;自动映射, 通过使用别名, 例如 user.username来为user注入值&lt;/li&gt;
+          &lt;li&gt;通过resultmap配置&lt;/li&gt;
+          &lt;li&gt;通过association配置,&lt;association property=&quot;属性名&quot; columnprefix=&quot;role_&quot; resultMap=&quot;另外一个map&quot;&gt;&lt;/association&gt;&lt;/li&gt;
+          &lt;li&gt;association嵌套查询, 通过使用select标签,另外一个映射的id,column = “{1 = 1}”配置参数,&lt;/li&gt;
+          &lt;li&gt;fetchtype,配置懒加载,lazy, eager,&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;一对多映射&lt;/p&gt;
+
+        &lt;ul&gt;
+          &lt;li&gt;collection, &lt;collection property=&quot;属性名&quot; columnprefix=&quot;&quot; resultMap=&quot;另外一个map&quot;&gt;&lt;/collection&gt;&lt;/li&gt;
+          &lt;li&gt;collection嵌套查询,&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;鉴别映射器&lt;/p&gt;
+
+        &lt;ul&gt;
+          &lt;li&gt;
+            &lt;p&gt;discriminator标签&lt;/p&gt;
+
+            &lt;ul&gt;
+              &lt;li&gt;column, 进行鉴别比较的值&lt;/li&gt;
+              &lt;li&gt;javaType, 指定列的类型&lt;/li&gt;
+              &lt;li&gt;value, 用来匹配column指定的值&lt;/li&gt;
+              &lt;li&gt;resultMap,value值相等的时候, 可以使用对应的resultmap, resultmap优先级高与resulttype&lt;/li&gt;
+              &lt;li&gt;resultType, 使用配置的resulttype,&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &amp;lt;resultMap id＝ ” rolePrivilegeL 工 stMapChoose ”
+          type ＝ ” tk . mybat 工 s . simple . model . SysRole ” &amp;gt;
+      &amp;lt;discriminator column=” enabled,, ] ava Type= ” int” &amp;gt;
+          &amp;lt;case value= ” 1 ” resultMap= ” rolePrivilegeListMapSelect ” / &amp;gt;
+          &amp;lt;case value ＝ ” 。 ” resultMap＝ ” roleMap ” ／ 〉
+      &amp;lt;/discriminator&amp;gt;
+  &amp;lt;/resultMap&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;存储过程1查询&lt;/p&gt;
+
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &amp;lt;select id=” selectUserByid&quot; statementType=” CALLABLE” useCache=” fals e ”         &amp;gt;
+      {call select user by id(
+      #{id , mode=IN} ,
+      #{userName, mode=OUT,]dbcType=VARCHAR} ,
+      #{userPassword, mode=OUT,]dbcType=VARCHAR} ,
+      #{userEmail, mode=OUT , jdbcType=VARCHAR},
+      #{userinfo, mode=OUT , jdbcType=VARCHAR} ,
+      #{headimg, mode=OUT , jdbcType=BLOB , javaType= byte[]} ,
+      #{createTime, mode=OUT , jdbcType=TIMESTAMP}
+      )}
+  &amp;lt;/select&amp;gt;
+  statementType属性设置为callable
+  usecache, 不支持二级缓存, 所以使用false
+  call,调用存储过程,
+  必须指定入参和出餐, 也就是mode, 
+  mode为out, 必须使用jdbcType参数, 
+  不支持blob类型, 所以使用javaType = byte[]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;有返回结果集&lt;/p&gt;
+
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &amp;lt;select id= &quot;selectUserPage” statementType=”CALLABLE” useCache=” false ”
+  resultMap=”userMap”&amp;gt;
+  {call select user page(
+  #{userName, mode=IN},
+  #{offset, mode=IN},
+  #{limit, mode=IN} ,
+  #{total, mode=OUT, jdbcType=BIGINT}
+  )}
+  &amp;lt;/select&amp;gt;
+  多了resultMap属性
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;插入,删除&lt;/p&gt;
+
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &amp;lt;insert id=” insertUserAndRoles ” statementType=” CALLABLE” &amp;gt;
+      {call insert user and roles(
+      #{user.id, mode=OUT,]dbcType=BIGINT} ,
+      #{user.userName, mode=IN} ,
+      #{user . userPassword , mode=IN} ,
+      #{user.userEmail , mode=IN} ,
+      #{user.userinfo , mode=IN} ,
+      #{user.headimg, mode=IN , jdbcType=BLOB},
+      #{user.createTime , mode=OUT, jdbcType=TIMESTAMP},
+      #{roleids , mode=IN}
+  )}
+  &amp;lt;/insert&amp;gt;
+  &amp;lt;delete id=” deleteUserByid” statementType=”CALLABLE”&amp;gt;
+      {call delete user by id(#{id, mode=IN})}
+  &amp;lt;/delete&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;mybatis枚举处理器,实现typehandler,&lt;/p&gt;
+
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &amp;lt;typeHandlers&amp;gt;
+      &amp;lt;typeHandler
+          javaType= ” tk . mybatis . simple . type . Enabled”
+          handler= ” tk.mybatis . simple.type.EnabledTypeHandler” /&amp;gt;
+  &amp;lt;/ typeHandlers&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;java8日期处理&lt;/p&gt;
+
+        &lt;div class=&quot;language-xml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;nt&quot;&gt;&amp;lt;dependency&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;nt&quot;&gt;&amp;lt;groupid&amp;gt;&lt;/span&gt;org.mybatis&lt;span class=&quot;nt&quot;&gt;&amp;lt;/groupid&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;nt&quot;&gt;&amp;lt;artifactid&amp;gt;&lt;/span&gt;mybatis-typehandlers - jsr310&lt;span class=&quot;err&quot;&gt;&amp;lt;&lt;/span&gt;/arti f actid&amp;gt;
+      &lt;span class=&quot;nt&quot;&gt;&amp;lt;version&amp;gt;&lt;/span&gt;l.0 . 2&lt;span class=&quot;nt&quot;&gt;&amp;lt;/version&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/dependency&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;typeHandlers&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;nt&quot;&gt;&amp;lt;typeHandler&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;handler=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;”&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;org.apache&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;ibatis&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;InstantTypeHandler&lt;/span&gt;         &lt;span class=&quot;err&quot;&gt;”&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;nt&quot;&gt;&amp;lt;typeHandler&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;handler=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;”&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;org&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;apache.ibatis&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;LocalDateTimeTypeHandler”&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;nt&quot;&gt;&amp;lt;typeHandler&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;handler=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;”&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;org&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;apache&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;ibatis&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;LocalDateTypeHandler&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;”&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;nt&quot;&gt;&amp;lt;typeHandler&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;handler=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;”&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;org&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;apache&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;ibatis&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;type.LocalTimeTypeHandler&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;”&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;nt&quot;&gt;&amp;lt;typeHandler&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;handler=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;”&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;org&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;apache&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;ibatis&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;OffsetDateTimeTypeHandler”&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;nt&quot;&gt;&amp;lt;typeHandler&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;handler=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;”&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;org&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;apache&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;ibatis&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;OffsetTi&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;meTypeHandler&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;”&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;/:&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;nt&quot;&gt;&amp;lt;typeHandler&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;handler=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;”&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;org.apache&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;ibatis&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;ZonedDateTimeTypeHandler&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;”&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;nt&quot;&gt;&amp;lt;typeHandler&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;handler=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;”&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;org&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;apache.ibatis.type&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;YearTypeHandler&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;”&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;nt&quot;&gt;&amp;lt;typeHandler&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;handler=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;”&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;org&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;apache.ibatis&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;MonthTypeHandler&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;”&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/typeHandlers&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;缓存配置&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;一级缓存, mybatis的一级缓存存在于sqlsession的生命周期中,mybatis会把执行的方法和参数值通过算法生成键值, 将键值和查询结果保存在一个map中, 下一次同样的查询会返回缓存中的数据,
+        &lt;ul&gt;
+          &lt;li&gt;如果不想让下一次的查询结果使用上一次的, 可以在select中配置flushcache = true, 在查询之前先清空一级缓存,避免这样做,&lt;/li&gt;
+          &lt;li&gt;insert, update, delete 操作会清空一级缓存,&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;二级缓存&lt;/p&gt;
+
+        &lt;ul&gt;
+          &lt;li&gt;cacheenabled, 上面setting设置,全局参数,默认开启&lt;/li&gt;
+          &lt;li&gt;
+            &lt;p&gt;配置在mapper.xml中, 缓存的配置是和命名空间绑定的,&lt;/p&gt;
+
+            &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  映射语句文件中的所有select会被缓存
+  所有insert, update, delete会被缓存
+  根据时间表, 
+  缓存会存储集合或对象, 的1024个引用
+  缓存会被视为read/write,可读可写
+            
+  cache可配置的属性如下,
+  eviction(收回策略)
+      lru,移除最长时间不使用的
+      fifo, 先进先出
+      soft, 软引用, 移除基于垃圾回收期或者软引用规则的对象
+      weak, 弱引用, 更积极的移除基于垃圾回收器或者弱引用规则的对象
+  flushinterval, 刷新间隔,默认情况不设置, 只有在调用语句才会刷新,
+  size, 引用数目,
+  readonly, 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;            &lt;/div&gt;
+          &lt;/li&gt;
+          &lt;li&gt;
+            &lt;p&gt;maper接口中配置二级缓存,&lt;/p&gt;
+
+            &lt;p&gt;@cachenamespace(
+      eviction = fifocache.class,
+      flushinterval = 3000,
+      size = 512,
+      readOnly = true
+  )&lt;/p&gt;
+          &lt;/li&gt;
+          &lt;li&gt;序列化缓存来实现可读写缓存类, 并通过序列化和反序列化来保证通过缓存获取数据, 返回的是一个新的实例&lt;/li&gt;
+          &lt;li&gt;如果是只读缓存, 会使用map, 返回的是一个对象&lt;/li&gt;
+          &lt;li&gt;ehcache缓存&lt;/li&gt;
+          &lt;li&gt;
+            &lt;p&gt;redis缓存&lt;/p&gt;
+
+            &lt;ul&gt;
+              &lt;li&gt;添加mybatis-redis依赖&lt;/li&gt;
+              &lt;li&gt;
+                &lt;p&gt;配置redis, 在resources下添加redis.properties配置文件&lt;/p&gt;
+
+                &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  host=localhost
+  port=6379
+  connectionTimeout=SOOO
+  soTimeout=SOOO
+  password=
+  database=O
+  clientName=
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;                &lt;/div&gt;
+              &lt;/li&gt;
+              &lt;li&gt;修改mapper中的缓存配置, cache type = “org.mybatis.caches.redis.RedisCache”&lt;/li&gt;
+              &lt;li&gt;保证被缓存的数据实现了serialable接口,&lt;/li&gt;
+              &lt;li&gt;基于java的序列化和反序列化实现的,&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+          &lt;li&gt;
+            &lt;p&gt;避免缓存产生的脏数据, 可以将几个关联的er表同时使用同一个二级缓存,&lt;/p&gt;
+
+            &lt;ul&gt;
+              &lt;li&gt;
+                &lt;cache-ref namespace=&quot;&quot;&gt;
+
+&lt;/cache-ref&gt;
+              &lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;mybatis插件开发&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;mybatis允许在已映射语句执行过程中的某一点进行拦截调用,&lt;/li&gt;
+      &lt;li&gt;方法(这些方法都是底层方法, 在使用的时候必须特别小心, 否则可能会破坏mybatis的核心模块)
+        &lt;ul&gt;
+          &lt;li&gt;executor,mybatis执行器,负责sql语句的生成和查询缓存的维护&lt;/li&gt;
+          &lt;li&gt;parameterhandler,负责用户传递的参数转化成sql需要的参数&lt;/li&gt;
+          &lt;li&gt;resultsethandler,负责返回的resultset对象转换成list类型的&lt;/li&gt;
+          &lt;li&gt;statementhandler,封装了statement操作,&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;自定义拦截器,需要实现interceptor接口, 包含三个方法&lt;/p&gt;
+
+        &lt;ul&gt;
+          &lt;li&gt;intercept&lt;/li&gt;
+          &lt;li&gt;plugin&lt;/li&gt;
+          &lt;li&gt;
+            &lt;p&gt;setProperties&lt;/p&gt;
+          &lt;/li&gt;
+          &lt;li&gt;
+            &lt;p&gt;需要使用@intercepts注解,&lt;/p&gt;
+
+            &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; ```
+ @intercepts({
+     @signature(
+         type = Executor.class
+         method = &quot;query&quot;
+         args = {Mappedstatmen.class, object.class, rowbounds.class}
+     )
+ })
+ invocation.proceed();直接执行被拦截的方法,
+ ```
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;            &lt;/div&gt;
+          &lt;/li&gt;
+          &lt;li&gt;之后,需要将拦截器注册到spring中,&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;spring集成mybatis&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;添加mybatis-spring依赖&lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;配置org.mybatis.spring.sqlsessionfactory&lt;/p&gt;
+
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &amp;lt;bean id=”sqlSessionFactory” class=” org.mybatis . spring . SqlSessionFactoryBean” &amp;gt;
+  &amp;lt;property name=” configLocation” value=” classpath:mybatis-config . xml ” /&amp;gt;
+  &amp;lt;property name=” dataSource ” ref=” dataSource ” /&amp;gt;
+  &amp;lt;property name=” mapperLocations ” &amp;gt;
+  &amp;lt;array&amp;gt;
+      &amp;lt;value &amp;gt;classpa th:tk/mybatis/**/mapper/*.xml&amp;lt;/value&amp;gt;
+  &amp;lt;/array&amp;gt;
+  &amp;lt;/property&amp;gt;
+      &amp;lt;property name=” typeAliasesPackage ” value=” t k.mybatis . web.model ” /&amp;gt;
+  &amp;lt;/bean&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+      &lt;li&gt;配置mapperscannerconfigurer
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &amp;lt;bean class=” org . mybatis.spring .mapper.MapperScannerConfigurer” &amp;gt;
+      &amp;lt;property name=” basePackage ” value=” tk.mybatis. ** .mapper” /&amp;gt;
+  &amp;lt;/bean&amp;gt;
+  //通过这个类自动扫描此包下的mapper接口
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;springboot集成mybatis&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;添加依赖, mybatis-spring-boot-starter&lt;/li&gt;
+      &lt;li&gt;@mapper注解标注在maper接口上, springboot启动的时候会自动扫描标注了mapper注解的接口&lt;/li&gt;
+      &lt;li&gt;@configurationproperties注解自动将配置文件中的属性组装到对象上,这个注意一般都需要配置与属性匹配的前缀, 此处前缀是mybatis,&lt;/li&gt;
+      &lt;li&gt;启动类中添加@mapperscan注解, 扫描的包,&lt;/li&gt;
+      &lt;li&gt;同时修改application.properties中的mybatis.mapper-locations= classpath:mapper/**.xml, 让映射文件也可以配扫描到&lt;/li&gt;
+      &lt;li&gt;如果bean存在同名的, 那么可以实现beannamegenerator, 同时在mapperscan中添加namegenerator属性,&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;mybatis开源项目&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;https://github.com/mybatis/mybatis-3&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;mybatis源码分析&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</content><author><name></name></author><summary type="html">mybatis</summary></entry><entry><title type="html">Oracle</title><link href="/2019/10/24/oracle.html" rel="alternate" type="text/html" title="Oracle" /><published>2019-10-24T00:00:00+08:00</published><updated>2019-10-24T00:00:00+08:00</updated><id>/2019/10/24/oracle</id><content type="html" xml:base="/2019/10/24/oracle.html">&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;四种语言&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;ddl, 数据库定义语言&lt;/li&gt;
+      &lt;li&gt;dml, 数据库操作语言&lt;/li&gt;
+      &lt;li&gt;dcl, 数据库控制语言&lt;/li&gt;
+      &lt;li&gt;tcl, 事务控制语言&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;ddl&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;创建表&lt;/p&gt;
+
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  create table table_name(column_name type constraint);
+  primary key 主键
+  unique  唯一
+  not null 非空
+  default 默认
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;删除表&lt;/p&gt;
+
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  drop table table_name;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;修改表&lt;/p&gt;
+
+        &lt;ul&gt;
+          &lt;li&gt;
+            &lt;p&gt;增加列&lt;/p&gt;
+
+            &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  alter table table_name add column_name type constraint;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;            &lt;/div&gt;
+          &lt;/li&gt;
+          &lt;li&gt;
+            &lt;p&gt;删除列&lt;/p&gt;
+
+            &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  alter table table_name drop column_name;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;            &lt;/div&gt;
+          &lt;/li&gt;
+          &lt;li&gt;
+            &lt;p&gt;修改列类型&lt;/p&gt;
+
+            &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  alter table table_name modify column_name type;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;            &lt;/div&gt;
+          &lt;/li&gt;
+          &lt;li&gt;
+            &lt;p&gt;重命名列名&lt;/p&gt;
+
+            &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  alter table table_name rename column column_name1 to column_name2;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;            &lt;/div&gt;
+          &lt;/li&gt;
+          &lt;li&gt;
+            &lt;p&gt;某一列添加唯一约束&lt;/p&gt;
+
+            &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  alter table table_name add constraint uk_... unique(column_name);
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;            &lt;/div&gt;
+          &lt;/li&gt;
+          &lt;li&gt;
+            &lt;p&gt;添加主键约束&lt;/p&gt;
+
+            &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  alter table table_name add constraint pk_... primary key(column_name);
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;            &lt;/div&gt;
+          &lt;/li&gt;
+          &lt;li&gt;
+            &lt;p&gt;添加检查约束&lt;/p&gt;
+
+            &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  alter table table_name add constraint ck_... check(column_name in('', ''));
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;            &lt;/div&gt;
+          &lt;/li&gt;
+          &lt;li&gt;
+            &lt;p&gt;外键约束&lt;/p&gt;
+
+            &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  alter table table_name add constraint fl_... foreign key(column_name) refrences table_name(column_name);
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;            &lt;/div&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;查看表结构&lt;/p&gt;
+
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  desc table_name;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;清空表&lt;/p&gt;
+
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  truncate table table_name;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;利用现有表创建新表&lt;/p&gt;
+
+        &lt;ul&gt;
+          &lt;li&gt;
+            &lt;p&gt;创建新表,复制数据&lt;/p&gt;
+
+            &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  create table table_name_new as select * from table_name_old;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;            &lt;/div&gt;
+          &lt;/li&gt;
+          &lt;li&gt;
+            &lt;p&gt;创建新表,不复制数据&lt;/p&gt;
+
+            &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  create table table_name_new as select * from table_name_old where 1=2;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;            &lt;/div&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;复制表数据插入, 表结构一致&lt;/p&gt;
+
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  insert into table_name_new select * from table_name_old;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;dml&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;插入&lt;/p&gt;
+
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  insert into table_name (column_name1,...) values(value1,...);
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;修改&lt;/p&gt;
+
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  update table_name set column_1 = ... where ...;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;删除&lt;/p&gt;
+
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  delete from table_name where ...;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;查询&lt;/p&gt;
+
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  select * from table_name for update;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;表达式&lt;/p&gt;
+
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  select 1+1 from dual;
+  select mod(6, 7) from dual;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;取别名&lt;/p&gt;
+
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  select a as d from dual;
+  select a d from dual;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;关系运算符&lt;/p&gt;
+
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &amp;gt; &amp;lt; = &amp;gt;= &amp;lt;= &amp;lt;&amp;gt; !=
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;逻辑运算符&lt;/p&gt;
+
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  and or not
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;聚合操作符(合并, union 去重, union all 不去重)&lt;/p&gt;
+
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  select * from table_a 
+  union 
+  select * from table_b;
+        
+  select * from table_a
+  union all
+  select * from table_b;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;交集intersect(不同的值只会出现一次, 按照第一列排序)&lt;/p&gt;
+
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  select * from table_name;
+  intersect
+  select * from table_name;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;集合差运算(第一列排序)&lt;/p&gt;
+
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  select * from table_a
+  minus
+  select * from table_b;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;排序查询&lt;/p&gt;
+
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  order by column_name1,... desc
+  order by column_nam1,... asc
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;聚合函数&lt;/p&gt;
+
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  max(), min(), sum(), avg(), count(), 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;分组查询, 只有group by  后边的列出现在结果列中&lt;/p&gt;
+
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  select sid from table_name group by sid;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;having(可以在语句之后添加聚合函数)&lt;/p&gt;
+
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  having avg(column) &amp;gt; ...;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;rank()/dense_rank() over(partition by column_name order by … desc)&lt;/p&gt;
+
+        &lt;ul&gt;
+          &lt;li&gt;rank跳跃排序, 如果两个一级, 接下来三级&lt;/li&gt;
+          &lt;li&gt;
+            &lt;p&gt;dense_rank f非跳跃排序, 如果两个一级, 接下来是二级&lt;/p&gt;
+          &lt;/li&gt;
+          &lt;li&gt;over 在什么条件之上&lt;/li&gt;
+          &lt;li&gt;partition by 按照什么划分&lt;/li&gt;
+          &lt;li&gt;order by 划分之后排序&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;去重&lt;/p&gt;
+
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  distinct
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;模糊查询&lt;/p&gt;
+
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  like
+  not like
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;区间&lt;/p&gt;
+
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  between and
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;外连接&lt;/p&gt;
+
+        &lt;ul&gt;
+          &lt;li&gt;
+            &lt;p&gt;左外, 显示全部左边&lt;/p&gt;
+
+            &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  select * from a left join b on a.a = b.b;
+  select * from a, b where a.a = b.b(+);
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;            &lt;/div&gt;
+          &lt;/li&gt;
+          &lt;li&gt;
+            &lt;p&gt;右外, 显示全部右边&lt;/p&gt;
+
+            &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  select * from a right join b  on a.a = b.b;
+  select * from a, b where a.a(+) =  b.b;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;            &lt;/div&gt;
+          &lt;/li&gt;
+          &lt;li&gt;
+            &lt;p&gt;全外, 显示左右两边, 不足的用null代替&lt;/p&gt;
+
+            &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  select * from a full join b on a.a = b.b;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;            &lt;/div&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;内连&lt;/p&gt;
+
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  select * from a, b where a.a = b.a;
+  select * from a inner join b on a.a = b.a;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;日期函数&lt;/p&gt;
+
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  sysdate
+  add_months(sysdate, 10)
+  add_months(sysdate, -10)
+        
+  last_date(sysdate) 这个月的最后一天
+  next_date(sysdate) 下一天
+        
+  round(date'2019-05-05', 'month') 四舍五入
+  trunc(sysdate, 'year') 今年第一天
+  trunc(sysdate) 当天
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;字符函数&lt;/p&gt;
+
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  select initcap('hello world') from dual;(首字母大写)
+
+    select lower('FUN') from dual;(转小写)
+
+    select upper('sun') from dual;(转大写)
+
+    select ltrim( 'xyzadams','xyz') from dual;(去左空格/指定字符)
+
+
+    select rtrim('xyzadams','ams') from dual;(去右空格/指定字符)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+
+   		  selete trim(leading 9 from 99998769789999) from dual;(去掉左边所有的9,中间的9保留)
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;        selete trim (trailing 9 from 99998769789999) from dual;(去掉右边所有的9,中间的9保留)
+
+        selete trim (9 from 99998796789999) from dual;(去掉两边所有的9,中间的9保留)
+
+
+        select length('ams') from dual;(求字符长度)
+
+        select translate('jack','abcd' ,'1234') from dual;(指定字符替换)
+
+        select translate('jack','jack' ,'1234') from dual;(指定字符替换)
+
+        select replace('jack and jue' ,'j','bl') from dual;(指定字符替换)
+
+        select ascii ('w') from dual;(求ascii码)
+
+        select instr ('worldwide','w') from dual;(此字母第一次出现的位置)
+
+        select substr('abcdefg',3,2) from dual;(取出指定位置的字符)
+
+        select concat ('hello',' world') from dual;(字符串拼接)
+
+        select chr(65) from dual;(用ascii码找到字符)
+
+        select lpad('xyz',8,'=') from dual;(在xyz 的左边拼接=使之成为8位 , 当所取个数小于字符长度则截取字符)
+
+        select rpad('xyz',8,'=') from dual;(在xyz 的右边拼接=使之成为8位 , 当所取个数小于字符长度则截取字符)
+
+        select trim(leading 9 from 99998769789999) from dual;(去掉左边所有的9,中间的9保留)
+
+        select trim(trailing 9 from 99998769789999) from dual;(去掉右边所有的9,中间的9保留)
+
+        select trim(9 from 99998796789999) from dual;(去掉两边所有的9,中间的9保留)
+
+        select decode('c','p','准备处理','c','已完成') from dual;(三元运算符)
+
+        select decode('c','p','相等','不相等') from dual;(相等则输出&quot;相等&quot;,不相等则输出&quot;不相等&quot;)
+
+        select orderno, decode(ostatus,'p','准备处理','c','已完成')from order_master;(结合表使用三元运算符)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;数字函数&lt;/p&gt;
+
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  select abs(-15) from dual;(绝对值)      
+    select sin(1.571) from dual;(求sin值)
+    select cos(0) from dual;(求cos值)
+    select sign(-32) from dual;(求符号位, 正数为1/负数为-1/0为0)
+    select ceil(44.078) from dual;(求整)(有小数则加一)
+    select floor(100.2) from dual;(求整)(有小数则直接舍弃)
+    select power(4,2) from dual;(求指数,4的2次方)
+    select mod(10,3) from dual;(取模)
+    select round(100.256,2) from dual;(保留两位小数,四舍五入)
+    select trunc(100.256,2) from dual;(保留两位小数,不四舍五入)
+    select sqrt(4) from dual;(开方)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;nvl 判断是否空, 如果空, 替换&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;dcl&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;grant 授权&lt;/li&gt;
+      &lt;li&gt;revoke 取消授权&lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;创建工作空间&lt;/p&gt;
+
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  create tablespace table_space_new datafile 'lujing'
+  size 100m
+  autoextend on;是否自增
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;创建用户, 指定表空间&lt;/p&gt;
+
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  create user szh identified by java default tablespace table_space_new;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;用户权限
+      grant … to user;
+      grant select on … to user;&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;修改用户&lt;/p&gt;
+
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  alter user user_name identified by ...;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;解锁, 锁定&lt;/p&gt;
+
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  alter user uer_name account lock;
+  alter user user_name account unlock;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;删除用户&lt;/p&gt;
+
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  drop user user_name;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;查看用户和默认表空间&lt;/p&gt;
+
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  select username, default_tablespace from dba_users;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;查看所有角色&lt;/p&gt;
+
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  select * from dba_roles;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;查看当前用户权限&lt;/p&gt;
+
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  select * from session_privs;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;tcl&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;rollback&lt;/li&gt;
+      &lt;li&gt;commit&lt;/li&gt;
+      &lt;li&gt;savepoint&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;一致性, 原子性, 隔离性, 持久性&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;数据类型
+    &lt;ul&gt;
+      &lt;li&gt;char 查询效率高, 不可变长&lt;/li&gt;
+      &lt;li&gt;varchar2 可变长&lt;/li&gt;
+      &lt;li&gt;long 2gb的字符存储&lt;/li&gt;
+      &lt;li&gt;number 数值类型&lt;/li&gt;
+      &lt;li&gt;raw 二进制数据&lt;/li&gt;
+      &lt;li&gt;lob 4gb的大对像&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;伪列&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;rowid 存储表中地址&lt;/li&gt;
+      &lt;li&gt;rownum&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;同义词&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;创建&lt;/p&gt;
+
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  create synonym myemp for table_old;
+  create public synonym myemp for table_od;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;使用&lt;/p&gt;
+
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  select * from myemp;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;删除&lt;/p&gt;
+
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  drop synonym myemp;
+  drop public synonym myemp;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;序列&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;创建&lt;/p&gt;
+
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  create sequence myseq
+  start with 10
+  increment by 10
+  maxvalue 100
+  cycle
+  cache3
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;使用&lt;/p&gt;
+
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  select myseq.nextval from dual;
+  select myseq.currval from dual;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;修改&lt;/p&gt;
+
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  alter sequence myseq maxvalue 50000 cycle;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;删除&lt;/p&gt;
+
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  drop sequence myseq;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;锁和表分区&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;锁, 将锁作为数据块的属性,存储在数据块中,&lt;/p&gt;
+
+        &lt;ul&gt;
+          &lt;li&gt;
+            &lt;p&gt;按用户和系统分&lt;/p&gt;
+
+            &lt;ul&gt;
+              &lt;li&gt;
+                &lt;p&gt;自动锁&lt;/p&gt;
+
+                &lt;ul&gt;
+                  &lt;li&gt;DML锁
+```
+                    &lt;ul&gt;
+                      &lt;li&gt;保证数据的一致性和完整性&lt;/li&gt;
+                      &lt;li&gt;保护并发情况下的完整性&lt;/li&gt;
+                      &lt;li&gt;自动获取所需的表级锁(TM)和行级锁(TX)/事务锁.&lt;/li&gt;
+                      &lt;li&gt;
+                        &lt;p&gt;表级锁TM锁&lt;/p&gt;
+
+                        &lt;ul&gt;
+                          &lt;li&gt;确保在修改表内容时, 表结构是不会改变的.&lt;/li&gt;
+                          &lt;li&gt;当事务获得行锁之后, 自动获取到表锁(共享锁)&lt;/li&gt;
+                          &lt;li&gt;当用户对表进行ddl或dml操作,会获取一个表锁,&lt;/li&gt;
+                        &lt;/ul&gt;
+                      &lt;/li&gt;
+                      &lt;li&gt;
+                        &lt;p&gt;事务锁或行级锁TX&lt;/p&gt;
+
+                        &lt;ul&gt;
+                          &lt;li&gt;执行插入,更新,删除,自动获取行的排他锁&lt;/li&gt;
+                          &lt;li&gt;事务发起第一次修改, 会获取tx锁,直到提交或回滚&lt;/li&gt;
+                        &lt;/ul&gt;
+                      &lt;/li&gt;
+                      &lt;li&gt;
+                        &lt;p&gt;共性表级锁(share)&lt;/p&gt;
+
+                        &lt;ul&gt;
+                          &lt;li&gt;共享该表的所有用户只能查询表,不能更新&lt;/li&gt;
+                          &lt;li&gt;只能通过用户来操作,lock table 表名…in share mode;&lt;/li&gt;
+                          &lt;li&gt;执行commit或者rollback, 推出数据库, 程序停止, 会释放锁&lt;/li&gt;
+                        &lt;/ul&gt;
+                      &lt;/li&gt;
+                      &lt;li&gt;
+                        &lt;p&gt;独占方式表级锁&lt;/p&gt;
+
+                        &lt;ul&gt;
+                          &lt;li&gt;lock table table_name … in exclusive mode&lt;/li&gt;
+                          &lt;li&gt;锁用户可以查询,更新,删除,….&lt;/li&gt;
+                          &lt;li&gt;其他用户无法获取共享锁和排他锁&lt;/li&gt;
+                          &lt;li&gt;其他用户可以查询数据&lt;/li&gt;
+                          &lt;li&gt;释放方式同上面&lt;/li&gt;
+                        &lt;/ul&gt;
+                      &lt;/li&gt;
+                      &lt;li&gt;
+                        &lt;p&gt;共享更新加锁方式select… for update 获取&lt;/p&gt;
+
+                        &lt;ul&gt;
+                          &lt;li&gt;某用户加锁, 可以查询,更新,&lt;/li&gt;
+                          &lt;li&gt;其他用户要想更新,也需加锁, 但是最终的更新时独占方式的,&lt;/li&gt;
+                          &lt;li&gt;行锁永远都是独占方式锁
+```&lt;/li&gt;
+                        &lt;/ul&gt;
+                      &lt;/li&gt;
+                    &lt;/ul&gt;
+                  &lt;/li&gt;
+                  &lt;li&gt;DDL锁,
+```
+                    &lt;ul&gt;
+                      &lt;li&gt;
+                        &lt;p&gt;排他ddl锁&lt;/p&gt;
+
+                        &lt;ul&gt;
+                          &lt;li&gt;创建,修改,删除,获取排他锁&lt;/li&gt;
+                        &lt;/ul&gt;
+                      &lt;/li&gt;
+                      &lt;li&gt;
+                        &lt;p&gt;共享ddl锁&lt;/p&gt;
+
+                        &lt;ul&gt;
+                          &lt;li&gt;需要在数据库对象值键建立相互依赖的ddl语句通常获取共享ddl锁&lt;/li&gt;
+                        &lt;/ul&gt;
+                      &lt;/li&gt;
+                      &lt;li&gt;
+                        &lt;p&gt;分析锁&lt;/p&gt;
+                      &lt;/li&gt;
+                    &lt;/ul&gt;
+                  &lt;/li&gt;
+                  &lt;li&gt;systemlocks锁
+```&lt;/li&gt;
+                &lt;/ul&gt;
+              &lt;/li&gt;
+              &lt;li&gt;
+                &lt;p&gt;显示锁, 某些情况下,需要用户显示的锁定数据库操作要用到的数据,才能使数据库操作执行的更好, 显示锁是用户对数据库对象设定的.&lt;/p&gt;
+              &lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+          &lt;li&gt;
+            &lt;p&gt;按锁级别区分&lt;/p&gt;
+
+            &lt;ul&gt;
+              &lt;li&gt;排他锁exclusive lock,(X)锁 事务设置排他锁之后,该事务单独获的次资源, 其他事务不能在此事务提交之前获取相同对象的排他锁或共享锁&lt;/li&gt;
+              &lt;li&gt;共享锁share lock,S锁,另一事务也可以对此资源获取共享锁或访问.&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+          &lt;li&gt;
+            &lt;p&gt;悲观锁&lt;/p&gt;
+
+            &lt;ul&gt;
+              &lt;li&gt;for update , 此时其他用户对这些数据行进行dml或者ddl操作,会阻塞,或返回错误信息&lt;/li&gt;
+              &lt;li&gt;乐观认为select出来到update之间不会被更改,使用版本列来,每次更新时都和就版本进行对比&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+          &lt;li&gt;
+            &lt;p&gt;乐观锁&lt;/p&gt;
+          &lt;/li&gt;
+          &lt;li&gt;
+            &lt;p&gt;死锁, oracle系统中能自动发现死锁, 并选择代价最小的,即完成工作量最小的进行回滚,&lt;/p&gt;
+          &lt;/li&gt;
+          &lt;li&gt;
+            &lt;p&gt;latch锁&lt;/p&gt;
+
+            &lt;ul&gt;
+              &lt;li&gt;对内存数据结构的互斥访问&lt;/li&gt;
+              &lt;li&gt;只作用与内存&lt;/li&gt;
+              &lt;li&gt;瞬间的占用和释放&lt;/li&gt;
+              &lt;li&gt;非入队&lt;/li&gt;
+              &lt;li&gt;不存在死锁&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;查询优化 分区,索引,分表,视图,&lt;/p&gt;
+
+        &lt;ul&gt;
+          &lt;li&gt;
+            &lt;p&gt;分区&lt;/p&gt;
+
+            &lt;ul&gt;
+              &lt;li&gt;
+                &lt;p&gt;优点&lt;/p&gt;
+
+                &lt;ul&gt;
+                  &lt;li&gt;改善查询性能&lt;/li&gt;
+                  &lt;li&gt;增强可用性&lt;/li&gt;
+                  &lt;li&gt;维护方便&lt;/li&gt;
+                  &lt;li&gt;均衡i/o&lt;/li&gt;
+                &lt;/ul&gt;
+              &lt;/li&gt;
+              &lt;li&gt;
+                &lt;p&gt;范围分区&lt;/p&gt;
+
+                &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  create table customer(id number)
+  partition by range(id)(
+  partition cus_part1 values less than (10000) tablespace cus_ts01,
+  partition cus_part2 values less than (20000) tablespace cus_ts02
+  )
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;                &lt;/div&gt;
+              &lt;/li&gt;
+              &lt;li&gt;
+                &lt;p&gt;列表分区&lt;/p&gt;
+
+                &lt;ul&gt;
+                  &lt;li&gt;
+                    &lt;p&gt;该分区的特点是某个列的值只有几个,采用列表分区&lt;/p&gt;
+                  &lt;/li&gt;
+                  &lt;li&gt;
+                    &lt;p&gt;.&lt;/p&gt;
+
+                    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  create table customer(gender varchar2)
+  partition by list(gender)(
+      partition p1 values ('women') tablespace .1,
+      partition p2 values ('man') tablespace .2
+  )
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;                    &lt;/div&gt;
+                  &lt;/li&gt;
+                &lt;/ul&gt;
+              &lt;/li&gt;
+              &lt;li&gt;
+                &lt;p&gt;散列分区&lt;/p&gt;
+
+                &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  create table szh(id number)
+  partition by hash(id)
+  (partition p1 tablespace t1,
+  partition p2 tablespace t2)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;                &lt;/div&gt;
+              &lt;/li&gt;
+              &lt;li&gt;
+                &lt;p&gt;组合范围列表分区&lt;/p&gt;
+
+                &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  create table customer(id number, id1 number)
+  partiton by range(id) subpartition by list(id1)(
+      partition p1 values less than (10000) tablespace t1(
+          partition p1 values ('active') tablespace t1,
+          partiton p2 values ('inactive') tablespace t2
+      )
+  )
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;                &lt;/div&gt;
+              &lt;/li&gt;
+              &lt;li&gt;
+                &lt;p&gt;复合范围散列分区&lt;/p&gt;
+
+                &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  create table customer(id number, id1 nubmer)
+  partition by range(id) subpartition by hash(id)(
+      partition p1 values less than (10000) tablespace t1,
+      ...
+  )
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;                &lt;/div&gt;
+              &lt;/li&gt;
+              &lt;li&gt;
+                &lt;p&gt;添加分区&lt;/p&gt;
+
+                &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  alter table customer add partition p2 values less than ('');
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;                &lt;/div&gt;
+              &lt;/li&gt;
+              &lt;li&gt;
+                &lt;p&gt;删除分区&lt;/p&gt;
+
+                &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  alter table customer drop partition p2;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;                &lt;/div&gt;
+              &lt;/li&gt;
+              &lt;li&gt;
+                &lt;p&gt;截断分区, 不会删除分区,删除数据&lt;/p&gt;
+
+                &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  alter table customer truncate partition p2;
+  alter table customer truncate subpartition p2;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;                &lt;/div&gt;
+              &lt;/li&gt;
+              &lt;li&gt;
+                &lt;p&gt;合并分区&lt;/p&gt;
+
+                &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  alter table customer merge partition p1, p2 into partition p2;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;                &lt;/div&gt;
+              &lt;/li&gt;
+              &lt;li&gt;
+                &lt;p&gt;拆分分区&lt;/p&gt;
+
+                &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  ALTER TABLE SALES SBLIT PARTITION P2 AT(TO_DATE('2003-02-01','YYYY-MM-DD')) INTO (PARTITION P21,PARTITION P22);
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;                &lt;/div&gt;
+              &lt;/li&gt;
+              &lt;li&gt;
+                &lt;p&gt;接合分区&lt;/p&gt;
+
+                &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  alter table customer coalesca partition;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;                &lt;/div&gt;
+              &lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+          &lt;li&gt;
+            &lt;p&gt;索引&lt;/p&gt;
+
+            &lt;ul&gt;
+              &lt;li&gt;
+                &lt;p&gt;创建&lt;/p&gt;
+
+                &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  create index index_name on table_name(column_name...);
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;                &lt;/div&gt;
+              &lt;/li&gt;
+              &lt;li&gt;
+                &lt;p&gt;删除&lt;/p&gt;
+
+                &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  drop index index_name;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;                &lt;/div&gt;
+              &lt;/li&gt;
+              &lt;li&gt;
+                &lt;p&gt;重命名&lt;/p&gt;
+
+                &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  alter index index_name rename to index_name;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;                &lt;/div&gt;
+              &lt;/li&gt;
+              &lt;li&gt;
+                &lt;p&gt;重建&lt;/p&gt;
+
+                &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  alter index index_name rebuild;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;                &lt;/div&gt;
+              &lt;/li&gt;
+              &lt;li&gt;
+                &lt;p&gt;合并索引&lt;/p&gt;
+
+                &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  alter index index_name coalesce;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;                &lt;/div&gt;
+              &lt;/li&gt;
+              &lt;li&gt;
+                &lt;p&gt;select * from user_ind_columns;&lt;/p&gt;
+              &lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+          &lt;li&gt;分表&lt;/li&gt;
+          &lt;li&gt;
+            &lt;p&gt;视图&lt;/p&gt;
+
+            &lt;ul&gt;
+              &lt;li&gt;
+                &lt;p&gt;创建&lt;/p&gt;
+
+                &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  create view view_name as select ... with read only;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;                &lt;/div&gt;
+              &lt;/li&gt;
+              &lt;li&gt;
+                &lt;p&gt;删除&lt;/p&gt;
+
+                &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  drop view view_name;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;                &lt;/div&gt;
+              &lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;存储过程&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;in out in+out&lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;创建存储过程&lt;/p&gt;
+
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  create or replace procedure insert_dect(
+  number_deptno in number,
+  var_dename out dept.dname%type,
+  var_loc out dept.loc%type)
+  is
+  declare
+  begin
+      select dname, loc into var_dename, var_loc into var_loc from ...where . = number_deptno;
+  exception 
+      when no_data_found then 
+          dbms_output.put_line();
+      end insert_dect;
+      /
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;调用&lt;/p&gt;
+
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  variable var_name varchar2();
+  variable var_loc varchar2();    
+  exec insert_dect(77, var_name, var_loc);
+  print var_name, var_loc;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;shanchu&lt;/p&gt;
+
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  select procedure from user_procedures;
+  drop procedure insert_dept;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;函数&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;创建&lt;/p&gt;
+
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;   create or replace function get_avg_pay(num_deptno number) return number is num_avg_pay number;
+   begin
+       select avg(sal) into num_avg_pay from emp where deptno=num_deptno;
+       return (round(num_avg_pay,2));
+   exception
+       when no_data_found then
+       dbms_output.put_line('该部门编号不存在');
+       return(0);
+   end;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;调用, 可以直接使用&lt;/p&gt;
+
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  declare 
+      avg_pay nubmer;
+  begin 
+      avg_pay:=get_avg_pay(10);
+      dbms_output.put_line
+  end;
+  /
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;删除&lt;/p&gt;
+
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  drop function function_name;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;触发器&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;语句级触发器&lt;/p&gt;
+
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  create or replace trigger t 
+  before insert or update or delete
+  on table_name
+  declare
+       var_tag varchar2(10);
+  begin
+      if inserting then
+          var_tag:='';
+      elsif updating then 
+          ;
+      end if;
+      insert info dept values();
+  end;
+  /
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;行级触发器&lt;/p&gt;
+
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  create or replace trigger t
+  before insert on table_name
+  for each row
+  begin
+      ...
+  end;
+  /
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;用户事件触发器&lt;/p&gt;
+
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  create or replace trigger t
+  before create or alter or drop
+  on scott.schema
+  begin
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;删除触发器&lt;/p&gt;
+
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  drop trigger t;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;包&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;创建&lt;/p&gt;
+
+        &lt;p&gt;create or replace package mypac
+  as 
+      type t_record is record(id table_mytest.id%type, name table_mytest.name%type);
+      type mycursor is ref cursor;
+      function addnumber(num1 number, num2 number) return number;
+      procedure getlist(cid in number, cname out varchar2);
+      end;&lt;/p&gt;
+
+        &lt;p&gt;create or replace package body mypac
+ as 
+     function ….
+     end;
+     procedure …..
+     end;&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;使用&lt;/p&gt;
+
+        &lt;p&gt;declare
+      c_cursor mypac.mycursor;
+      c_type mypac.t_record;
+      num1 number;
+  begin
+      mypac.getlist();
+      fetch c_cursor into c_type;
+      dbms_output.put_line();
+      end;&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;游标&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;打开 open c1&lt;/li&gt;
+      &lt;li&gt;fetch c1 into c11; 第一条数据到c11&lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;关闭游标close c1;&lt;/p&gt;
+
+        &lt;p&gt;loop
+  exit when 
+  end loop;&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;事务的特性&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;原子性&lt;/li&gt;
+      &lt;li&gt;一致性&lt;/li&gt;
+      &lt;li&gt;隔离性&lt;/li&gt;
+      &lt;li&gt;持久性&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;事务的隔离级别&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;read uncommitted, 所有事务都可以看到没有提交事务的数据&lt;/li&gt;
+      &lt;li&gt;read committed, 事务提交成功之后才可以读取,&lt;/li&gt;
+      &lt;li&gt;repeatable, 重复读&lt;/li&gt;
+      &lt;li&gt;serializable, 可串行化&lt;/li&gt;
+      &lt;li&gt;mysql默认重复读,&lt;/li&gt;
+      &lt;li&gt;oracle支持read committed,和seri两个级别, 默认使用提交读,&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;事务的传播属性&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;propagation_required, 支持当前事务, 如果当前没有事务, 就新建一个事务, 父事务与子事务只要有一个失败, 就全部回滚,&lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;PROPAGATION_SUPPORTS – 支持当前事务，如果当前没有事务，就以非事务方式执行。&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;PROPAGATION_MANDATORY – 支持当前事务，如果当前没有事务，就抛出异常。&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;PROPAGATION_REQUIRES_NEW – 新建事务，如果当前存在事务，把当前事务挂起。父事务与子事务相互独立运行，互不影响。&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;PROPAGATION_NOT_SUPPORTED – 以非事务方式执行操作，如果当前存在事务，就把当前事务挂起。&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;PROPAGATION_NEVER – 以非事务方式执行，如果当前存在事务，则抛出异常。&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;PROPAGATION_NESTED – 如果当前存在事务，则在嵌套事务内执行。如果当前没有事务，则进行与PROPAGATION_REQUIRED类似的操作。&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</content><author><name></name></author><summary type="html">四种语言</summary></entry><entry><title type="html">Redis</title><link href="/2019/10/24/redis.html" rel="alternate" type="text/html" title="Redis" /><published>2019-10-24T00:00:00+08:00</published><updated>2019-10-24T00:00:00+08:00</updated><id>/2019/10/24/redis</id><content type="html" xml:base="/2019/10/24/redis.html">&lt;p&gt;##redis&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;概念&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    1. 完全开源免费的
+    2. 内存数据库
+    3. 特点
+   
+        支持数据的持久化，可以把内存中的数据持久化到磁盘中，重启的时候加载使用。
+   
+        不仅支持key-value类型的数据，同时也支持list、set、zset、hash等数据的存储。  
+  
+        支持数据的备份
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;优势&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  1. 性能高
+
+  2. 丰富的数据类型
+
+  3. 原子操作
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;安装&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;   1. 创建一个文件夹（路径中不出现中文字符）
+   2. 解压压缩包到创建的文件夹
+   3. 安装完成
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;启动&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  1. 启动服务器
+      cmd中运行redis-server.exe redis.windows.conf，启动成功后会看到启动图案和启动信息：redis版本和监听端口等信息。
+      在使用redis服务过程中不能关闭此cmd窗口，否则整个服务区也将关闭。
+  2.启动客户端
+      重新开启一个cmd窗口，
+      切换到redis目录下，
+      运行redis-cli.exe -h 127.0.0.1 -p6379
+      或者redis-cli.exe(默认的端口和ip)
+  3.redis本身不区分大小写，但是key值是区分大小写的
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;redis配置参数的介绍(redis.windows.conf)&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;绑定的主机地址&lt;/p&gt;
+
+        &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;bind&lt;/code&gt;&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;绑定的端口号&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;port&lt;/code&gt;&lt;/p&gt;
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;客户端闲置多长时间内关闭&lt;/p&gt;
+
+        &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;timeout&lt;/code&gt;&lt;/p&gt;
+
+        &lt;p&gt;默认为0 关闭此功能&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;数据库的数量，默认数据库的index从0开始，可以使用&lt;code class=&quot;highlighter-rouge&quot;&gt;select[dbid]&lt;/code&gt;连接指定的数据库&lt;/p&gt;
+
+        &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;databases 16&lt;/code&gt;&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;指定多长时间之内，有多少次操作就将数据同步到数据文件&lt;/p&gt;
+
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; // 900秒内有一个更改
+ save 900 1
+        
+ // 300秒内有15个更改
+ save 300 10
+		
+ // 60秒内有10000个更改
+ save 60 10000
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+      &lt;li&gt;指定本地数据库在存储时是否压缩&lt;code class=&quot;highlighter-rouge&quot;&gt;rdbcompression yes&lt;/code&gt;lzf压缩&lt;/li&gt;
+      &lt;li&gt;redus的本地数据库文件名&lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;dbfilename dump.rdb&lt;/code&gt;&lt;/p&gt;
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;设置redis连接密码，如果配置了密码，在连接数据库时需要使用密码&lt;/p&gt;
+
+        &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;requirepass 123456&lt;/code&gt;&lt;/p&gt;
+
+        &lt;p&gt;默认redis是没有密码的&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;最大客户连接数&lt;/p&gt;
+
+        &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;maxclients 128&lt;/code&gt;&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;最大内存限制&lt;/p&gt;
+
+        &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;maxmemory&lt;/code&gt;&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;每次更新操作后是否进行日志记录&lt;/p&gt;
+
+        &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;appendonly&lt;/code&gt;&lt;/p&gt;
+
+        &lt;p&gt;redis在启动时会把数据以异步的方式写入到磁盘中，如果不开启，在断电之后，可能会丢失数据，&lt;/p&gt;
+
+        &lt;p&gt;因为redis本身是按照上面的save保存条件来进行同步的，某一段时间内的数据只存在于内存中。&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;redis支持的数据类型&lt;/p&gt;
+
+    &lt;p&gt;&lt;em&gt;&lt;strong&gt;所有类型数据的删除操作都是&lt;/strong&gt;del key&lt;/em&gt;&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;string字符串&lt;/p&gt;
+
+        &lt;p&gt;redis中最基本的数据类型  &lt;br /&gt;
+最大存储512MB&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;hash（哈希）&lt;/p&gt;
+
+        &lt;p&gt;键值对&lt;/p&gt;
+
+        &lt;p&gt;hmset key （value）field value field value`&lt;/p&gt;
+
+        &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;hmset tom username tom password 123&lt;/code&gt;&lt;/p&gt;
+
+        &lt;p&gt;hgetall key&lt;/p&gt;
+
+        &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;hgetall tom&lt;/code&gt;&lt;/p&gt;
+
+        &lt;p&gt;hget key field&lt;/p&gt;
+
+        &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;hget tom username&lt;/code&gt;&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;list(列表)&lt;/p&gt;
+
+        &lt;p&gt;lpush key value value&lt;/p&gt;
+
+        &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;lpush list01 sunzhenhua&lt;/code&gt;&lt;/p&gt;
+
+        &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;lpush list01 yangyulong&lt;/code&gt;&lt;/p&gt;
+
+        &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;lpush list01 niulihang&lt;/code&gt;&lt;/p&gt;
+
+        &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;lpush list01 chenguo&lt;/code&gt;&lt;/p&gt;
+
+        &lt;p&gt;lrange key start stop&lt;/p&gt;
+
+        &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;lrange list01 0 1&lt;/code&gt;&lt;/p&gt;
+
+        &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;lrange list01 0 -1&lt;/code&gt;&lt;/p&gt;
+
+        &lt;p&gt;lrem key count value&lt;/p&gt;
+
+        &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;lrem list01 0 niulihang&lt;/code&gt;&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;set&lt;/p&gt;
+
+        &lt;p&gt;&lt;strong&gt;&lt;em&gt;string类型的无序集合&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+        &lt;p&gt;sadd key member&lt;/p&gt;
+
+        &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;sadd set01 szh 1 hello sunzhenhua&lt;/code&gt;&lt;/p&gt;
+
+        &lt;p&gt;smembers key&lt;/p&gt;
+
+        &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;smembers set01&lt;/code&gt;&lt;/p&gt;
+
+        &lt;p&gt;srem key member&lt;/p&gt;
+
+        &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;srem set szh&lt;/code&gt;&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;zset&lt;/p&gt;
+
+        &lt;p&gt;&lt;strong&gt;&lt;em&gt;有序集合&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+        &lt;p&gt;zadd key score value score value&lt;/p&gt;
+
+        &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;zadd zset01 0 hello 1 szh  2 ssef &lt;/code&gt;&lt;/p&gt;
+
+        &lt;p&gt;zrange key start stop&lt;/p&gt;
+
+        &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;zrange zset01 0 -1&lt;/code&gt;&lt;/p&gt;
+
+        &lt;p&gt;zrem key  member&lt;/p&gt;
+
+        &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;zrem zset01 hello&lt;/code&gt;&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;redis中对key的操作&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;查看所有的key值&lt;/p&gt;
+
+        &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;keys *&lt;/code&gt;&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;删除存在的key&lt;/p&gt;
+
+        &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;del key&lt;/code&gt;&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;判断指定的key是否存在&lt;/p&gt;
+
+        &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;exists key&lt;/code&gt;&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;expire设置key的过期时间&lt;/p&gt;
+
+        &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;expire key seconds&lt;/code&gt;&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;移除key的过期时间&lt;/p&gt;
+
+        &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;persist key &lt;/code&gt;&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;查看剩余key的过期时间&lt;/p&gt;
+
+        &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;ttl key&lt;/code&gt;&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;随机返回一个key名称&lt;/p&gt;
+
+        &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;randomkey&lt;/code&gt;&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;查看key的存储的值类型&lt;/p&gt;
+
+        &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;type key&lt;/code&gt;&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;redis中的事务&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;redis不支持事务回滚，可以保持简洁和快速&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;multi（相当于开启事务）和exec（相当于执行事务）命令&lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;取消事务&lt;/p&gt;
+
+        &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;discard&lt;/code&gt;&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;成功&lt;/p&gt;
+
+        &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;127.0.0.1:6397&amp;gt; multi
+ok
+127.0.0.1:6397&amp;gt; &lt;span class=&quot;nb&quot;&gt;set &lt;/span&gt;name tom
+QUEUED
+127.0.0.1:6397&amp;gt; &lt;span class=&quot;nb&quot;&gt;set &lt;/span&gt;age 20
+QUEUED
+127.0.0.1:6397&amp;gt; &lt;span class=&quot;nb&quot;&gt;set &lt;/span&gt;dob 2016-11-11
+QUEUED
+127.0.0.1:6397&amp;gt; &lt;span class=&quot;nb&quot;&gt;exec
+&lt;/span&gt;1&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;OK
+2&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;OK
+3&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;OK
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;失败（语法错误）&lt;/p&gt;
+
+        &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;127.0.0.1:6379&amp;gt; multi
+OK
+127.0.0.1:6379&amp;gt; &lt;span class=&quot;nb&quot;&gt;set &lt;/span&gt;name tom
+QUEUED
+127.0.0.1:6379&amp;gt; &lt;span class=&quot;nb&quot;&gt;set &lt;/span&gt;age 20
+QUEUED
+127.0.0.1:6379&amp;gt; seta dob 2016-11-11
+&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;error&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; ERR unknown &lt;span class=&quot;nb&quot;&gt;command&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'seta'&lt;/span&gt;
+127.0.0.1:6379&amp;gt; &lt;span class=&quot;nb&quot;&gt;exec&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;error&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; EXECABORT Transaction discarded          because of previous errors.
+127.0.0.1:6379&amp;gt; get name
+&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;nil&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+127.0.0.1:6379&amp;gt; get age
+&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;nil&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+127.0.0.1:6379&amp;gt; get dob
+&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;nil&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;失败（运行错误）&lt;/p&gt;
+
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;127.0.0.1:6379&amp;gt; multi
+  OK
+  127.0.0.1:6379&amp;gt; set name tom
+  QUEUED
+  127.0.0.1:6379&amp;gt; set age 20
+  QUEUED
+  127.0.0.1:6379&amp;gt; hget name age
+  QUEUED
+  127.0.0.1:6379&amp;gt; exec
+  1) OK
+  2) OK
+  3) (error) WRONGTYPE Operation against a key holding the wrong kind of value
+  127.0.0.1:6379&amp;gt; get name
+  &quot;tom&quot;
+  127.0.0.1:6379&amp;gt; get age
+  &quot;20&quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;redis事务错误：
+    + 语法错误&lt;/p&gt;
+
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;    如果碰到语法错误，在2.6.5之前的版本整个事务会忽略错误的命令
+    在之后的版本中会忽略整个事务中的命令
++ 运行错误
+
+
+    运行错误表示在事务执行过程中某一条命令出现错误，其他事务仍然会执行。
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;redis持久化&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;rdb&lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;p&gt;####redis通过快照完成持久化的&lt;/p&gt;
+
+    &lt;p&gt;通过一段时间，redis会把内存中的数据存储在数据库中，dump.rdb文件中&lt;/p&gt;
+
+    &lt;p&gt;快照的过程：&lt;/p&gt;
+
+    &lt;p&gt;1.redis使用fork函数先把当前进程中的数据复制一份&lt;/p&gt;
+
+    &lt;p&gt;2.父进程继续接受来自客户端的数据，子进程开始将内存中的数据写入硬盘中的临时文件中。&lt;/p&gt;
+
+    &lt;p&gt;3.当临时文件写入完成之后，会替换之前存在的dump.rdb文件，一次完成。&lt;/p&gt;
+
+    &lt;p&gt;在任何时候rdb文件都是完整的，在中间的过程中不会修改文件，只有完成之后才会修改文件。&lt;/p&gt;
+
+    &lt;p&gt;####也可以手动执行快照&lt;/p&gt;
+
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;save&lt;/code&gt;或者&lt;code class=&quot;highlighter-rouge&quot;&gt;bgsave&lt;/code&gt;&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; save阻塞其他请求
+
+ bgsave在后台进行快照。
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;aof&lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;p&gt;aof是通过日志方式进行的。&lt;/p&gt;
+
+    &lt;p&gt;通过appendonly开启aof持久化方式。&lt;/p&gt;
+
+    &lt;p&gt;通过appendfsync 设置命令同步的时机&lt;/p&gt;
+
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;always&lt;/code&gt;每次都会执行&lt;/p&gt;
+
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;everysec&lt;/code&gt;默认每秒执行一次&lt;/p&gt;
+
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;no&lt;/code&gt;不主动执行，30秒执行一次&lt;/p&gt;
+
+    &lt;p&gt;通过appendfile 设置保存的文件名&lt;/p&gt;
+
+    &lt;p&gt;####手动执行aof&lt;/p&gt;
+
+    &lt;p&gt;bgrewriteaof&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;redis中的config命令&lt;/p&gt;
+
+    &lt;p&gt;动态设置参数，服务器重启之后就失效了。&lt;/p&gt;
+
+    &lt;p&gt;config get * 可以查看所有使用config set设置的参数&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;redis的发布订阅模式（消息通信）o&lt;/p&gt;
+
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;publish channel message&lt;/code&gt;
+   发布消息在某个信道上channel 消息内容是message&lt;/p&gt;
+
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;subscribe channel ...&lt;/code&gt;
+  另外开启一个客户端，在这个客户端上面订阅来自某个信道channel的消息，&lt;/p&gt;
+
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;unsubscribe channel&lt;/code&gt;取消订阅&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</content><author><name></name></author><summary type="html">##redis 概念 1. 完全开源免费的 2. 内存数据库 3. 特点 支持数据的持久化，可以把内存中的数据持久化到磁盘中，重启的时候加载使用。 不仅支持key-value类型的数据，同时也支持list、set、zset、hash等数据的存储。 支持数据的备份 优势</summary></entry></feed>

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Git | cosy-sun</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Git" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="git 命令" />
+<meta property="og:description" content="git 命令" />
+<link rel="canonical" href="/2019/10/24/git.html" />
+<meta property="og:url" content="/2019/10/24/git.html" />
+<meta property="og:site_name" content="cosy-sun" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2019-10-24T00:00:00+08:00" />
+<script type="application/ld+json">
+{"mainEntityOfPage":{"@type":"WebPage","@id":"/2019/10/24/git.html"},"url":"/2019/10/24/git.html","dateModified":"2019-10-24T00:00:00+08:00","datePublished":"2019-10-24T00:00:00+08:00","headline":"Git","description":"git 命令","@type":"BlogPosting","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css">
+  <link rel="icon" type= "image/x-icon" href="../image/szh.ico"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="cosy-sun" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">cosy-sun</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Git</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2019-10-24T00:00:00+08:00" itemprop="datePublished">Oct 24, 2019
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <h1 id="git-命令">git 命令</h1>
+
+<h3 id="查看-添加-提交-删除-找回-重置-修改">查看 添加 提交 删除 找回 重置 修改</h3>
+<ul>
+  <li>
+    <p>git help &lt;&gt; 显示command的help</p>
+  </li>
+  <li>
+    <p>git show 显示某次提交的内容</p>
+  </li>
+  <li>
+    <p>git co –&lt;file&gt; 抛弃工作区修改</p>
+  </li>
+  <li>
+    <p>git co .   抛弃工作区修改</p>
+  </li>
+  <li>
+    <p>git add &lt;file&gt;</p>
+  </li>
+  <li>
+    <p>git add .</p>
+  </li>
+  <li>
+    <p>git rm</p>
+  </li>
+  <li>
+    <p>git rm &lt;file&gt; –cached 从版本库中删除，但是不删除文件</p>
+  </li>
+  <li>
+    <p>git reset &lt;file&gt; 从暂存区回复到工作文件</p>
+  </li>
+  <li>
+    <p>git reset –.</p>
+  </li>
+  <li>
+    <p>git reset –hard 回复最近一次提交过的状态</p>
+  </li>
+</ul>
+
+<h3 id="查看文件差异">查看文件差异</h3>
+
+<ul>
+  <li>
+    <p>git diff &lt;file&gt; 比较当前文件和暂存区文件差异</p>
+  </li>
+  <li>
+    <p>git diff &lt;branch1&gt;..&lt;branch2&gt; 比较两个分支的差异</p>
+  </li>
+  <li>
+    <p>git difff –staged 比较暂存区和版本库差异</p>
+  </li>
+  <li>
+    <p>git diff –cached 比较暂存区和版本库差异</p>
+  </li>
+  <li>
+    <p>git diff –stat 仅仅比较统计信息</p>
+  </li>
+</ul>
+
+<p>###查看提交记录</p>
+
+<ul>
+  <li>
+    <p>git log &lt;file&gt; 查看该文件每次提交记录</p>
+  </li>
+  <li>
+    <p>git log -p &lt;file&gt; 查看每次修改内容的diff</p>
+  </li>
+  <li>
+    <p>git -p -2 查看最近两次详细修改内容的diff</p>
+  </li>
+  <li>
+    <p>git –stat 查看提交统计信息</p>
+  </li>
+</ul>
+
+<h3 id="git-本地分支管理">git 本地分支管理</h3>
+
+<h3 id="查看-切换-创建-删除">查看 切换 创建 删除</h3>
+
+<ul>
+  <li>
+    <p>git br -r 查看远程分支</p>
+  </li>
+  <li>
+    <p>git br &lt;new_branch&gt; 创建信的分支</p>
+  </li>
+  <li>
+    <p>git br -v 查看各个分支最后提交信息</p>
+  </li>
+  <li>
+    <p>git br –merged 查看已经被合并到当前分支的分支</p>
+  </li>
+  <li>
+    <p>git br –no -merged 查看当前尚未被合并到当前分支的分支</p>
+  </li>
+  <li>
+    <p>git br -d ….. 删除某个分支</p>
+  </li>
+  <li>
+    <p>git br -D … 强制删除某个分支</p>
+  </li>
+</ul>
+
+<h3 id="合并分支和rebase">合并分支和rebase</h3>
+
+<ul>
+  <li>
+    <p>git merge &lt;branch&gt;  将branch分支合并到当前分支</p>
+  </li>
+  <li>
+    <p>git rebase master &lt;branch&gt;</p>
+  </li>
+</ul>
+
+<h3 id="git远程分支管理">git远程分支管理</h3>
+
+<ul>
+  <li>
+    <p>git  pull  抓取远程仓库所有分支更新并合并到本地</p>
+  </li>
+  <li>
+    <p>git pull –no-ff 抓取远程仓库所有分支更新合并到本地，不快进合并</p>
+  </li>
+  <li>
+    <p>git fetch origin 抓取远程仓库更新</p>
+  </li>
+  <li>
+    <p>git merge origin/master  将远程主分支合并到本地分支</p>
+  </li>
+  <li>
+    <p>git push -u origin master 将本地主分支推送到远程分支，如果远程没有分支， 则创建分支</p>
+  </li>
+  <li>
+    <p>git push origin &lt;local_branch&gt; 创建远程分支， origin是远程分支名</p>
+  </li>
+  <li>
+    <p>git push origin <local_branch>:\<remete_branch></remete_branch></local_branch></p>
+  </li>
+  <li>
+    <p>git push origin :&lt;remote_branch&gt; 先删除本地分支， 然后push删除远程分支</p>
+  </li>
+</ul>
+
+<h3 id="git远程仓库管理">git远程仓库管理</h3>
+
+<ul>
+  <li>
+    <p>git remote -v 查看远程服务器地址和仓库名称</p>
+  </li>
+  <li>
+    <p>git remote show origin 查看远程服务器仓库状态</p>
+  </li>
+  <li>
+    <p>git remote add origin git@github:cosy-sun/cosy-sun.github.io.git  添加远程仓库地址</p>
+  </li>
+  <li>
+    <p>git remote set-url origin</p>
+  </li>
+</ul>
+
+<p>$a \ne b$</p>
+
+  </div><a class="u-url" href="/2019/10/24/git.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <!--<h2 class="footer-heading">cosy-sun</h2>-->
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">cosy-sun</li><li><a class="u-email" href="mailto:737387998@qq.com">737387998@qq.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/cosy-sun"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">cosy-sun</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>孙振华的博客</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
