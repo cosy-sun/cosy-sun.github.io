@@ -1,52 +1,4 @@
-<!DOCTYPE html>
-<html lang="en"><head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.5.0 -->
-<title>Redis | cosy-sun</title>
-<meta name="generator" content="Jekyll v3.8.5" />
-<meta property="og:title" content="Redis" />
-<meta property="og:locale" content="en_US" />
-<meta name="description" content="##redis 概念 1. 完全开源免费的 2. 内存数据库 3. 特点 支持数据的持久化，可以把内存中的数据持久化到磁盘中，重启的时候加载使用。 不仅支持key-value类型的数据，同时也支持list、set、zset、hash等数据的存储。 支持数据的备份 优势" />
-<meta property="og:description" content="##redis 概念 1. 完全开源免费的 2. 内存数据库 3. 特点 支持数据的持久化，可以把内存中的数据持久化到磁盘中，重启的时候加载使用。 不仅支持key-value类型的数据，同时也支持list、set、zset、hash等数据的存储。 支持数据的备份 优势" />
-<link rel="canonical" href="/2019/10/24/redis.html" />
-<meta property="og:url" content="/2019/10/24/redis.html" />
-<meta property="og:site_name" content="cosy-sun" />
-<meta property="og:type" content="article" />
-<meta property="article:published_time" content="2019-10-24T00:00:00+08:00" />
-<script type="application/ld+json">
-{"mainEntityOfPage":{"@type":"WebPage","@id":"/2019/10/24/redis.html"},"url":"/2019/10/24/redis.html","dateModified":"2019-10-24T00:00:00+08:00","datePublished":"2019-10-24T00:00:00+08:00","headline":"Redis","description":"##redis 概念 1. 完全开源免费的 2. 内存数据库 3. 特点 支持数据的持久化，可以把内存中的数据持久化到磁盘中，重启的时候加载使用。 不仅支持key-value类型的数据，同时也支持list、set、zset、hash等数据的存储。 支持数据的备份 优势","@type":"BlogPosting","@context":"http://schema.org"}</script>
-<!-- End Jekyll SEO tag -->
-<link rel="stylesheet" href="/assets/main.css">
-  <link rel="icon" type= "image/x-icon" href="../image/szh.ico"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="cosy-sun" /></head>
-<body><header class="site-header" role="banner">
-
-  <div class="wrapper"><a class="site-title" rel="author" href="/">cosy-sun</a><nav class="site-nav">
-        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
-        <label for="nav-trigger">
-          <span class="menu-icon">
-            <svg viewBox="0 0 18 15" width="18px" height="15px">
-              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
-            </svg>
-          </span>
-        </label>
-
-        <div class="trigger"></div>
-      </nav></div>
-</header>
-<main class="page-content" aria-label="Content">
-      <div class="wrapper">
-        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
-
-  <header class="post-header">
-    <h1 class="post-title p-name" itemprop="name headline">Redis</h1>
-    <p class="post-meta">
-      <time class="dt-published" datetime="2019-10-24T00:00:00+08:00" itemprop="datePublished">Oct 24, 2019
-      </time></p>
-  </header>
-
-  <div class="post-content e-content" itemprop="articleBody">
-    <p>##redis</p>
+<p>##redis</p>
 <ul>
   <li>
     <p>概念</p>
@@ -180,80 +132,99 @@
 
         <p>redis中最基本的数据类型  <br />
 最大存储512MB</p>
+
+        <ul>
+          <li>set</li>
+          <li>get</li>
+          <li>getset(key, value), 给string 的key赋予上一次的value</li>
+          <li>mget(key1, key2,…), 返回多个key的value</li>
+          <li>setnx(key, value)</li>
+          <li>setex(key, seconds, value)</li>
+          <li>mset(key value)[key, value]</li>
+          <li>msetnx key value key value</li>
+          <li>incr(key) 名称为key的string增1</li>
+          <li>incrby(key, interger) 名称为key的string增interger</li>
+          <li>decr key,</li>
+          <li>decrby key interger</li>
+          <li>append(key, value), 在key的value 上添加value</li>
+          <li>substr(key, start, end), 截取start到end的子字符串</li>
+        </ul>
       </li>
       <li>
         <p>hash（哈希）</p>
 
         <p>键值对</p>
 
-        <p>hmset key （value）field value field value`</p>
-
-        <p><code class="highlighter-rouge">hmset tom username tom password 123</code></p>
-
-        <p>hgetall key</p>
-
-        <p><code class="highlighter-rouge">hgetall tom</code></p>
-
-        <p>hget key field</p>
-
-        <p><code class="highlighter-rouge">hget tom username</code></p>
+        <ul>
+          <li>hset key field value, 存储</li>
+          <li>hget key field, 获取</li>
+          <li>hmget key field field</li>
+          <li>hmset key field value field value</li>
+          <li>hincrby key field interger</li>
+          <li>hexists key field, 是否存在</li>
+          <li>hdel key field, 删除某个field</li>
+          <li>hlen key, 返回field的个数</li>
+          <li>hkeys key, 返回所有key</li>
+          <li>hvals key, 返回所有value</li>
+          <li>hgetall key, 返回名称为key的hash中的所有key-value,</li>
+        </ul>
       </li>
       <li>
         <p>list(列表)</p>
 
-        <p>lpush key value value</p>
-
-        <p><code class="highlighter-rouge">lpush list01 sunzhenhua</code></p>
-
-        <p><code class="highlighter-rouge">lpush list01 yangyulong</code></p>
-
-        <p><code class="highlighter-rouge">lpush list01 niulihang</code></p>
-
-        <p><code class="highlighter-rouge">lpush list01 chenguo</code></p>
-
-        <p>lrange key start stop</p>
-
-        <p><code class="highlighter-rouge">lrange list01 0 1</code></p>
-
-        <p><code class="highlighter-rouge">lrange list01 0 -1</code></p>
-
-        <p>lrem key count value</p>
-
-        <p><code class="highlighter-rouge">lrem list01 0 niulihang</code></p>
+        <ul>
+          <li>rpush key value value, 在名称为key的list尾部添加元素</li>
+          <li>lpush key value value, 在名称为key的list头部添加元素</li>
+          <li>llen key, 返回名称为key的长度</li>
+          <li>lrange key start end, 返回list中从start到end的元素</li>
+          <li>ltrim key, start, end, 截取list中从start到end的元素</li>
+          <li>lindex key index, 返回key中的index位置</li>
+          <li>lset key index value, 给key中的index位置赋值</li>
+          <li>lrem key count value, 删除count个key中的值为value的值</li>
+          <li>lpop key, 返回并删除名称为key的首元素</li>
+          <li>rpop key, 返回并删除名称为key的尾元素</li>
+          <li>blpop key, key, … , timeout, lpop的block版本</li>
+          <li>brpop key, key, … , timeout, rpop的block版本</li>
+          <li>rpoplpush srckey dstkey 返回并删除名称为srckey的list的尾元素, 并将该元素添加到名称为dstkey的头部,</li>
+        </ul>
       </li>
       <li>
         <p>set</p>
 
         <p><strong><em>string类型的无序集合</em></strong></p>
 
-        <p>sadd key member</p>
-
-        <p><code class="highlighter-rouge">sadd set01 szh 1 hello sunzhenhua</code></p>
-
-        <p>smembers key</p>
-
-        <p><code class="highlighter-rouge">smembers set01</code></p>
-
-        <p>srem key member</p>
-
-        <p><code class="highlighter-rouge">srem set szh</code></p>
+        <ul>
+          <li>sadd key value value</li>
+          <li>srem key value, 删除key中的value元素</li>
+          <li>spop key count, 随机返回并删除key中的count个元素</li>
+          <li>smove srckey dstkey value, 将某元素移动到另外一个集合中</li>
+          <li>scard key, 返回名称为key的set计数</li>
+          <li>sismember key value, value是否是key中的元素</li>
+          <li>sinter key key ,求交集</li>
+          <li>sinterstore dstkey keys 求keys中的交集, 并将交集保存到dstkey中</li>
+          <li>sunion key1 keys, 求并集,</li>
+          <li>sunionstore dstkey keys 求并集, 并保存到dstkey中</li>
+          <li>sdiff keys, 求差集</li>
+          <li>sdiffstroe</li>
+          <li>smemebers key , 返回key中的所有元素</li>
+          <li>srandmember key count, 随机返回key中的count个元素</li>
+        </ul>
       </li>
       <li>
         <p>zset</p>
 
         <p><strong><em>有序集合</em></strong></p>
 
-        <p>zadd key score value score value</p>
-
-        <p><code class="highlighter-rouge">zadd zset01 0 hello 1 szh  2 ssef </code></p>
-
-        <p>zrange key start stop</p>
-
-        <p><code class="highlighter-rouge">zrange zset01 0 -1</code></p>
-
-        <p>zrem key  member</p>
-
-        <p><code class="highlighter-rouge">zrem zset01 hello</code></p>
+        <ul>
+          <li>zadd  key score value score value, 添加分数为多少的值</li>
+          <li>zrange key start end [withscores], 获取start 到end之间的元素, 选项是否可获取分数,</li>
+          <li>zrem key value, 删除指定成员,返回删除的数量</li>
+          <li>zcard key , 返回存储的数量</li>
+          <li>zincrby key score value, 将value值的分数上加上score</li>
+          <li>zcount key minscore maxscore, 返回maxscore和minscore之间的个数</li>
+          <li>zrank key value,</li>
+          <li>zsocre key value, 返回成员value的score,</li>
+        </ul>
       </li>
     </ul>
   </li>
@@ -461,35 +432,3 @@ QUEUED
   </li>
 </ul>
 
-
-  </div><a class="u-url" href="/2019/10/24/redis.html" hidden></a>
-</article>
-
-      </div>
-    </main><footer class="site-footer h-card">
-  <data class="u-url" href="/"></data>
-
-  <div class="wrapper">
-
-    <!--<h2 class="footer-heading">cosy-sun</h2>-->
-
-    <div class="footer-col-wrapper">
-      <div class="footer-col footer-col-1">
-        <ul class="contact-list">
-          <li class="p-name">cosy-sun</li><li><a class="u-email" href="mailto:737387998@qq.com">737387998@qq.com</a></li></ul>
-      </div>
-
-      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/cosy-sun"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">cosy-sun</span></a></li></ul>
-</div>
-
-      <div class="footer-col footer-col-3">
-        <p>孙振华的博客</p>
-      </div>
-    </div>
-
-  </div>
-
-</footer>
-</body>
-
-</html>
