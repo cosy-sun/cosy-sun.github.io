@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2019-10-25T15:27:34+08:00</updated><id>/feed.xml</id><title type="html">cosy-sun</title><subtitle>孙振华的博客</subtitle><entry><title type="html">Java命令总结</title><link href="/2019/10/25/Java%E5%91%BD%E4%BB%A4%E6%80%BB%E7%BB%93.html" rel="alternate" type="text/html" title="Java命令总结" /><published>2019-10-25T00:00:00+08:00</published><updated>2019-10-25T00:00:00+08:00</updated><id>/2019/10/25/Java%E5%91%BD%E4%BB%A4%E6%80%BB%E7%BB%93</id><content type="html" xml:base="/2019/10/25/Java%E5%91%BD%E4%BB%A4%E6%80%BB%E7%BB%93.html">&lt;ul&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2019-10-25T15:45:26+08:00</updated><id>/feed.xml</id><title type="html">cosy-sun</title><subtitle>孙振华的博客</subtitle><entry><title type="html">Java命令总结</title><link href="/2019/10/25/Java%E5%91%BD%E4%BB%A4%E6%80%BB%E7%BB%93.html" rel="alternate" type="text/html" title="Java命令总结" /><published>2019-10-25T00:00:00+08:00</published><updated>2019-10-25T00:00:00+08:00</updated><id>/2019/10/25/Java%E5%91%BD%E4%BB%A4%E6%80%BB%E7%BB%93</id><content type="html" xml:base="/2019/10/25/Java%E5%91%BD%E4%BB%A4%E6%80%BB%E7%BB%93.html">&lt;ul&gt;
   &lt;li&gt;
     &lt;p&gt;java&lt;/p&gt;
 
@@ -34,10 +34,12 @@
     &lt;ul&gt;
       &lt;li&gt;-class, 监视类装载、卸载数量、总空间以及类装载所耗费的时间。&lt;/li&gt;
       &lt;li&gt;-gc, 监视Java堆状况，包括Eden区、两个Survivor区、老年区、元数据等的容量、已用空间，GC时间合计等信息。
-     S0C，S1C，EC，OC，MC，CCSC：S0，S1，Eden，老年代，Metaspace和压缩类空间大小；S0U  &lt;br /&gt;
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;     S0C，S1C，EC，OC，MC，CCSC：S0，S1，Eden，老年代，Metaspace和压缩类空间大小；S0U    
      S1U，EU，OU，MU，CCSU：S0，S1，Eden，老年代，Metaspace和压缩类空间已经使用的大小；
      YGC，YGCT，FGC，FGCT：Young GC和Full GC的次数和耗时；
-     GCT：垃圾回收的耗时。&lt;/li&gt;
+     GCT：垃圾回收的耗时。
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
   &lt;li&gt;
@@ -88,7 +90,29 @@
       &lt;li&gt;-extdirs[dirs] 覆盖搜索安装方式扩展的位置。扩展的缺省位置是 jrelibext。&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
-&lt;/ul&gt;</content><author><name></name></author><summary type="html">java</summary></entry><entry><title type="html">Cyrpto</title><link href="/2019/10/24/cyrpto.html" rel="alternate" type="text/html" title="Cyrpto" /><published>2019-10-24T00:00:00+08:00</published><updated>2019-10-24T00:00:00+08:00</updated><id>/2019/10/24/cyrpto</id><content type="html" xml:base="/2019/10/24/cyrpto.html"></content><author><name></name></author><summary type="html"></summary></entry><entry><title type="html">Design Mode</title><link href="/2019/10/24/design-mode.html" rel="alternate" type="text/html" title="Design Mode" /><published>2019-10-24T00:00:00+08:00</published><updated>2019-10-24T00:00:00+08:00</updated><id>/2019/10/24/design-mode</id><content type="html" xml:base="/2019/10/24/design-mode.html">&lt;p&gt;####设计模式&lt;/p&gt;
+&lt;/ul&gt;</content><author><name></name></author><summary type="html">java</summary></entry><entry><title type="html">Index</title><link href="/2019/10/25/index.html" rel="alternate" type="text/html" title="Index" /><published>2019-10-25T00:00:00+08:00</published><updated>2019-10-25T00:00:00+08:00</updated><id>/2019/10/25/index</id><content type="html" xml:base="/2019/10/25/index.html">&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://cosy-sun.github.io/2019/10/24/mybatis.html&quot;&gt;mybatis&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://cosy-sun.github.io/2019/10/24/java元注解.html&quot;&gt;java元注解&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://cosy-sun.github.io/2019/10/24/oracle.html&quot;&gt;oracle&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://cosy-sun.github.io/2019/10/24/redis.html&quot;&gt;redis&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://cosy-sun.github.io/2019/10/24/regexps.html&quot;&gt;正则表达式&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://cosy-sun.github.io/2019/10/24/seletpollepoll.html&quot;&gt;select, poll, epoll原理&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://cosy-sun.github.io/2019/10/24/shell脚本.html&quot;&gt;shell脚本&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://cosy-sun.github.io/2019/10/24/spring.html&quot;&gt;spring&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://cosy-sun.github.io/2019/10/24/sprinbatch.html&quot;&gt;spring-batch&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://cosy-sun.github.io/2019/10/24/springboot.html&quot;&gt;spring-boot&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://cosy-sun.github.io/2019/10/24/springboot连接mysql数据库问题整理.html&quot;&gt;spring-boot连接数据库问题&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://cosy-sun.github.io/2019/10/24/springcloud.html&quot;&gt;spring-cloud&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://cosy-sun.github.io/2019/10/24/springdata.html&quot;&gt;spring-data&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://cosy-sun.github.io/2019/10/24/spring源码解析.html&quot;&gt;spring源码解析&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://cosy-sun.github.io/2019/10/24/xml与json介绍与解析.html&quot;&gt;xml与json&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://cosy-sun.github.io/2019/10/24/算法.html&quot;&gt;算法&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://cosy-sun.github.io/2019/10/24/索引建立规则.html&quot;&gt;索引建立规则&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://cosy-sun.github.io/2019/10/24/网络协议.html&quot;&gt;网络协议&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://cosy-sun.github.io/2019/10/24/文件描述符.html&quot;&gt;文件描述符&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://cosy-sun.github.io/2019/10/24/juc包.html&quot;&gt;juc-java.util.concurrent&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://cosy-sun.github.io/2019/10/25/Java命令总结.html&quot;&gt;java命令总结&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><author><name></name></author><summary type="html">mybatis java元注解 oracle redis 正则表达式 select, poll, epoll原理 shell脚本 spring spring-batch spring-boot spring-boot连接数据库问题 spring-cloud spring-data spring源码解析 xml与json 算法 索引建立规则 网络协议 文件描述符 juc-java.util.concurrent java命令总结</summary></entry><entry><title type="html">Design Mode</title><link href="/2019/10/24/design-mode.html" rel="alternate" type="text/html" title="Design Mode" /><published>2019-10-24T00:00:00+08:00</published><updated>2019-10-24T00:00:00+08:00</updated><id>/2019/10/24/design-mode</id><content type="html" xml:base="/2019/10/24/design-mode.html">&lt;p&gt;####设计模式&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;
@@ -438,29 +462,7 @@
   &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;$a \ne b$&lt;/p&gt;</content><author><name></name></author><summary type="html">git 命令</summary></entry><entry><title type="html">Index</title><link href="/2019/10/24/index.html" rel="alternate" type="text/html" title="Index" /><published>2019-10-24T00:00:00+08:00</published><updated>2019-10-24T00:00:00+08:00</updated><id>/2019/10/24/index</id><content type="html" xml:base="/2019/10/24/index.html">&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;./2019-10-24-mybatis.md&quot;&gt;mybatis&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;./2019-10-24-java元注解.md&quot;&gt;java元注解&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;./2019-10-24-oracle.md&quot;&gt;oracle&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;./2019-10-24-redis.md&quot;&gt;redis&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;./2019-10-24-regexps.md&quot;&gt;正则表达式&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;./2019-10-24-seletpollepoll.md&quot;&gt;select, poll, epoll原理&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;./2019-10-24-shell脚本.md&quot;&gt;shell脚本&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;./2019-10-24-spring.md&quot;&gt;spring&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;./2019-10-24-sprinbatch.md&quot;&gt;spring-batch&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;./2019-10-24-springboot.md&quot;&gt;spring-boot&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;./2019-10-24-springboot连接mysql数据库问题整理.md&quot;&gt;spring-boot连接数据库问题&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;./2019-10-24-springcloud.md&quot;&gt;spring-cloud&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;./2019-10-24-springdata.md&quot;&gt;spring-data&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;./2019-10-24-spring源码解析.md&quot;&gt;spring源码解析&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;./2019-10-24-xml与json介绍与解析.md&quot;&gt;xml与json&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;./2019-10-24-算法.md&quot;&gt;算法&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;./2019-10-24-索引建立规则.md&quot;&gt;索引建立规则&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;./2019-10-24-网络协议.md&quot;&gt;网络协议&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;./2019-10-24-文件描述符.md&quot;&gt;文件描述符&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;./2019-10-24-juc包.md&quot;&gt;juc-java.util.concurrent&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;./2019-10-25-Java命令总结.md&quot;&gt;java命令总结&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><author><name></name></author><summary type="html">mybatis java元注解 oracle redis 正则表达式 select, poll, epoll原理 shell脚本 spring spring-batch spring-boot spring-boot连接数据库问题 spring-cloud spring-data spring源码解析 xml与json 算法 索引建立规则 网络协议 文件描述符 juc-java.util.concurrent java命令总结</summary></entry><entry><title type="html">Java元注解</title><link href="/2019/10/24/java%E5%85%83%E6%B3%A8%E8%A7%A3.html" rel="alternate" type="text/html" title="Java元注解" /><published>2019-10-24T00:00:00+08:00</published><updated>2019-10-24T00:00:00+08:00</updated><id>/2019/10/24/java%E5%85%83%E6%B3%A8%E8%A7%A3</id><content type="html" xml:base="/2019/10/24/java%E5%85%83%E6%B3%A8%E8%A7%A3.html">&lt;p&gt;#&lt;center&gt; java元注解&lt;/center&gt;&lt;/p&gt;
+&lt;p&gt;$a \ne b$&lt;/p&gt;</content><author><name></name></author><summary type="html">git 命令</summary></entry><entry><title type="html">Java元注解</title><link href="/2019/10/24/java%E5%85%83%E6%B3%A8%E8%A7%A3.html" rel="alternate" type="text/html" title="Java元注解" /><published>2019-10-24T00:00:00+08:00</published><updated>2019-10-24T00:00:00+08:00</updated><id>/2019/10/24/java%E5%85%83%E6%B3%A8%E8%A7%A3</id><content type="html" xml:base="/2019/10/24/java%E5%85%83%E6%B3%A8%E8%A7%A3.html">&lt;p&gt;#&lt;center&gt; java元注解&lt;/center&gt;&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;
@@ -2797,4 +2799,88 @@ QUEUED
 
     &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;unsubscribe channel&lt;/code&gt;取消订阅&lt;/p&gt;
   &lt;/li&gt;
-&lt;/ul&gt;</content><author><name></name></author><summary type="html">##redis 概念 1. 完全开源免费的 2. 内存数据库 3. 特点 支持数据的持久化，可以把内存中的数据持久化到磁盘中，重启的时候加载使用。 不仅支持key-value类型的数据，同时也支持list、set、zset、hash等数据的存储。 支持数据的备份 优势</summary></entry></feed>
+  &lt;li&gt;redis的cluster&lt;/li&gt;
+  &lt;li&gt;redis的哨兵模式&lt;/li&gt;
+  &lt;li&gt;已经看过了, 以后更新&lt;/li&gt;
+&lt;/ul&gt;</content><author><name></name></author><summary type="html">##redis 概念 1. 完全开源免费的 2. 内存数据库 3. 特点 支持数据的持久化，可以把内存中的数据持久化到磁盘中，重启的时候加载使用。 不仅支持key-value类型的数据，同时也支持list、set、zset、hash等数据的存储。 支持数据的备份 优势</summary></entry><entry><title type="html">Regexps</title><link href="/2019/10/24/regexps.html" rel="alternate" type="text/html" title="Regexps" /><published>2019-10-24T00:00:00+08:00</published><updated>2019-10-24T00:00:00+08:00</updated><id>/2019/10/24/regexps</id><content type="html" xml:base="/2019/10/24/regexps.html">&lt;p&gt;####regexps&lt;/p&gt;
+
+&lt;p&gt;^ 匹配行或者字符串的起始位置&lt;/p&gt;
+
+&lt;p&gt;$ 匹配行货字符串的结尾&lt;/p&gt;
+
+&lt;p&gt;\b 单词分界位置&lt;/p&gt;
+
+&lt;p&gt;\d 匹配数字&lt;/p&gt;
+
+&lt;p&gt;\w 匹配字母,数字,下划线&lt;/p&gt;
+
+&lt;p&gt;\s 匹配空格&lt;/p&gt;
+
+&lt;p&gt;大写表示他们的反义&lt;/p&gt;
+
+&lt;p&gt;[abc]匹配之中的任意一个字符&lt;/p&gt;
+
+&lt;p&gt;[^abc]  匹配除了abc之外的任意一个字符&lt;/p&gt;
+
+&lt;p&gt;. 匹配除了换行符之外的所有字符&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;重复零次或更多&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;重复一次或更多次&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;? 重复零次或一次&lt;/p&gt;
+
+&lt;p&gt;{n} 重复n次&lt;/p&gt;
+
+&lt;p&gt;{n,m} 重复n到m次&lt;/p&gt;
+
+&lt;p&gt;{n,} 重复n此或者更多次&lt;/p&gt;
+
+&lt;p&gt;懒惰限定符&lt;/p&gt;
+
+&lt;p&gt;*? 重复任意次,但是尽量取最少次数&lt;/p&gt;
+
+&lt;p&gt;+? 重复一次或更多次,取最少次数&lt;/p&gt;
+
+&lt;p&gt;{n,m}? n到m次,取最少次数&lt;/p&gt;
+
+&lt;p&gt;??&lt;/p&gt;
+
+&lt;p&gt;捕获分组&lt;/p&gt;
+
+&lt;p&gt;(\d)\d&lt;/p&gt;
+
+&lt;p&gt;(\d)\d\1 此处的\1就是捕获到这个括号中的分组&lt;/p&gt;
+
+&lt;p&gt;(?&amp;lt;name&amp;gt;\w+)   如果要捕获使用 \k&amp;lt;name&amp;gt;&lt;/p&gt;
+
+&lt;p&gt;捕获&lt;/p&gt;
+
+&lt;p&gt;(exp) 匹配exp,并捕获文本到自动命名的组中,&lt;/p&gt;
+
+&lt;p&gt;(?&amp;lt;name&amp;gt;exp)匹配exp,并捕获文本到name组中&lt;/p&gt;
+
+&lt;p&gt;(?:exp)匹配exp,但是不不过匹配的文本&lt;/p&gt;
+
+&lt;p&gt;零宽断言&lt;/p&gt;
+
+&lt;p&gt;(?=exp)匹配exp前面的位置&lt;/p&gt;
+
+&lt;p&gt;(?&amp;lt;=exp)匹配exp后面的位置&lt;/p&gt;
+
+&lt;p&gt;(?!exp)匹配后面跟的不是exp的位置&lt;/p&gt;
+
+&lt;p&gt;(?&amp;lt;!exp)匹配前面不是exp的位置&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;分支条件&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</content><author><name></name></author><summary type="html">####regexps</summary></entry></feed>

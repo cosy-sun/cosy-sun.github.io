@@ -4,7 +4,7 @@ layout: post
 spring data 
 
 - spring data jpa
-
+    ```
     spring data 子项目
          
          spring data commons
@@ -17,9 +17,9 @@ spring data
          spring data redis
          
     spring data jpa 顶层类 repository
-    
-七个reposiroty接口
-        
+    ```
+- 七个reposiroty接口
+       ``` 
         org.springframework.data.repository.Repository
         org.springframework.data.repository.CrudReposritory
         org.springframework.data.reposiroty.PagingAndSortingRepository
@@ -30,21 +30,21 @@ spring data
         两个实现类
         org.springframework.data.jpa.reposiroty.support.SimpleJpaRepository, 是jpa整个关联数据库的所有reposiroty的接口实现类,
         org.springframework.data.jpa.repository.support.QueryDslJpaRepository
-    
-定义查询方法的配置方法
-
+    ```
+- 定义查询方法的配置方法
+        ```
         spirng jpa repository是通过动态代理实现的,
-
-方法的查询策略的设置
-
+        ```
+- 方法的查询策略的设置
+    ```
     @EnableJpaRepositories(queryLookupStrategy=QueryLookupStrategy.Key.(..))
     key值一共有三个
     create:直接根据方法名创建, 如果方法名不符合规则, 那么会抛出异常,
     use_declared_query:声名方式创建, 也就是注解是方式, 如果没有找到则抛出异常,
     create_if_not_found:上面两种的结合版,先使用声明式查找,若没有找到就使用方法名创建.
-    
-查询方法的创建
-
+    ```
+- 查询方法的创建
+    ```
     find...By
     read...By
     query...By
@@ -52,10 +52,10 @@ spring data
     get...By
     delete...By
     remove...By
+    ```
     
-    
-关键字
-
+- 关键字
+    ```
     and      findByNameAndEmail
     Or       findByNameOrEmail
     between  findByDateBetween(x1, x2)
@@ -65,31 +65,31 @@ spring data
     like
     startWith
     endingWith
-    
+    ```
 
     
-查询结果的处理
-
+- 查询结果的处理
+    ```
     在查询方法中使用特定类型的参数,可以达到分页或者排序的目的,例如:Pageable
     Page<User> findByLastname(String lastname, pageable page);
     List<User> findByLastname(String lastname, sort sort);
+    ```
     
-    
-限制查询结果
-
+- 限制查询结果
+    ```
     可以在方法名上加上关键字first或者top
     list<user> findFirst10ByLstname();
-    
-查询结果的不同形式
-
+    ```
+- 查询结果的不同形式
+    ```
     page
     list       
     stream     stream.foreach()
     future     @Async
-    
-注解查询大全
-
-<font size = "5"><b>一定注意jpql中的实体不是数据库中的表,而是自己创建的实体类,时区分大小写的</font></b>
+    ```
+- 注解查询大全
+    ```
+    一定注意jpql中的实体不是数据库中的表,而是自己创建的实体类,时区分大小写的
 
     @Query , 不使用value,直接添加sql是jpql的sql, 或者使用value,
     value 指定jpql的查询语法
@@ -104,29 +104,30 @@ spring data
 
     @Query分页
     直接用page对象接受接口,在参数中加入pageable
-    
-@param
-    
+    ```
+- @param
+    ```
     在方法的参数上加上@param("字段名") String name
     在查询语句中使用参数时,:参数名
     
-```
+
 	@Query(value = "select u from User u where u.name = :name")
 	User findByName2(@Param("name") String name);
-```
+    ```
 
-@Query注解中使用spel表达式
+- @Query注解中使用spel表达式
+```
 <table>
 <th>变量名</th><th>使用方式</th><th>描述</th><tr><td>entityName</td><td>select x from  #{#entityName} x</td><td>根据指定的repository插入相关的entityName(1)如果定义了entity注解,直接使用entity属性名,(2)如果没有定义,使用实体类的名称
 </td></tr></table>
-
-@Modifying修改查询
+```
+- @Modifying修改查询
 
     clearAutomatically(), 其中的方法, 会刷新一级缓存,
     modifying在修改或者删除的时候必须使用事务的注解,@transactional
 
-@procedure存储过程
-
+- @procedure存储过程
+    ```
 	参数:
 	value 数据库里中储存过程的名称
 	procedureName数据库中储存过程的名称 
@@ -142,9 +143,9 @@ spring data
 				@StoredProcedureParameter(mode = ParameterMode.IN,name = "arg", type = Integer.class),
 				@StoredProcedureParameter(mode = ParameterMode.OUT,name = "res", type = Integer.class)
 		})
-
-@NamedQuery
-
+```
+- @NamedQuery
+    ```
 	定义在实体类上,预定义的查询
 	name 规则 实体名.方法名
 	query jpql语法
@@ -154,10 +155,10 @@ spring data
 	repository中不需要使用注解,直接定义方法
 	
     @qeury> 方法定义查询 > @namedquery
-	
+	```
 
-基本注解
-
+- 基本注解
+    ```
 	@Entity	被此注解注释的对象将会成为jpa管理的实体,将映射到指定的数据库表
 	@Table 指定数据库中的表名
 	    @Table(name = "Table_name" schema = "db")
@@ -181,10 +182,10 @@ spring data
 	@Temporal 设置data类型的属性,(TemporalType.date/time/timestamp)
 	@Enumerated 参数EnumType.ORDINAL(映射枚举的下标)或者STRING(映射枚举的name), 同时需要创建一个枚举类,作为映射参数,
 	@Lob 将属性映射成数据库支持的大对象类型,一般配合@basic(fetch = fetchtype.lazy)将其设置为延迟加载,
-	
+	```
 
-关联关系注解
-
+- 关联关系注解
+    ```
 	@JoinColumn 定义外键关联的字段名称 
 		name 目标表的字段名 必填
 		referenceedColumnName 本实体的字段名歌,非必填,默认是本表的Id
@@ -215,8 +216,8 @@ spring data
 	@JoinTable  关联关系表
 		
 	@ManyToMany 多对多
-	
-EntityManager中常用的方法
+	```
+- EntityManager中常用的方法
 
 ```
 	//根据主键查询实体对象
@@ -242,17 +243,17 @@ EntityManager中常用的方法
 	
 ```
 
-可以自定义自己的 Repository 
-
+- 可以自定义自己的 Repository 
+```    
 	@NoRepositoryBean 声明定制共享行为的接口
 	再jpa中提供的repository已经实现了大部分的功能,如果自己实现的话,可以继承这些已经实现的方法,可以减少工作量,同时在实现类中需要注意的是必须实现父类的构造方法,同时整个类需要T类型的 class类型,所以需要在构造方法中传入class类型.
 	
 	也可以完全自己实现带泛型的repository
 	注意在类中声明最简单的两个变量class<T>以及entityManager
 	在entityManager上使用注解@PersistenceContext实现容器管理的entitymanager,由于是容器管理的, 所以我们不需要也不应该显示关闭注入的entitymanager,
-	
-auditing（审计）
-
+```	
+- auditing（审计）
+    ```
 	entity实体类中需要添加注解
 		@CreatedBy 创建者
 		@CreatedDate 创建日期
@@ -263,26 +264,26 @@ auditing（审计）
 
 	实现AuditorAware接口告诉jpa是谁在修改或者创建数据
 	启动auditing, @enablejpaauding(auditorAwareRef = "auding实现类")
-	
-@MappedSupperclass
-
+	```
+- @MappedSupperclass
+    ```
 	相当与添加了注解entity的实体的父类，可以在这个父类中添加公共的方法
-	
+	```
    
 
-自定义entityListener
-
+- 自定义entityListener
+    ```
     通过在方法上添加这些注解, 可以监听一些东西, 然后将监听器注解在@entitylisteners中,
     @postpersist, 当更新的时候做一些逻辑判断, 及事件通知
     @postremove, 当删除的时候
     @postupdate, 当更新的时候,
-
-@version, 通过aop机制, 在更新的时候会使用version字段, 
-    
+    ```
+- @version, 通过aop机制, 在更新的时候会使用version字段, 
+      ```  
     乐观锁
     悲观锁
-    
-@enablejparepositories("包名")
-    
+    ```
+- @enablejparepositories("包名")
+    ```
 	springboot中会帮我们自动添加,
-	
+	```
