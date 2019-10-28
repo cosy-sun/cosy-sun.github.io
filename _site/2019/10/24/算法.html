@@ -7,15 +7,15 @@
 <meta name="generator" content="Jekyll v3.8.5" />
 <meta property="og:title" content="算法" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="孙振华的博客" />
-<meta property="og:description" content="孙振华的博客" />
+<meta name="description" content="插入排序" />
+<meta property="og:description" content="插入排序" />
 <link rel="canonical" href="/2019/10/24/%E7%AE%97%E6%B3%95.html" />
 <meta property="og:url" content="/2019/10/24/%E7%AE%97%E6%B3%95.html" />
 <meta property="og:site_name" content="cosy-sun" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2019-10-24T00:00:00+08:00" />
 <script type="application/ld+json">
-{"mainEntityOfPage":{"@type":"WebPage","@id":"/2019/10/24/%E7%AE%97%E6%B3%95.html"},"url":"/2019/10/24/%E7%AE%97%E6%B3%95.html","dateModified":"2019-10-24T00:00:00+08:00","datePublished":"2019-10-24T00:00:00+08:00","headline":"算法","description":"孙振华的博客","@type":"BlogPosting","@context":"http://schema.org"}</script>
+{"mainEntityOfPage":{"@type":"WebPage","@id":"/2019/10/24/%E7%AE%97%E6%B3%95.html"},"url":"/2019/10/24/%E7%AE%97%E6%B3%95.html","dateModified":"2019-10-24T00:00:00+08:00","datePublished":"2019-10-24T00:00:00+08:00","headline":"算法","description":"插入排序","@type":"BlogPosting","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/main.css">
   <link rel="icon" type= "image/x-icon" href="../image/szh.ico"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="cosy-sun" /></head>
@@ -46,7 +46,93 @@
   </header>
 
   <div class="post-content e-content" itemprop="articleBody">
-    
+    <ul>
+  <li>
+    <p>插入排序</p>
+
+    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span><span class="o">[]</span> <span class="nf">sort</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">arr</span><span class="o">)</span> <span class="o">{</span>
+      <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">arr</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">i</span> <span class="o">++)</span> <span class="o">{</span>
+          <span class="kt">int</span> <span class="n">key</span> <span class="o">=</span> <span class="n">arr</span><span class="o">[</span><span class="n">i</span><span class="o">];</span>
+          <span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="o">;</span>
+          <span class="k">while</span> <span class="o">(</span><span class="n">j</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">arr</span><span class="o">[</span><span class="n">j</span><span class="o">]</span> <span class="o">&lt;</span> <span class="n">key</span><span class="o">)</span> <span class="o">{</span>
+              <span class="n">arr</span><span class="o">[</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="o">]</span> <span class="o">=</span> <span class="n">arr</span><span class="o">[</span><span class="n">j</span><span class="o">];</span>
+              <span class="n">j</span> <span class="o">--;</span>
+          <span class="o">}</span>
+          <span class="n">arr</span><span class="o">[</span><span class="n">j</span> <span class="o">+</span> <span class="mi">1</span><span class="o">]</span> <span class="o">=</span> <span class="n">key</span><span class="o">;</span>
+      <span class="o">}</span>
+      <span class="k">return</span> <span class="n">arr</span><span class="o">;</span>
+  <span class="o">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>快速排序</p>
+
+    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">quickSort</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">arr</span><span class="o">,</span> <span class="kt">int</span> <span class="n">start</span><span class="o">,</span> <span class="kt">int</span> <span class="n">end</span><span class="o">)</span> <span class="o">{</span>
+      <span class="k">if</span><span class="o">(</span><span class="n">start</span> <span class="o">&lt;</span> <span class="n">end</span><span class="o">)</span> <span class="o">{</span>
+          <span class="kt">int</span> <span class="n">position</span> <span class="o">=</span> <span class="n">positionSelect</span><span class="o">(</span><span class="n">arr</span><span class="o">,</span> <span class="n">start</span><span class="o">,</span> <span class="n">end</span><span class="o">);</span>
+          <span class="n">quickSort</span><span class="o">(</span><span class="n">arr</span><span class="o">,</span> <span class="n">start</span><span class="o">,</span> <span class="n">position</span> <span class="o">-</span> <span class="mi">1</span><span class="o">);</span>
+          <span class="n">quickSort</span><span class="o">(</span><span class="n">arr</span><span class="o">,</span> <span class="n">position</span> <span class="o">+</span> <span class="mi">1</span><span class="o">,</span> <span class="n">end</span><span class="o">);</span>
+      <span class="o">}</span>
+  <span class="o">}</span>
+  <span class="kd">private</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">positionSelect</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">arr</span><span class="o">,</span> <span class="kt">int</span> <span class="n">start</span><span class="o">,</span> <span class="kt">int</span> <span class="n">end</span><span class="o">)</span> <span class="o">{</span>
+      <span class="kt">int</span> <span class="n">index</span> <span class="o">=</span> <span class="n">start</span> <span class="o">-</span> <span class="mi">1</span><span class="o">;</span>
+      <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">start</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">end</span><span class="o">;</span> <span class="n">i</span> <span class="o">++)</span> <span class="o">{</span>
+          <span class="k">if</span><span class="o">(</span><span class="n">arr</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">&lt;</span> <span class="n">arr</span><span class="o">[</span><span class="n">end</span><span class="o">])</span> <span class="o">{</span>
+              <span class="n">swap</span><span class="o">(</span><span class="n">arr</span><span class="o">,</span> <span class="o">++</span> <span class="n">index</span><span class="o">,</span> <span class="n">i</span><span class="o">);</span>
+          <span class="o">}</span>
+      <span class="o">}</span>
+      <span class="n">swap</span><span class="o">(</span><span class="n">arr</span><span class="o">,</span> <span class="o">++</span> <span class="n">index</span><span class="o">,</span> <span class="n">end</span><span class="o">);</span>
+      <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">Arrays</span><span class="o">.</span><span class="na">toString</span><span class="o">(</span><span class="n">arr</span><span class="o">));</span>
+      <span class="k">return</span> <span class="n">index</span><span class="o">;</span>
+  <span class="o">}</span>
+  <span class="kd">private</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">swap</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">arr</span><span class="o">,</span> <span class="kt">int</span> <span class="n">x</span><span class="o">,</span> <span class="kt">int</span> <span class="n">y</span><span class="o">)</span> <span class="o">{</span>
+      <span class="kt">int</span> <span class="n">tmp</span> <span class="o">=</span> <span class="n">arr</span><span class="o">[</span><span class="n">x</span><span class="o">];</span>
+      <span class="n">arr</span><span class="o">[</span><span class="n">x</span><span class="o">]</span> <span class="o">=</span> <span class="n">arr</span><span class="o">[</span><span class="n">y</span><span class="o">];</span>
+      <span class="n">arr</span><span class="o">[</span><span class="n">y</span><span class="o">]</span> <span class="o">=</span> <span class="n">tmp</span><span class="o">;</span>
+  <span class="o">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>计数排序</p>
+
+    <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span><span class="o">[]</span> <span class="nf">countSort</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">arr</span><span class="o">)</span> <span class="o">{</span>
+      <span class="c1">//临时数组要比最大的值大一个</span>
+      <span class="kt">int</span><span class="o">[]</span> <span class="n">tmp</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="n">max</span><span class="o">(</span><span class="n">arr</span><span class="o">)</span> <span class="o">+</span> <span class="mi">1</span><span class="o">];</span>
+      <span class="c1">//排序数组也要比数据长度大一</span>
+      <span class="kt">int</span><span class="o">[]</span> <span class="n">res</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="n">arr</span><span class="o">.</span><span class="na">length</span> <span class="o">+</span> <span class="mi">1</span><span class="o">];</span>
+      <span class="c1">//临时数组key存储的是要排序数据的值, key对应的值是出现次数</span>
+      <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">arr</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">i</span> <span class="o">++)</span> <span class="o">{</span>
+          <span class="n">tmp</span><span class="o">[</span><span class="n">arr</span><span class="o">[</span><span class="n">i</span><span class="o">]]</span> <span class="o">++;</span>
+      <span class="o">}</span>
+      <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">Arrays</span><span class="o">.</span><span class="na">toString</span><span class="o">(</span><span class="n">tmp</span><span class="o">));</span>
+      <span class="c1">//计算比每个值小的数有多少个</span>
+      <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">tmp</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">i</span> <span class="o">++)</span> <span class="o">{</span>
+          <span class="n">tmp</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="n">tmp</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">+</span> <span class="n">tmp</span><span class="o">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="o">];</span>
+      <span class="o">}</span>
+      <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">Arrays</span><span class="o">.</span><span class="na">toString</span><span class="o">(</span><span class="n">tmp</span><span class="o">));</span>
+      <span class="c1">//</span>
+      <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">arr</span><span class="o">.</span><span class="na">length</span> <span class="o">-</span> <span class="mi">1</span><span class="o">;</span> <span class="n">i</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">--)</span> <span class="o">{</span>
+          <span class="n">res</span><span class="o">[</span><span class="n">tmp</span><span class="o">[</span><span class="n">arr</span><span class="o">[</span><span class="n">i</span><span class="o">]]</span> <span class="o">--]</span> <span class="o">=</span> <span class="n">arr</span><span class="o">[</span><span class="n">i</span><span class="o">];</span>
+			
+      <span class="o">}</span>
+      <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">Arrays</span><span class="o">.</span><span class="na">toString</span><span class="o">(</span><span class="n">res</span><span class="o">));</span>
+      <span class="c1">//最后将排序的数据1-n的值复制到原数组中</span>
+      <span class="n">System</span><span class="o">.</span><span class="na">arraycopy</span><span class="o">(</span><span class="n">res</span><span class="o">,</span> <span class="mi">1</span><span class="o">,</span> <span class="n">arr</span><span class="o">,</span> <span class="mi">0</span><span class="o">,</span> <span class="n">arr</span><span class="o">.</span><span class="na">length</span><span class="o">);</span>
+      <span class="k">return</span> <span class="n">arr</span><span class="o">;</span>
+  <span class="o">}</span>
+	
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">int</span> <span class="nf">max</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">arr</span><span class="o">)</span> <span class="o">{</span>
+      <span class="kt">int</span> <span class="n">max</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+      <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">x</span> <span class="o">:</span> <span class="n">arr</span><span class="o">)</span> <span class="o">{</span>
+          <span class="k">if</span><span class="o">(</span><span class="n">x</span> <span class="o">&gt;</span> <span class="n">max</span><span class="o">)</span>
+              <span class="n">max</span> <span class="o">=</span> <span class="n">x</span><span class="o">;</span>
+      <span class="o">}</span>
+      <span class="k">return</span> <span class="n">max</span><span class="o">;</span>
+  <span class="o">}</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
 
   </div><a class="u-url" href="/2019/10/24/%E7%AE%97%E6%B3%95.html" hidden></a>
 </article>

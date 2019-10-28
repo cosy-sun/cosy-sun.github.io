@@ -1,0 +1,199 @@
+<ul>
+  <li>default, 可以在接口中使用此关键字修饰方法, 默认方法, 后续不需要实现, 直接使用,</li>
+  <li>
+    <p>lambda</p>
+
+    <ul>
+      <li>当一个接口中存在多个方法时, 无法只能匹配某一个方法,</li>
+      <li>只有函数式接口支持</li>
+    </ul>
+  </li>
+  <li>
+    <p>函数式接口</p>
+
+    <ul>
+      <li>只包含一个抽象方法,</li>
+      <li>@FunctionalInterface注解来定义函数式接口, 如果不符合规范那么会报错,</li>
+      <li>
+        <p>常见四大函数式接口</p>
+
+        <ul>
+          <li>consumer<t>, 有参无返回</t></li>
+          <li>supplier<T>, 无参有返回</T></li>
+          <li>Function&lt;T, R&gt;, 有参有返回</li>
+          <li>Predicate<T>, 断言类型, 有参有返回</T></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>方法与构造函数引用</p>
+
+    <ul>
+      <li>若lambda体中的内容有方法已经实现了，那么可以使用“方法引用”, 也可以理解为方法引用是lambda表达式的另外一种表现形式并且其语法比lambda表达式更加简单</li>
+      <li>::</li>
+      <li>方法引用,ambda体中调用方法的参数列表与返回值类型，要与函数式接口中抽象方法的函数列表和返回值类型保持一致！
+        <ul>
+          <li>对象::实例方法名</li>
+          <li>类::静态方法名</li>
+          <li>
+            <p>类::实例方法名</p>
+
+            <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  Consumer&lt;Integer&gt; con2 = System.out::println;
+  con2.accept(200);
+    
+  // 方法引用-类名::静态方法名
+  BiFunction&lt;Integer, Integer, Integer&gt; biFun = (x, y) -&gt;     Integer.compare(x, y);
+  BiFunction&lt;Integer, Integer, Integer&gt; biFun2 = Integer::compare;
+  Integer result = biFun2.apply(100, 200);
+    
+  // 方法引用-类名::实例方法名
+  BiFunction&lt;String, String, Boolean&gt; fun1 = (str1, str2) -&gt;     str1.equals(str2);
+  BiFunction&lt;String, String, Boolean&gt; fun2 = String::equals;
+  Boolean result2 = fun2.apply("hello", "world");
+  System.out.println(result2);
+</code></pre></div>            </div>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <p>构造器引用,classname::methodname</p>
+
+        <p>```
+  public interface UserFactory {
+  User get(String name, String sex);
+  }</p>
+      </li>
+    </ul>
+
+    <p>UserFactory uf = User::new;
+  User u = uf.get(“ww”, “man”);
+  ```</p>
+    <ul>
+      <li>
+        <p>数组引用,</p>
+
+        <ul>
+          <li>type[]::new;
+            <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  Function&lt;Integer, String[]&gt; fun = (x) -&gt; new String[x];
+  Function&lt;Integer, String[]&gt; fun2 = String[]::new;
+  String[] strArray = fun2.apply(10);
+  Arrays.stream(strArray).forEach(System.out::println);
+            
+</code></pre></div>            </div>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>stream api</p>
+
+    <ul>
+      <li>
+        <p>创建</p>
+
+        <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="c1">// 1，校验通过Collection 系列集合提供的stream()或者paralleStream()</span>
+  <span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">list</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
+  <span class="n">Strean</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">stream1</span> <span class="o">=</span> <span class="n">list</span><span class="o">.</span><span class="na">stream</span><span class="o">();</span>
+    
+  <span class="c1">// 2.通过Arrays的静态方法stream()获取数组流</span>
+  <span class="n">String</span><span class="o">[]</span> <span class="n">str</span> <span class="o">=</span> <span class="k">new</span> <span class="n">String</span><span class="o">[</span><span class="mi">10</span><span class="o">];</span>
+  <span class="n">Stream</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">stream2</span> <span class="o">=</span> <span class="n">Arrays</span><span class="o">.</span><span class="na">stream</span><span class="o">(</span><span class="n">str</span><span class="o">);</span>
+    
+  <span class="c1">// 3.通过Stream类中的静态方法of</span>
+  <span class="n">Stream</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">stream3</span> <span class="o">=</span> <span class="n">Stream</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="s">"aa"</span><span class="o">,</span><span class="s">"bb"</span><span class="o">,</span><span class="s">"cc"</span><span class="o">);</span>
+    
+  <span class="c1">// 4.创建无限流</span>
+  <span class="c1">// 迭代</span>
+  <span class="n">Stream</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">stream4</span> <span class="o">=</span> <span class="n">Stream</span><span class="o">.</span><span class="na">iterate</span><span class="o">(</span><span class="mi">0</span><span class="o">,(</span><span class="n">x</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="n">x</span><span class="o">+</span><span class="mi">2</span><span class="o">);</span>
+
+  <span class="c1">//生成</span>
+  <span class="n">Stream</span><span class="o">.</span><span class="na">generate</span><span class="o">(()</span> <span class="o">-&gt;</span><span class="n">Math</span><span class="o">.</span><span class="na">random</span><span class="o">());</span>
+</code></pre></div>        </div>
+      </li>
+      <li>
+        <p>中间操作</p>
+
+        <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="c1">//筛选,过滤,去重</span>
+  <span class="n">emps</span><span class="o">.</span><span class="na">stream</span><span class="o">()</span>
+    <span class="o">.</span><span class="na">filter</span><span class="o">(</span><span class="n">e</span> <span class="o">-&gt;</span> <span class="n">e</span><span class="o">.</span><span class="na">getAge</span><span class="o">()</span> <span class="o">&gt;</span> <span class="mi">10</span><span class="o">)</span>
+    <span class="o">.</span><span class="na">limit</span><span class="o">(</span><span class="mi">4</span><span class="o">)</span>
+    <span class="o">.</span><span class="na">skip</span><span class="o">(</span><span class="mi">4</span><span class="o">)</span>
+    <span class="c1">// 需要流中的元素重写hashCode和equals方法</span>
+    <span class="o">.</span><span class="na">distinct</span><span class="o">()</span>
+    <span class="o">.</span><span class="na">forEach</span><span class="o">(</span><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">::</span><span class="n">println</span><span class="o">);</span>
+
+
+  <span class="c1">//生成新的流 通过map映射</span>
+  <span class="n">emps</span><span class="o">.</span><span class="na">stream</span><span class="o">()</span>
+    <span class="o">.</span><span class="na">map</span><span class="o">((</span><span class="n">e</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="n">e</span><span class="o">.</span><span class="na">getAge</span><span class="o">())</span>
+    <span class="o">.</span><span class="na">forEach</span><span class="o">(</span><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">::</span><span class="n">println</span><span class="o">);</span>
+
+
+  <span class="c1">//自然排序  定制排序</span>
+  <span class="n">emps</span><span class="o">.</span><span class="na">stream</span><span class="o">()</span>
+    <span class="o">.</span><span class="na">sorted</span><span class="o">((</span><span class="n">e1</span> <span class="o">,</span><span class="n">e2</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="o">{</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">e1</span><span class="o">.</span><span class="na">getAge</span><span class="o">().</span><span class="na">equals</span><span class="o">(</span><span class="n">e2</span><span class="o">.</span><span class="na">getAge</span><span class="o">())){</span>
+            <span class="k">return</span> <span class="n">e1</span><span class="o">.</span><span class="na">getName</span><span class="o">().</span><span class="na">compareTo</span><span class="o">(</span><span class="n">e2</span><span class="o">.</span><span class="na">getName</span><span class="o">());</span>
+        <span class="o">}</span> <span class="k">else</span><span class="o">{</span>
+            <span class="k">return</span> <span class="n">e1</span><span class="o">.</span><span class="na">getAge</span><span class="o">().</span><span class="na">compareTo</span><span class="o">(</span><span class="n">e2</span><span class="o">.</span><span class="na">getAge</span><span class="o">());</span>
+        <span class="o">}</span>
+    <span class="o">})</span>
+    <span class="o">.</span><span class="na">forEach</span><span class="o">(</span><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">::</span><span class="n">println</span><span class="o">);</span>
+</code></pre></div>        </div>
+      </li>
+      <li>
+        <p>…</p>
+
+        <ul>
+          <li>allmatch</li>
+          <li>anymatch</li>
+          <li>max</li>
+          <li>min</li>
+          <li>Findfirst</li>
+          <li>findany</li>
+          <li>count</li>
+        </ul>
+      </li>
+      <li>
+        <p>reduce</p>
+
+        <ul>
+          <li>合并</li>
+        </ul>
+      </li>
+      <li>
+        <p>collectreduce</p>
+
+        <ul>
+          <li>将流转化为其他形式, 接受一个collection接口的实现,</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>optional容器</p>
+
+    <ul>
+      <li>of, 创建一个optional实例</li>
+      <li>empty, 创建一个空的optional实例</li>
+      <li>ofnullable, 创建一个空或者非空的optional实例</li>
+    </ul>
+  </li>
+  <li>
+    <p>dateapi</p>
+
+    <ul>
+      <li>java.time</li>
+      <li>localdate</li>
+      <li>localtime</li>
+      <li>localdatetime</li>
+      <li>duration, 计算两个事件之间的间隔,</li>
+      <li>period, 计算两个日期之间的间隔</li>
+      <li>temporaladjust, 时间校验器</li>
+      <li>datetimeformatter, 格式化日期</li>
+      <li></li>
+    </ul>
+  </li>
+</ul>

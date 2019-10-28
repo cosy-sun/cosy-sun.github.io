@@ -1,4 +1,202 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2019-10-25T15:45:26+08:00</updated><id>/feed.xml</id><title type="html">cosy-sun</title><subtitle>孙振华的博客</subtitle><entry><title type="html">Java命令总结</title><link href="/2019/10/25/Java%E5%91%BD%E4%BB%A4%E6%80%BB%E7%BB%93.html" rel="alternate" type="text/html" title="Java命令总结" /><published>2019-10-25T00:00:00+08:00</published><updated>2019-10-25T00:00:00+08:00</updated><id>/2019/10/25/Java%E5%91%BD%E4%BB%A4%E6%80%BB%E7%BB%93</id><content type="html" xml:base="/2019/10/25/Java%E5%91%BD%E4%BB%A4%E6%80%BB%E7%BB%93.html">&lt;ul&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2019-10-28T15:54:51+08:00</updated><id>/feed.xml</id><title type="html">cosy-sun</title><subtitle>孙振华的博客</subtitle><entry><title type="html">Jdk1.8</title><link href="/2019/10/28/jdk1.8.html" rel="alternate" type="text/html" title="Jdk1.8" /><published>2019-10-28T00:00:00+08:00</published><updated>2019-10-28T00:00:00+08:00</updated><id>/2019/10/28/jdk1.8</id><content type="html" xml:base="/2019/10/28/jdk1.8.html">&lt;ul&gt;
+  &lt;li&gt;default, 可以在接口中使用此关键字修饰方法, 默认方法, 后续不需要实现, 直接使用,&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;lambda&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;当一个接口中存在多个方法时, 无法只能匹配某一个方法,&lt;/li&gt;
+      &lt;li&gt;只有函数式接口支持&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;函数式接口&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;只包含一个抽象方法,&lt;/li&gt;
+      &lt;li&gt;@FunctionalInterface注解来定义函数式接口, 如果不符合规范那么会报错,&lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;常见四大函数式接口&lt;/p&gt;
+
+        &lt;ul&gt;
+          &lt;li&gt;consumer&lt;t&gt;, 有参无返回&lt;/t&gt;&lt;/li&gt;
+          &lt;li&gt;supplier&lt;T&gt;, 无参有返回&lt;/T&gt;&lt;/li&gt;
+          &lt;li&gt;Function&amp;lt;T, R&amp;gt;, 有参有返回&lt;/li&gt;
+          &lt;li&gt;Predicate&lt;T&gt;, 断言类型, 有参有返回&lt;/T&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;方法与构造函数引用&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;若lambda体中的内容有方法已经实现了，那么可以使用“方法引用”, 也可以理解为方法引用是lambda表达式的另外一种表现形式并且其语法比lambda表达式更加简单&lt;/li&gt;
+      &lt;li&gt;::&lt;/li&gt;
+      &lt;li&gt;方法引用,ambda体中调用方法的参数列表与返回值类型，要与函数式接口中抽象方法的函数列表和返回值类型保持一致！
+        &lt;ul&gt;
+          &lt;li&gt;对象::实例方法名&lt;/li&gt;
+          &lt;li&gt;类::静态方法名&lt;/li&gt;
+          &lt;li&gt;
+            &lt;p&gt;类::实例方法名&lt;/p&gt;
+
+            &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  Consumer&amp;lt;Integer&amp;gt; con2 = System.out::println;
+  con2.accept(200);
+    
+  // 方法引用-类名::静态方法名
+  BiFunction&amp;lt;Integer, Integer, Integer&amp;gt; biFun = (x, y) -&amp;gt;     Integer.compare(x, y);
+  BiFunction&amp;lt;Integer, Integer, Integer&amp;gt; biFun2 = Integer::compare;
+  Integer result = biFun2.apply(100, 200);
+    
+  // 方法引用-类名::实例方法名
+  BiFunction&amp;lt;String, String, Boolean&amp;gt; fun1 = (str1, str2) -&amp;gt;     str1.equals(str2);
+  BiFunction&amp;lt;String, String, Boolean&amp;gt; fun2 = String::equals;
+  Boolean result2 = fun2.apply(&quot;hello&quot;, &quot;world&quot;);
+  System.out.println(result2);
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;            &lt;/div&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;构造器引用,classname::methodname&lt;/p&gt;
+
+        &lt;p&gt;```
+  public interface UserFactory {
+  User get(String name, String sex);
+  }&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;p&gt;UserFactory uf = User::new;
+  User u = uf.get(“ww”, “man”);
+  ```&lt;/p&gt;
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;数组引用,&lt;/p&gt;
+
+        &lt;ul&gt;
+          &lt;li&gt;type[]::new;
+            &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  Function&amp;lt;Integer, String[]&amp;gt; fun = (x) -&amp;gt; new String[x];
+  Function&amp;lt;Integer, String[]&amp;gt; fun2 = String[]::new;
+  String[] strArray = fun2.apply(10);
+  Arrays.stream(strArray).forEach(System.out::println);
+            
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;            &lt;/div&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;stream api&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;创建&lt;/p&gt;
+
+        &lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;c1&quot;&gt;// 1，校验通过Collection 系列集合提供的stream()或者paralleStream()&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;list&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ArrayList&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;gt;();&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;Strean&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;stream1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;stream&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+    
+  &lt;span class=&quot;c1&quot;&gt;// 2.通过Arrays的静态方法stream()获取数组流&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;str&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;];&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;Stream&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;stream2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Arrays&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;stream&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+    
+  &lt;span class=&quot;c1&quot;&gt;// 3.通过Stream类中的静态方法of&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;Stream&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;stream3&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Stream&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;of&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;aa&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;bb&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;cc&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+    
+  &lt;span class=&quot;c1&quot;&gt;// 4.创建无限流&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;// 迭代&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;Stream&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Integer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;stream4&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Stream&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;iterate&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+
+  &lt;span class=&quot;c1&quot;&gt;//生成&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;Stream&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;generate&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Math&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;random&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;());&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;中间操作&lt;/p&gt;
+
+        &lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;c1&quot;&gt;//筛选,过滤,去重&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;emps&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;stream&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;filter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;e&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getAge&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;limit&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;skip&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;// 需要流中的元素重写hashCode和equals方法&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;distinct&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;forEach&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+
+
+  &lt;span class=&quot;c1&quot;&gt;//生成新的流 通过map映射&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;emps&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;stream&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getAge&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;())&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;forEach&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+
+
+  &lt;span class=&quot;c1&quot;&gt;//自然排序  定制排序&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;emps&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;stream&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;sorted&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;e1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;e2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;e1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getAge&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;equals&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;e2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getAge&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;())){&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;e1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getName&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;compareTo&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;e2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getName&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;());&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;e1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getAge&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;compareTo&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;e2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getAge&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;());&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;})&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;forEach&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;…&lt;/p&gt;
+
+        &lt;ul&gt;
+          &lt;li&gt;allmatch&lt;/li&gt;
+          &lt;li&gt;anymatch&lt;/li&gt;
+          &lt;li&gt;max&lt;/li&gt;
+          &lt;li&gt;min&lt;/li&gt;
+          &lt;li&gt;Findfirst&lt;/li&gt;
+          &lt;li&gt;findany&lt;/li&gt;
+          &lt;li&gt;count&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;reduce&lt;/p&gt;
+
+        &lt;ul&gt;
+          &lt;li&gt;合并&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;collectreduce&lt;/p&gt;
+
+        &lt;ul&gt;
+          &lt;li&gt;将流转化为其他形式, 接受一个collection接口的实现,&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;optional容器&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;of, 创建一个optional实例&lt;/li&gt;
+      &lt;li&gt;empty, 创建一个空的optional实例&lt;/li&gt;
+      &lt;li&gt;ofnullable, 创建一个空或者非空的optional实例&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;dateapi&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;java.time&lt;/li&gt;
+      &lt;li&gt;localdate&lt;/li&gt;
+      &lt;li&gt;localtime&lt;/li&gt;
+      &lt;li&gt;localdatetime&lt;/li&gt;
+      &lt;li&gt;duration, 计算两个事件之间的间隔,&lt;/li&gt;
+      &lt;li&gt;period, 计算两个日期之间的间隔&lt;/li&gt;
+      &lt;li&gt;temporaladjust, 时间校验器&lt;/li&gt;
+      &lt;li&gt;datetimeformatter, 格式化日期&lt;/li&gt;
+      &lt;li&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</content><author><name></name></author><summary type="html">default, 可以在接口中使用此关键字修饰方法, 默认方法, 后续不需要实现, 直接使用, lambda 当一个接口中存在多个方法时, 无法只能匹配某一个方法, 只有函数式接口支持 函数式接口</summary></entry><entry><title type="html">Java命令总结</title><link href="/2019/10/25/Java%E5%91%BD%E4%BB%A4%E6%80%BB%E7%BB%93.html" rel="alternate" type="text/html" title="Java命令总结" /><published>2019-10-25T00:00:00+08:00</published><updated>2019-10-25T00:00:00+08:00</updated><id>/2019/10/25/Java%E5%91%BD%E4%BB%A4%E6%80%BB%E7%BB%93</id><content type="html" xml:base="/2019/10/25/Java%E5%91%BD%E4%BB%A4%E6%80%BB%E7%BB%93.html">&lt;ul&gt;
   &lt;li&gt;
     &lt;p&gt;java&lt;/p&gt;
 
@@ -90,29 +288,7 @@
       &lt;li&gt;-extdirs[dirs] 覆盖搜索安装方式扩展的位置。扩展的缺省位置是 jrelibext。&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
-&lt;/ul&gt;</content><author><name></name></author><summary type="html">java</summary></entry><entry><title type="html">Index</title><link href="/2019/10/25/index.html" rel="alternate" type="text/html" title="Index" /><published>2019-10-25T00:00:00+08:00</published><updated>2019-10-25T00:00:00+08:00</updated><id>/2019/10/25/index</id><content type="html" xml:base="/2019/10/25/index.html">&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://cosy-sun.github.io/2019/10/24/mybatis.html&quot;&gt;mybatis&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://cosy-sun.github.io/2019/10/24/java元注解.html&quot;&gt;java元注解&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://cosy-sun.github.io/2019/10/24/oracle.html&quot;&gt;oracle&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://cosy-sun.github.io/2019/10/24/redis.html&quot;&gt;redis&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://cosy-sun.github.io/2019/10/24/regexps.html&quot;&gt;正则表达式&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://cosy-sun.github.io/2019/10/24/seletpollepoll.html&quot;&gt;select, poll, epoll原理&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://cosy-sun.github.io/2019/10/24/shell脚本.html&quot;&gt;shell脚本&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://cosy-sun.github.io/2019/10/24/spring.html&quot;&gt;spring&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://cosy-sun.github.io/2019/10/24/sprinbatch.html&quot;&gt;spring-batch&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://cosy-sun.github.io/2019/10/24/springboot.html&quot;&gt;spring-boot&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://cosy-sun.github.io/2019/10/24/springboot连接mysql数据库问题整理.html&quot;&gt;spring-boot连接数据库问题&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://cosy-sun.github.io/2019/10/24/springcloud.html&quot;&gt;spring-cloud&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://cosy-sun.github.io/2019/10/24/springdata.html&quot;&gt;spring-data&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://cosy-sun.github.io/2019/10/24/spring源码解析.html&quot;&gt;spring源码解析&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://cosy-sun.github.io/2019/10/24/xml与json介绍与解析.html&quot;&gt;xml与json&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://cosy-sun.github.io/2019/10/24/算法.html&quot;&gt;算法&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://cosy-sun.github.io/2019/10/24/索引建立规则.html&quot;&gt;索引建立规则&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://cosy-sun.github.io/2019/10/24/网络协议.html&quot;&gt;网络协议&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://cosy-sun.github.io/2019/10/24/文件描述符.html&quot;&gt;文件描述符&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://cosy-sun.github.io/2019/10/24/juc包.html&quot;&gt;juc-java.util.concurrent&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://cosy-sun.github.io/2019/10/25/Java命令总结.html&quot;&gt;java命令总结&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><author><name></name></author><summary type="html">mybatis java元注解 oracle redis 正则表达式 select, poll, epoll原理 shell脚本 spring spring-batch spring-boot spring-boot连接数据库问题 spring-cloud spring-data spring源码解析 xml与json 算法 索引建立规则 网络协议 文件描述符 juc-java.util.concurrent java命令总结</summary></entry><entry><title type="html">Design Mode</title><link href="/2019/10/24/design-mode.html" rel="alternate" type="text/html" title="Design Mode" /><published>2019-10-24T00:00:00+08:00</published><updated>2019-10-24T00:00:00+08:00</updated><id>/2019/10/24/design-mode</id><content type="html" xml:base="/2019/10/24/design-mode.html">&lt;p&gt;####设计模式&lt;/p&gt;
+&lt;/ul&gt;</content><author><name></name></author><summary type="html">java</summary></entry><entry><title type="html">Design Mode</title><link href="/2019/10/24/design-mode.html" rel="alternate" type="text/html" title="Design Mode" /><published>2019-10-24T00:00:00+08:00</published><updated>2019-10-24T00:00:00+08:00</updated><id>/2019/10/24/design-mode</id><content type="html" xml:base="/2019/10/24/design-mode.html">&lt;p&gt;####设计模式&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;
