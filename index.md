@@ -23,3 +23,4 @@ layout: home
 - [juc-java.util.concurrent](https://cosy-sun.github.io/2019/10/24/juc包.html)
 - [java命令总结](https://cosy-sun.github.io/2019/10/25/Java命令总结.html)
 - [jdk1.8新特性](https://cosy-sun.github.io/2019/10/28/jdk1.8.html)
+- [hadoop](https://cosy-sun.github.io/2019/10/29/hadoop.html)
