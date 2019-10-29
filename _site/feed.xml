@@ -1,4 +1,159 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2019-10-28T15:54:51+08:00</updated><id>/feed.xml</id><title type="html">cosy-sun</title><subtitle>孙振华的博客</subtitle><entry><title type="html">Jdk1.8</title><link href="/2019/10/28/jdk1.8.html" rel="alternate" type="text/html" title="Jdk1.8" /><published>2019-10-28T00:00:00+08:00</published><updated>2019-10-28T00:00:00+08:00</updated><id>/2019/10/28/jdk1.8</id><content type="html" xml:base="/2019/10/28/jdk1.8.html">&lt;ul&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2019-10-29T11:02:33+08:00</updated><id>/feed.xml</id><title type="html">cosy-sun</title><subtitle>孙振华的博客</subtitle><entry><title type="html">Hadoop</title><link href="/2019/10/29/hadoop.html" rel="alternate" type="text/html" title="Hadoop" /><published>2019-10-29T00:00:00+08:00</published><updated>2019-10-29T00:00:00+08:00</updated><id>/2019/10/29/hadoop</id><content type="html" xml:base="/2019/10/29/hadoop.html">&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;hdfs:分布式文件系统&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;大数据文件,&lt;/li&gt;
+      &lt;li&gt;文件分块存储, 多机读取效率高与单机读取&lt;/li&gt;
+      &lt;li&gt;流式数据访问:不支持动态改变文件, 一次写入就不做变化, 要变化只能在文件末尾改变&lt;/li&gt;
+      &lt;li&gt;硬件故障, 将一个文件块副本分配到不同的机器上,&lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;master/slave&lt;/p&gt;
+
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  一个HDFS集群是有一个Namenode和一定数目的Datanode组成。Namenode是一个中心服务器，负责管理文件系统的namespace和客户端对文件的访问。Datanode在集群中一般是一个节点一个，负责管理节点上它们附带的存储。在内部，一个文件其实分成一个或多个block，这些block存储在Datanode集合里。Namenode执行文件系统的namespace操作，例如打开、关闭、重命名文件和目录，同时决定block到具体Datanode节点的映射。Datanode在Namenode的指挥下进行block的创建、删除和复制。Namenode和Datanode都是设计成可以跑在普通的廉价的运行linux的机器上
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+      &lt;li&gt;将一个文件分块,通常是64M&lt;/li&gt;
+      &lt;li&gt;namenode:如果主namenode失效,启动备份namenode, 保存整个文件系统的目录信息, 文件信息和分块信息,&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;hadoop目录说明&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;bin, hadoop最基本的管理脚本和使用脚本所在目录&lt;/li&gt;
+      &lt;li&gt;etc, 配置文件所在目录(core-site.xml, hdfs-site.xml, mappred-site.xml)&lt;/li&gt;
+      &lt;li&gt;include,&lt;/li&gt;
+      &lt;li&gt;lib, 对外提供的动态编程库&lt;/li&gt;
+      &lt;li&gt;libexec, shell配置信息&lt;/li&gt;
+      &lt;li&gt;sbin,&lt;/li&gt;
+      &lt;li&gt;share, 各个模块编译之后的jar包所在目录&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;hadoop-shell&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;创建文件夹
+        &lt;ul&gt;
+          &lt;li&gt;hadoop fs -mkdir /… 创建文件夹&lt;/li&gt;
+          &lt;li&gt;hadoop fs -mkdirhdfs://hadoop1:9000/…&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;上传文件
+        &lt;ul&gt;
+          &lt;li&gt;hadoop fs -put… …&lt;/li&gt;
+          &lt;li&gt;hadoop fs -copyFromLocal … …&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;显示目录结构&lt;/p&gt;
+
+        &lt;ul&gt;
+          &lt;li&gt;hadoop fs -ls -R /&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;复制文件到本地文件系统&lt;/p&gt;
+
+        &lt;ul&gt;
+          &lt;li&gt;hadoop fs -get … …&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;显示目录中所有文件的大小&lt;/p&gt;
+
+        &lt;ul&gt;
+          &lt;li&gt;hadoop fs  -du …&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;统计文件夹数量&lt;/p&gt;
+
+        &lt;ul&gt;
+          &lt;li&gt;hadoop fs -count /…&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;-mv 移动&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;-cp 复制&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;-moveFromLocal 从本地移动&lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;-getmerge 合并到本地&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;-cat 查看文件内容&lt;/li&gt;
+      &lt;li&gt;-text 查看文件内容&lt;/li&gt;
+      &lt;li&gt;-touchz 创建空白文件&lt;/li&gt;
+      &lt;li&gt;-stat 查看统计信息&lt;/li&gt;
+      &lt;li&gt;-tail 查看文件尾部内容&lt;/li&gt;
+      &lt;li&gt;-chmod 修改文件权限&lt;/li&gt;
+      &lt;li&gt;-chown 修改属主&lt;/li&gt;
+      &lt;li&gt;-rm 删除&lt;/li&gt;
+      &lt;li&gt;-rmr 递归删文件&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;java-api(hadoop)&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;hdfs文件到本地文件, filesystem, open , in, out , ioutils&lt;/li&gt;
+      &lt;li&gt;上传文件, filesystem.create&lt;/li&gt;
+      &lt;li&gt;删除文件, filesystem.delete&lt;/li&gt;
+      &lt;li&gt;创建文件, filesystem.mkdirs&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;hadoop分布式系统部署&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;主备namenode, 一个处于active状态, 一个处于standby状态,仅仅同步active节点的状态,&lt;/li&gt;
+      &lt;li&gt;配置hosts文件&lt;/li&gt;
+      &lt;li&gt;配置ssh免密登录&lt;/li&gt;
+      &lt;li&gt;关闭防火墙, systemctl disable iptables.server&lt;/li&gt;
+      &lt;li&gt;上传服务器&lt;/li&gt;
+      &lt;li&gt;修改hadoop-env.sh配置文件,添加java-home配置&lt;/li&gt;
+      &lt;li&gt;修改core-site.xml,&lt;/li&gt;
+      &lt;li&gt;修改hdfs-site.xml,&lt;/li&gt;
+      &lt;li&gt;修改mapred-site.xml, 指定mapreduce运行在yarn环境&lt;/li&gt;
+      &lt;li&gt;修改yarn-site.xml,&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;mapreduce&lt;/p&gt;
+
+    &lt;p&gt;将作业拆分成不同的map, 然后分配到不同节点取执行, map重在处理输入数据, reduce主要是把前面若干个map的结果汇总到一起输出,&lt;/p&gt;
+    &lt;ul&gt;
+      &lt;li&gt;wordcount&lt;/li&gt;
+      &lt;li&gt;mapreduce分区,可以将map中的key进行区分, 进入到不同的reduce中,&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;yarn任务过程分析
+    &lt;ul&gt;
+      &lt;li&gt;yarn resourcesmanager: 用来管理协调分布式集群的资源&lt;/li&gt;
+      &lt;li&gt;yarn nodemanager: 用来启动和监控计算机资源单位container的利用情况&lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;流程&lt;/p&gt;
+
+        &lt;ul&gt;
+          &lt;li&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;hive:hadoop的数据仓库工具&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;pig:基于hadoop的大规模数据分析工具&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;hbase:分布式存储系统,高可靠性,高性能,面向列,可伸缩&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;zookeeper:&lt;/li&gt;
+&lt;/ul&gt;</content><author><name></name></author><summary type="html">hdfs:分布式文件系统</summary></entry><entry><title type="html">Jdk1.8</title><link href="/2019/10/28/jdk1.8.html" rel="alternate" type="text/html" title="Jdk1.8" /><published>2019-10-28T00:00:00+08:00</published><updated>2019-10-28T00:00:00+08:00</updated><id>/2019/10/28/jdk1.8</id><content type="html" xml:base="/2019/10/28/jdk1.8.html">&lt;ul&gt;
   &lt;li&gt;default, 可以在接口中使用此关键字修饰方法, 默认方法, 后续不需要实现, 直接使用,&lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;lambda&lt;/p&gt;
@@ -288,196 +443,7 @@
       &lt;li&gt;-extdirs[dirs] 覆盖搜索安装方式扩展的位置。扩展的缺省位置是 jrelibext。&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
-&lt;/ul&gt;</content><author><name></name></author><summary type="html">java</summary></entry><entry><title type="html">Design Mode</title><link href="/2019/10/24/design-mode.html" rel="alternate" type="text/html" title="Design Mode" /><published>2019-10-24T00:00:00+08:00</published><updated>2019-10-24T00:00:00+08:00</updated><id>/2019/10/24/design-mode</id><content type="html" xml:base="/2019/10/24/design-mode.html">&lt;p&gt;####设计模式&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;原则&lt;/p&gt;
-
-    &lt;ol&gt;
-      &lt;li&gt;单一职责&lt;/li&gt;
-      &lt;li&gt;开闭原则, 开放扩展, 关闭修改,&lt;/li&gt;
-      &lt;li&gt;里氏替换,&lt;/li&gt;
-      &lt;li&gt;依赖倒置, 调用者和被调用者都依赖抽象, 这样具体实现类如何修改, 不会影响,&lt;/li&gt;
-      &lt;li&gt;接口隔离,&lt;/li&gt;
-      &lt;li&gt;最少知道,&lt;/li&gt;
-      &lt;li&gt;合成/聚合复用,&lt;/li&gt;
-    &lt;/ol&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;分类&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;
-        &lt;p&gt;创建模型&lt;/p&gt;
-
-        &lt;p&gt;单例, 工厂方法, 抽象工厂, 静态工厂, 建造者模式, 原型模式,&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;结构性&lt;/p&gt;
-
-        &lt;p&gt;适配器, 桥接, 装饰, 组合, 外观, 享元, 代理,&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;行为型&lt;/p&gt;
-
-        &lt;p&gt;模板, 命令, 迭代器, 观察者, 中介者, 备忘录, 解释器, 状态模式, 策略, 责任链, 访问者,&lt;/p&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;模式&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;静态工厂模式&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;工厂方法模式&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;抽象工厂模式&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;单例模式(singleton)&lt;/p&gt;
-
-    &lt;ol&gt;
-      &lt;li&gt;饿汉式,&lt;code class=&quot;highlighter-rouge&quot;&gt;private static final singleton instance = new singleton();&lt;/code&gt;&lt;/li&gt;
-      &lt;li&gt;懒汉式,&lt;code class=&quot;highlighter-rouge&quot;&gt;if(instance == null) instance = new singleton();&lt;/code&gt;&lt;/li&gt;
-    &lt;/ol&gt;
-
-    &lt;p&gt;在多个虚拟机里面, 会在每个虚拟机下面创建一个实例, 因此在分布式环境下, 应该避免使用,&lt;/p&gt;
-
-    &lt;p&gt;在多个类加载器中, 单例模式在多个类加载器中会存在不同的实例,&lt;/p&gt;
-
-    &lt;p&gt;使用饿汉式单例模式可以避免同步带来的死锁,&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;建造模式(builder)&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;原型模型(prototype)&lt;/p&gt;
-
-    &lt;p&gt;通过clone来实现的,clone来实现对象的复制, 动态的抽取当前工作对象的运行机制的状态并克隆到新的对象中,&lt;/p&gt;
-
-    &lt;p&gt;###深拷贝, 基本数据类型值传递, 引用数据类型, 创建一个新的对象,&lt;/p&gt;
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;     //可以进行多次克隆, 或者利用序列化技术,
-     public Object clone() {
-		
-     ByteArrayOutputStream baos = new ByteArrayOutputStream();
-     ObjectOutputStream oos;
-     Object readObject = null;
-     byte[] b = null;
-     try {
-         oos = new ObjectOutputStream(baos);
-         oos.writeObject(this);
-         ObjectInputStream ois = new ObjectInputStream(new ByteArrayInputStream(baos.toByteArray()));
-         readObject = ois.readObject();
-     } catch (Exception e) {
-         // TODO Auto-generated catch block
-         e.printStackTrace();
-     }
-     return readObject;
-		
- }
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-    &lt;p&gt;###浅拷贝, 引用数据类型引用传递,&lt;/p&gt;
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; public void clone() {
-     super.clone();
- }
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;适配器模式(adapter)&lt;/p&gt;
-
-    &lt;ol&gt;
-      &lt;li&gt;
-        &lt;p&gt;类适配器&lt;/p&gt;
-
-        &lt;p&gt;customer类, news接口, linuxNews继承customer实现news,&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;对象适配器&lt;/p&gt;
-
-        &lt;p&gt;loginEvent抽象类, 直接对此抽象类实现特殊的,&lt;/p&gt;
-      &lt;/li&gt;
-    &lt;/ol&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;桥梁模式(bridge)&lt;/p&gt;
-
-    &lt;p&gt;将抽象和实现分离,&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;外观模式(facade)&lt;/p&gt;
-
-    &lt;p&gt;对客户屏蔽子系统组件,&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;组合模式(composite)&lt;/p&gt;
-
-    &lt;p&gt;将对象一属性结构组织起来,以达成’整体- 部分’的层次结构,是的客户端对单个对象和组合对象的使用具有一致性,&lt;/p&gt;
-
-    &lt;p&gt;用户不必关系自己处理的是那种对象, 都使用相同的方法,&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;装饰模式(decorator)&lt;/p&gt;
-
-    &lt;p&gt;在原有的功能上添加功能,&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;代理模式(proxy)&lt;/p&gt;
-
-    &lt;p&gt;查看cglib代理和jdk动态代理&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;享元模式(flyweight)&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;命令模式(command)&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;解释器模式(interpreter)&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;状态模式(state)&lt;/p&gt;
-
-    &lt;p&gt;在状态较多的情况下, 对对象的状态进行集中管理, 通俗点, 就是在一个状态管理类中,注入需要状态管理的对象, 对对象进行操作,&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;策略模式(strategy)&lt;/p&gt;
-
-    &lt;p&gt;将一个操作分布在一组相关的类中,&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;模板模式(template)&lt;/p&gt;
-
-    &lt;p&gt;定义一个模板, 抽象类, 减轻子类的负担, 类如resttemplate, 有许多默认实现&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;备忘录模式&lt;/p&gt;
-
-    &lt;p&gt;发起者, 管理者, 备忘录bean, 类似与那种需要备份的东西, 在之后可以进行恢复&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;观察者模式&lt;/p&gt;
-
-    &lt;p&gt;发布订阅模式,java.util.observable, java.util.observer&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;责任链模式&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;中介者模式&lt;/p&gt;
-
-    &lt;p&gt;所有用户都持有一个中间者,&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;访问者模式&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;</content><author><name></name></author><summary type="html">####设计模式</summary></entry><entry><title type="html">Git</title><link href="/2019/10/24/git.html" rel="alternate" type="text/html" title="Git" /><published>2019-10-24T00:00:00+08:00</published><updated>2019-10-24T00:00:00+08:00</updated><id>/2019/10/24/git</id><content type="html" xml:base="/2019/10/24/git.html">&lt;h1 id=&quot;git-命令&quot;&gt;git 命令&lt;/h1&gt;
+&lt;/ul&gt;</content><author><name></name></author><summary type="html">java</summary></entry><entry><title type="html">Git</title><link href="/2019/10/24/git.html" rel="alternate" type="text/html" title="Git" /><published>2019-10-24T00:00:00+08:00</published><updated>2019-10-24T00:00:00+08:00</updated><id>/2019/10/24/git</id><content type="html" xml:base="/2019/10/24/git.html">&lt;h1 id=&quot;git-命令&quot;&gt;git 命令&lt;/h1&gt;
 
 &lt;h3 id=&quot;查看-添加-提交-删除-找回-重置-修改&quot;&gt;查看 添加 提交 删除 找回 重置 修改&lt;/h3&gt;
 &lt;ul&gt;
