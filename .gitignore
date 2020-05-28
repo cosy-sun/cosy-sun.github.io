@@ -1,0 +1,8 @@
+*Thumbs.db
+.bundle
+.sass-cache
+_site
+*.gem
+*.bak
+.jekyll-cache
+.jekyll-metadata
