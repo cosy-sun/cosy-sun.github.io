@@ -1,15 +1,4 @@
-- url: "vbox搭建ubuntu环境"
-  title: "vbox"
-  
-- url: "git"
-  title: "git"
-  
-- url: "Java命令总结"
-  title: "java命令总结"
-
-- url: "design-mode"
-  title: "设计模式"
-  
+- url: "vbox"
+- url: "git" 
 - url: "regexps"
-  title: "正则"
-  
+- url: "jdk1.8"
