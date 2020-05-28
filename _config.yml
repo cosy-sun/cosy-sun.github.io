@@ -16,9 +16,9 @@
 title: cosy-sun
 email: 737387998@qq.com
 description: >- # this means to ignore newlines until "baseurl:"
-    孙振华的博客
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+    cosy-sun的博客
+baseurl: "" 
+url: "" 
 github_username:  cosy-sun
 
 # Build settings
