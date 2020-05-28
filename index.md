@@ -24,4 +24,4 @@ layout: home
 - [java命令总结](https://cosy-sun.github.io/2019/10/25/Java命令总结.html)
 - [jdk1.8新特性](https://cosy-sun.github.io/2019/10/28/jdk1.8.html)
 - [hadoop](https://cosy-sun.github.io/2019/10/29/hadoop.html)
-- [vbox搭建ubuntu-server19.04环境](https://cosy-sun.github.io/2019/11/29/vbox搭建ubuntu环境.html)
+- [vbox搭建ubuntu-server19.04环境](https://cosy-sun.github.io/2020/05/20/vbox搭建ubuntu环境.html)
