@@ -214,3 +214,16 @@ exit
 remote 
 echo done!
 ```
+
+- 安装svnserver
+
+```
+1.apt update
+2.apt install subversion
+3.创建svn文件夹
+    mkdir svn/repos
+4.修改svnserve.conf authz passwd认证可读可写方式
+5.svnserve -d -r /comm_software/svn
+6.killall svnserve
+7.svn://192.168.56.14/repos
+```
