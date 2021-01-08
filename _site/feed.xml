@@ -1,0 +1,1855 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>cosy-sun</title>
+		<description>cosy-sun</description>
+		<link>https://github.com/cosy-sun</link>
+		<atom:link href="https://github.com/cosy-sun/feed.xml" rel="self" type="application/rss+xml" />
+		
+			<item>
+				<title>docker</title>
+				<description>&lt;h1 id=&quot;docker&quot;&gt;docker&lt;/h1&gt;
+
+&lt;h2 id=&quot;docker镜像&quot;&gt;docker镜像&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;拉取镜像: docker pull name:tag&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;查看镜像: docker images&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;添加标签: docker tag oldname newname&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;查看镜像详细信息: docker inspect name:tag&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;删除镜像: docker rmi name&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;创建镜像&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;      1. 使用已存在的镜像创建, 打开存在的容器, 进行修改 
+       docker commit
+         
+  2. 基于本地模板导入
+
+      docker import
+        
+  3. 基于dockerfile创建
+
+      创建dockerfile, 然后使用docker build -t name:tag .
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;导出镜像: docker save -o mysql.tar mysql:latest&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;导入镜像: docker load -i mysql.tar&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;上传镜像: docker push name:tag&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;docker容器&quot;&gt;docker容器&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;启动, 停止, 重启容器, docker start name&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;创建容器 docker create&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;创建并启动容器 docker run -d -p port:port –name name -v /…:/… images.name&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;进入容器: docker exec -it name /bin/bash&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;删除容器: docker rm&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;导出容器: docker export&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;导入容器: docker import&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;查看容器: docker container inspect mysql&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;查看容器进程: docker top mysql&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;dockerfile&quot;&gt;dockerfile&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;配置指令&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;ARG  定义变量&lt;/li&gt;
+      &lt;li&gt;FROM  指定基础镜像&lt;/li&gt;
+      &lt;li&gt;LABLE  添加元数据标签&lt;/li&gt;
+      &lt;li&gt;EXPOSE 声明镜像内服务监听的端口&lt;/li&gt;
+      &lt;li&gt;ENB 指定环境变量&lt;/li&gt;
+      &lt;li&gt;ENTRYPOINT 指定镜像默认入口命令&lt;/li&gt;
+      &lt;li&gt;VOLUME [“/data”] 创建一个数据挂载点&lt;/li&gt;
+      &lt;li&gt;user 指定运行容器的用户名和uid&lt;/li&gt;
+      &lt;li&gt;workdir 为后续的run命令配置工作目录&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;操作指令&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;run&lt;/li&gt;
+      &lt;li&gt;cmd&lt;/li&gt;
+      &lt;li&gt;add src dest&lt;/li&gt;
+      &lt;li&gt;copy src dest&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;docker数据管理&quot;&gt;docker数据管理&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;创建数据卷&lt;/p&gt;
+
+    &lt;p&gt;docker volume create -d local test&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;绑定数据卷, 除了使用volume子命令来管理数据卷, 还可以在创建容器的时候将本机本地的任意路径挂载到容器内作为数据卷,&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;-mount&lt;/p&gt;
+
+        &lt;ul&gt;
+          &lt;li&gt;volume 普通数据卷&lt;/li&gt;
+          &lt;li&gt;bind 绑定数据卷&lt;/li&gt;
+          &lt;li&gt;tmpfs 临时数据卷, 只存在于内存中&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;p&gt;docker run -d -p  3306:3306 –name mysql-cosy-sun –mount type=bind,source=web/app,destination=/opt/web mysql&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;数据卷容器&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;创建数据卷容器 docker run -it -v /dbdata –name dbdata ubuntu&lt;/li&gt;
+      &lt;li&gt;挂载数据卷容器 docker run -it –volumes-from dbdata –name db1 ubuntu&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;docker-compose&quot;&gt;docker-compose&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;apt install docker-compose&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;[docker-compose模板文件](../assets/self/docker-compose.yml “”)&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+</description>
+				<pubDate>Sat, 20 Jun 2020 00:00:00 +0800</pubDate>
+				<link>https://github.com/cosy-sun/linux/2020/06/20/docker.html</link>
+				<guid isPermaLink="true">https://github.com/cosy-sun/linux/2020/06/20/docker.html</guid>
+			</item>
+		
+			<item>
+				<title>netty</title>
+				<description>&lt;h3 id=&quot;ionetty&quot;&gt;&lt;center&gt;io.netty&lt;/center&gt;&lt;/h3&gt;
+
+&lt;p&gt;####&lt;/p&gt;
+</description>
+				<pubDate>Fri, 19 Jun 2020 00:00:00 +0800</pubDate>
+				<link>https://github.com/cosy-sun/java/2020/06/19/netty.html</link>
+				<guid isPermaLink="true">https://github.com/cosy-sun/java/2020/06/19/netty.html</guid>
+			</item>
+		
+			<item>
+				<title>vbox</title>
+				<description>&lt;ul&gt;
+  &lt;li&gt;修改时区,&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;1. tzselect
+2. 选择亚洲
+3. 选择china
+4. 选择北京时间
+5. cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+6. date -s hh:mm:ss 修改时间
+7. date -s mm/dd/yyyy 修改日期
+8. hwclock --systohc
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;网络配置&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;首先关闭ubuntu防火墙, 自己用, 可以不是使用, 
+打开宿主机防火墙, ubuntu不可以ping宿主机
+桥接模式, 让linux可以连接外网, 方便后续的下载更新操作,
+1. 安装镜像ubuntu_19.04,
+2. 配置网络, 添加桥接网卡,
+3. 设置网卡, 通过netplan配置, 注意网关地址和ip地址段
+
+vbox-host-only模式, 通过此模式, 可以让局域网没有连接外网的情况下可以互相ping通,包括宿主机和虚拟机的交互, 通过宿主机ssh连接linux,
+1. 在vbox中添加网卡,配置ip, 取消dhcp,
+2. 配置网络, 添加hostonly模式网卡,
+3. linux中设置网卡地址, 通过netplan设置,
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;安装ssh&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;1. 国外软件源连接慢, 此处使用的阿里源,   /etc/apt/sources.list
+2. 更换地址为http://mirrors.aliyun.com/ubuntu,
+3. apt-get update 
+4. 安装ssh,  apt-get install openssh-server
+5. 安装客户端, 后续免密登录别的服务器需要,
+6. apt-get install openssh-client
+7. 配置免密登录
+8. ssh-keygen -t rsa -P &quot;&quot;
+9. cat ~/.ssh/id_rsa.pub &amp;gt;&amp;gt; ~/.ssh/authorized_keys
+10. 需要将自己的公钥传到其他服务器并添加到authorized_keys中
+10. ssh localhost 验证
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;根分区扩容&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;1. lvs 列出逻辑卷
+2. pvcreate /dev/sda 创建物理卷
+3. pvscan 查看创建的物理卷
+4. pvdisplay 查看创建的物理卷的详细信息
+5. vgdisplay 查看详细信息
+6. df -h 查看详细信息
+7. lvextend -L +xxxG /dev/....   扩容根分区
+8. resize2fs 卷名    使扩容生效
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;安装jdk&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;1. 下载jdk的linux版本
+2. 解压jdk,放到根目录下的某个文件夹,
+3. 配置环境变量, 可以使用全局变量或者单个用户配置,
+4. export JAVA_HOME=/comm_software/jdk/jdk1.8.0_201
+5. export PATH=$JAVA_HOME/bin:$PATH
+6. export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;alien&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;转换rpm包和deb包
+alien -k --scripts xxx.rpm    生成一个deb包
+dpkg -I --instdir=/comm_packages/oracle/ xxx.deb 安装
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;redis集群搭建&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;1. 使用四主四从
+2. 安装gcc
+3. make 编译redis
+4. make PREFIX=/...... install安装
+5. 配置cluster
+6. bind 0.0.0.0
+7. port 
+8. daemonize yes 后台启动
+9. cluster-enabled yes
+10. cluster-config-file nods_7002.conf
+11. cluster-node-timeout 15000
+12. cluster-require-full-coverage no
+13. logfile
+14. dir 数据目录
+15. dbfilename dump文件
+16. redis-server .conf启动
+17. redis-cli -p port cluster meet ip port 加入集群
+18. redis-cli -p port1 cluster replicate id port1作为id的从机
+19. 分配hash槽
+20. redis-cli -p port cluster addslots $i
+
+    #! /bin/bash
+    start=$1
+    end=$2
+
+    for ((i=$start;i&amp;lt;=$end;i++));
+    do
+         /comm_software/redis/redis-5.0.7/bin/redis-cli -p $3 cluster addslots $i
+    done
+集群搭建完成, cluster命令自行查看
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;mysql 单机安装卸载&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;1. sudo apt-get update
+2. sudo apt-get install mysql-server
+3. sudo apt-get autoremove --purge mysql-server
+4. sudo apt-get remove mysql-server
+5. sudo apt-get autoremove mysql-server
+6. sudo apt-get remove mysql-common
+7. dpkg -l| grep ^rc
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;mysql集群安装&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;1. 使用三台机器host01, host02, host03
+2. host01, host02 双主同步, 主备切换, host03作为另外一台
+3. 更改mysql.conf.d/mysqld.cnf, 配置主从同步,
+4. reset master
+5. show master status
+6. show slave status \G
+7. change master to
+8. master_host = '192.168.56.11',
+9. master_port = 3306,
+10. master_user = 'sync',
+11. master_password = '123456',
+12. master_log_file = 'host02.000001',
+13. master_log_pos = 154;
+14. start slave
+15. myat是基于ali的cobar
+16. mycat可以读写分离, 主备热切换, 分库分表,
+17. mycat高可用集群以后再搭建, 目前来看, 一个mycat就够用
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;zookeeper集群安装&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;2181  客户端连接端口
+2888
+2889  zk选举端口
+1. zookeeper解压,
+2. 添加日志目录, 
+    /var/log/zookeeper/
+    /var/log/zookeeper/datalog
+    /var/log/zookeeper/trace
+3. 修改主机名, /etc/hostname
+4. 修改hosts,
+5. 添加myid(zoo配置文件中的server.x中的x), 只需配置一个数字就可以,
+6. 配置zoo.cfg, 添加
+    dataDir=
+    dataLogDir=
+    server.myid=ip:port:port
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;kafka集群&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;1. 修改配置文件config/server.properties,
+2. brokenid,
+3. listens地址
+2. zookeeper集群地址
+3. 启动kafka-server-start.sh config/server.properties
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;hadoop&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;1. 配置hosts文件
+2. 配置免密登录
+3. 配置hadoop
+4. 分发到其他节点
+5. hadoop namenode -format, 在启动之前需要格式化namenode
+6. start-dfs.sh
+7. start-yarn.sh
+8. 后续需要使用start-all.sh
+9. stop-all.sh
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;安装docker(此处之后再说)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;1. 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;不同机器shell脚本互通&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;ssh cosy-sun@host02 &amp;gt; /dev/null 2&amp;gt;&amp;amp;1  &amp;lt;&amp;lt;remote
+cd ~
+touch txt1.txt
+exit
+remote 
+echo done!
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;安装svnserver&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;1.apt update
+2.apt install subversion
+3.创建svn文件夹
+    mkdir svn/repos
+4.修改svnserve.conf authz passwd认证可读可写方式
+5.svnserve -d -r /comm_software/svn
+6.killall svnserve
+7.svn://192.168.56.14/repos
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+</description>
+				<pubDate>Wed, 20 May 2020 00:00:00 +0800</pubDate>
+				<link>https://github.com/cosy-sun/linux/2020/05/20/vbox%E6%90%AD%E5%BB%BAubuntu%E7%8E%AF%E5%A2%83.html</link>
+				<guid isPermaLink="true">https://github.com/cosy-sun/linux/2020/05/20/vbox%E6%90%AD%E5%BB%BAubuntu%E7%8E%AF%E5%A2%83.html</guid>
+			</item>
+		
+			<item>
+				<title>hadoop</title>
+				<description>&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;hdfs:分布式文件系统&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;大数据文件,&lt;/li&gt;
+      &lt;li&gt;文件分块存储, 多机读取效率高与单机读取&lt;/li&gt;
+      &lt;li&gt;流式数据访问:不支持动态改变文件, 一次写入就不做变化, 要变化只能在文件末尾改变&lt;/li&gt;
+      &lt;li&gt;硬件故障, 将一个文件块副本分配到不同的机器上,&lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;master/slave&lt;/p&gt;
+
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  一个HDFS集群是有一个Namenode和一定数目的Datanode组成。Namenode是一个中心服务器，负责管理文件系统的namespace和客户端对文件的访问。Datanode在集群中一般是一个节点一个，负责管理节点上它们附带的存储。在内部，一个文件其实分成一个或多个block，这些block存储在Datanode集合里。Namenode执行文件系统的namespace操作，例如打开、关闭、重命名文件和目录，同时决定block到具体Datanode节点的映射。Datanode在Namenode的指挥下进行block的创建、删除和复制。Namenode和Datanode都是设计成可以跑在普通的廉价的运行linux的机器上
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+      &lt;li&gt;将一个文件分块,通常是64M&lt;/li&gt;
+      &lt;li&gt;namenode:如果主namenode失效,启动备份namenode, 保存整个文件系统的目录信息, 文件信息和分块信息,&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;hadoop目录说明&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;bin, hadoop最基本的管理脚本和使用脚本所在目录&lt;/li&gt;
+      &lt;li&gt;etc, 配置文件所在目录(core-site.xml, hdfs-site.xml, mappred-site.xml)&lt;/li&gt;
+      &lt;li&gt;include,&lt;/li&gt;
+      &lt;li&gt;lib, 对外提供的动态编程库&lt;/li&gt;
+      &lt;li&gt;libexec, shell配置信息&lt;/li&gt;
+      &lt;li&gt;sbin,&lt;/li&gt;
+      &lt;li&gt;share, 各个模块编译之后的jar包所在目录&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;hadoop-shell&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;创建文件夹
+        &lt;ul&gt;
+          &lt;li&gt;hadoop fs -mkdir /… 创建文件夹&lt;/li&gt;
+          &lt;li&gt;hadoop fs -mkdirhdfs://hadoop1:9000/…&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;上传文件
+        &lt;ul&gt;
+          &lt;li&gt;hadoop fs -put… …&lt;/li&gt;
+          &lt;li&gt;hadoop fs -copyFromLocal … …&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;显示目录结构&lt;/p&gt;
+
+        &lt;ul&gt;
+          &lt;li&gt;hadoop fs -ls -R /&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;复制文件到本地文件系统&lt;/p&gt;
+
+        &lt;ul&gt;
+          &lt;li&gt;hadoop fs -get … …&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;显示目录中所有文件的大小&lt;/p&gt;
+
+        &lt;ul&gt;
+          &lt;li&gt;hadoop fs  -du …&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;统计文件夹数量&lt;/p&gt;
+
+        &lt;ul&gt;
+          &lt;li&gt;hadoop fs -count /…&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;-mv 移动&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;-cp 复制&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;-moveFromLocal 从本地移动&lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;-getmerge 合并到本地&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;-cat 查看文件内容&lt;/li&gt;
+      &lt;li&gt;-text 查看文件内容&lt;/li&gt;
+      &lt;li&gt;-touchz 创建空白文件&lt;/li&gt;
+      &lt;li&gt;-stat 查看统计信息&lt;/li&gt;
+      &lt;li&gt;-tail 查看文件尾部内容&lt;/li&gt;
+      &lt;li&gt;-chmod 修改文件权限&lt;/li&gt;
+      &lt;li&gt;-chown 修改属主&lt;/li&gt;
+      &lt;li&gt;-rm 删除&lt;/li&gt;
+      &lt;li&gt;-rmr 递归删文件&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;java-api(hadoop)&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;hdfs文件到本地文件, filesystem, open , in, out , ioutils&lt;/li&gt;
+      &lt;li&gt;上传文件, filesystem.create&lt;/li&gt;
+      &lt;li&gt;删除文件, filesystem.delete&lt;/li&gt;
+      &lt;li&gt;创建文件, filesystem.mkdirs&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;hadoop分布式系统部署&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;主备namenode, 一个处于active状态, 一个处于standby状态,仅仅同步active节点的状态,&lt;/li&gt;
+      &lt;li&gt;配置hosts文件&lt;/li&gt;
+      &lt;li&gt;配置ssh免密登录&lt;/li&gt;
+      &lt;li&gt;关闭防火墙, systemctl disable iptables.server&lt;/li&gt;
+      &lt;li&gt;上传服务器&lt;/li&gt;
+      &lt;li&gt;修改hadoop-env.sh配置文件,添加java-home配置&lt;/li&gt;
+      &lt;li&gt;修改core-site.xml,&lt;/li&gt;
+      &lt;li&gt;修改hdfs-site.xml,&lt;/li&gt;
+      &lt;li&gt;修改mapred-site.xml, 指定mapreduce运行在yarn环境&lt;/li&gt;
+      &lt;li&gt;修改yarn-site.xml,&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;mapreduce&lt;/p&gt;
+
+    &lt;p&gt;将作业拆分成不同的map, 然后分配到不同节点取执行, map重在处理输入数据, reduce主要是把前面若干个map的结果汇总到一起输出,&lt;/p&gt;
+    &lt;ul&gt;
+      &lt;li&gt;wordcount&lt;/li&gt;
+      &lt;li&gt;mapreduce分区,可以将map中的key进行区分, 进入到不同的reduce中,&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;yarn任务过程分析
+    &lt;ul&gt;
+      &lt;li&gt;yarn resourcesmanager: 用来管理协调分布式集群的资源&lt;/li&gt;
+      &lt;li&gt;yarn nodemanager: 用来启动和监控计算机资源单位container的利用情况&lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;流程&lt;/p&gt;
+
+        &lt;ul&gt;
+          &lt;li&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;hive:hadoop的数据仓库工具&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;pig:基于hadoop的大规模数据分析工具&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;hbase:分布式存储系统,高可靠性,高性能,面向列,可伸缩&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;zookeeper:&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+				<pubDate>Tue, 29 Oct 2019 00:00:00 +0800</pubDate>
+				<link>https://github.com/cosy-sun/hadoop/2019/10/29/hadoop.html</link>
+				<guid isPermaLink="true">https://github.com/cosy-sun/hadoop/2019/10/29/hadoop.html</guid>
+			</item>
+		
+			<item>
+				<title>jdk1.8</title>
+				<description>&lt;ul&gt;
+  &lt;li&gt;default, 可以在接口中使用此关键字修饰方法, 默认方法, 后续不需要实现, 直接使用,&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;lambda&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;当一个接口中存在多个方法时, 无法只能匹配某一个方法,&lt;/li&gt;
+      &lt;li&gt;只有函数式接口支持&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;函数式接口&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;只包含一个抽象方法,&lt;/li&gt;
+      &lt;li&gt;@FunctionalInterface注解来定义函数式接口, 如果不符合规范那么会报错,&lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;常见四大函数式接口&lt;/p&gt;
+
+        &lt;ul&gt;
+          &lt;li&gt;consumer&lt;t&gt;, 有参无返回&lt;/t&gt;&lt;/li&gt;
+          &lt;li&gt;supplier&lt;T&gt;, 无参有返回&lt;/T&gt;&lt;/li&gt;
+          &lt;li&gt;Function&amp;lt;T, R&amp;gt;, 有参有返回&lt;/li&gt;
+          &lt;li&gt;Predicate&lt;T&gt;, 断言类型, 有参有返回&lt;/T&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;方法与构造函数引用&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;若lambda体中的内容有方法已经实现了，那么可以使用“方法引用”, 也可以理解为方法引用是lambda表达式的另外一种表现形式并且其语法比lambda表达式更加简单&lt;/li&gt;
+      &lt;li&gt;::&lt;/li&gt;
+      &lt;li&gt;方法引用,ambda体中调用方法的参数列表与返回值类型，要与函数式接口中抽象方法的函数列表和返回值类型保持一致！
+        &lt;ul&gt;
+          &lt;li&gt;对象::实例方法名&lt;/li&gt;
+          &lt;li&gt;类::静态方法名&lt;/li&gt;
+          &lt;li&gt;
+            &lt;p&gt;类::实例方法名&lt;/p&gt;
+
+            &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  Consumer&amp;lt;Integer&amp;gt; con2 = System.out::println;
+  con2.accept(200);
+    
+  // 方法引用-类名::静态方法名
+  BiFunction&amp;lt;Integer, Integer, Integer&amp;gt; biFun = (x, y) -&amp;gt;     Integer.compare(x, y);
+  BiFunction&amp;lt;Integer, Integer, Integer&amp;gt; biFun2 = Integer::compare;
+  Integer result = biFun2.apply(100, 200);
+    
+  // 方法引用-类名::实例方法名
+  BiFunction&amp;lt;String, String, Boolean&amp;gt; fun1 = (str1, str2) -&amp;gt;     str1.equals(str2);
+  BiFunction&amp;lt;String, String, Boolean&amp;gt; fun2 = String::equals;
+  Boolean result2 = fun2.apply(&quot;hello&quot;, &quot;world&quot;);
+  System.out.println(result2);
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;            &lt;/div&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;构造器引用,classname::methodname&lt;/p&gt;
+
+        &lt;p&gt;```
+  public interface UserFactory {
+  User get(String name, String sex);
+  }&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;p&gt;UserFactory uf = User::new;
+  User u = uf.get(“ww”, “man”);
+  ```&lt;/p&gt;
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;数组引用,&lt;/p&gt;
+
+        &lt;ul&gt;
+          &lt;li&gt;type[]::new;
+            &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  Function&amp;lt;Integer, String[]&amp;gt; fun = (x) -&amp;gt; new String[x];
+  Function&amp;lt;Integer, String[]&amp;gt; fun2 = String[]::new;
+  String[] strArray = fun2.apply(10);
+  Arrays.stream(strArray).forEach(System.out::println);
+            
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;            &lt;/div&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;stream api&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;创建&lt;/p&gt;
+
+        &lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;c1&quot;&gt;// 1，校验通过Collection 系列集合提供的stream()或者paralleStream()&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;list&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ArrayList&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;gt;();&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;Strean&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;stream1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;stream&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+    
+  &lt;span class=&quot;c1&quot;&gt;// 2.通过Arrays的静态方法stream()获取数组流&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;str&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;];&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;Stream&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;stream2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Arrays&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;stream&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+    
+  &lt;span class=&quot;c1&quot;&gt;// 3.通过Stream类中的静态方法of&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;Stream&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;stream3&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Stream&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;of&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;aa&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;bb&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;cc&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+    
+  &lt;span class=&quot;c1&quot;&gt;// 4.创建无限流&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;// 迭代&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;Stream&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Integer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;stream4&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Stream&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;iterate&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+
+  &lt;span class=&quot;c1&quot;&gt;//生成&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;Stream&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;generate&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Math&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;random&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;());&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;中间操作&lt;/p&gt;
+
+        &lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;c1&quot;&gt;//筛选,过滤,去重&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;emps&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;stream&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;filter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;e&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getAge&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;limit&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;skip&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;// 需要流中的元素重写hashCode和equals方法&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;distinct&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;forEach&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+
+
+  &lt;span class=&quot;c1&quot;&gt;//生成新的流 通过map映射&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;emps&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;stream&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getAge&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;())&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;forEach&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+
+
+  &lt;span class=&quot;c1&quot;&gt;//自然排序  定制排序&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;emps&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;stream&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;sorted&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;e1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;e2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;e1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getAge&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;equals&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;e2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getAge&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;())){&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;e1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getName&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;compareTo&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;e2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getName&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;());&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;e1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getAge&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;compareTo&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;e2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getAge&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;());&lt;/span&gt;
+        &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;})&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;forEach&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;…&lt;/p&gt;
+
+        &lt;ul&gt;
+          &lt;li&gt;allmatch&lt;/li&gt;
+          &lt;li&gt;anymatch&lt;/li&gt;
+          &lt;li&gt;max&lt;/li&gt;
+          &lt;li&gt;min&lt;/li&gt;
+          &lt;li&gt;Findfirst&lt;/li&gt;
+          &lt;li&gt;findany&lt;/li&gt;
+          &lt;li&gt;count&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;reduce&lt;/p&gt;
+
+        &lt;ul&gt;
+          &lt;li&gt;合并&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;collectreduce&lt;/p&gt;
+
+        &lt;ul&gt;
+          &lt;li&gt;将流转化为其他形式, 接受一个collection接口的实现,&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;optional容器&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;of, 创建一个optional实例&lt;/li&gt;
+      &lt;li&gt;empty, 创建一个空的optional实例&lt;/li&gt;
+      &lt;li&gt;ofnullable, 创建一个空或者非空的optional实例&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;dateapi&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;java.time&lt;/li&gt;
+      &lt;li&gt;localdate&lt;/li&gt;
+      &lt;li&gt;localtime&lt;/li&gt;
+      &lt;li&gt;localdatetime&lt;/li&gt;
+      &lt;li&gt;duration, 计算两个事件之间的间隔,&lt;/li&gt;
+      &lt;li&gt;period, 计算两个日期之间的间隔&lt;/li&gt;
+      &lt;li&gt;temporaladjust, 时间校验器&lt;/li&gt;
+      &lt;li&gt;datetimeformatter, 格式化日期&lt;/li&gt;
+      &lt;li&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+</description>
+				<pubDate>Mon, 28 Oct 2019 00:00:00 +0800</pubDate>
+				<link>https://github.com/cosy-sun/java/2019/10/28/jdk1.8.html</link>
+				<guid isPermaLink="true">https://github.com/cosy-sun/java/2019/10/28/jdk1.8.html</guid>
+			</item>
+		
+			<item>
+				<title>javaCommand</title>
+				<description>&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;java&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;-cp和-classpath命令,&lt;/p&gt;
+
+        &lt;p&gt;有classpath环境变量设置, 覆盖默认设置
+  有-cp设置, 覆盖上面两个,
+  有-jar参数, 覆盖上面两个&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;-D&lt;property&gt;=value, 设置参数&lt;/property&gt;&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;javac&lt;/li&gt;
+  &lt;li&gt;jar&lt;/li&gt;
+  &lt;li&gt;javadoc&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;jps&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;-q, 只输出lvmid, 省略主类的名称&lt;/li&gt;
+      &lt;li&gt;-m, 输出主类启动时的参数&lt;/li&gt;
+      &lt;li&gt;-l, 输出主类的全类名, 如果时jar包, 输出全路径&lt;/li&gt;
+      &lt;li&gt;-v, 输出启动jvm的参数&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;jstat, 监视虚拟机的运行状态&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;-class, 监视类装载、卸载数量、总空间以及类装载所耗费的时间。&lt;/li&gt;
+      &lt;li&gt;-gc, 监视Java堆状况，包括Eden区、两个Survivor区、老年区、元数据等的容量、已用空间，GC时间合计等信息。
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;     S0C，S1C，EC，OC，MC，CCSC：S0，S1，Eden，老年代，Metaspace和压缩类空间大小；S0U    
+     S1U，EU，OU，MU，CCSU：S0，S1，Eden，老年代，Metaspace和压缩类空间已经使用的大小；
+     YGC，YGCT，FGC，FGCT：Young GC和Full GC的次数和耗时；
+     GCT：垃圾回收的耗时。
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;jmap, 命令用于生成堆转储快照（heapdump或dump文件)&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;-dump, jmap -dump:[live],format=b,file=dump.bin 3500
+        &lt;ul&gt;
+          &lt;li&gt;live, 是否值dump出存货的对象&lt;/li&gt;
+          &lt;li&gt;format, 格式,&lt;/li&gt;
+          &lt;li&gt;file, 文件名&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;heap, java堆详细信息&lt;/li&gt;
+      &lt;li&gt;histo, 对象统计信息, 包括类,&lt;/li&gt;
+      &lt;li&gt;F, dump没有响应,强制生成dump文件,&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;jhat demp文件, 用来分析dump文件, 同时生成一个http端口, 可以通过浏览器查看分析结果,&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;jstack, 用来生成虚拟机当前时刻的线程快照&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;-F	当正常输出的请求不被响应时，强制输出线程堆栈&lt;/li&gt;
+      &lt;li&gt;-l	除堆栈外，显示关于锁的附加信息&lt;/li&gt;
+      &lt;li&gt;-m	如果调用到本地方法的话，可以显示C/C++的堆栈&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;javap, 查看生成的java字节码, 反汇编器,(不常用)&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;-help 输出 javap 的帮助信息。&lt;/li&gt;
+      &lt;li&gt;-l 输出行及局部变量表。&lt;/li&gt;
+      &lt;li&gt;-b 确保与 JDK 1.1 javap 的向后兼容性。&lt;/li&gt;
+      &lt;li&gt;-public 只显示 public 类及成员。&lt;/li&gt;
+      &lt;li&gt;-protected 只显示 protected 和 public 类及成员。&lt;/li&gt;
+      &lt;li&gt;-package 只显示包、protected 和 public 类及成员。这是缺省设置。&lt;/li&gt;
+      &lt;li&gt;-private 显示所有类和成员。&lt;/li&gt;
+      &lt;li&gt;-J[flag] 直接将 flag 传给运行时系统。&lt;/li&gt;
+      &lt;li&gt;-s 输出内部类型签名。&lt;/li&gt;
+      &lt;li&gt;-c 输出类中各方法的未解析的代码，即构成 Java 字节码的指令。&lt;/li&gt;
+      &lt;li&gt;-verbose 输出堆栈大小、各方法的 locals 及 args 数,以及class文件的编译版本&lt;/li&gt;
+      &lt;li&gt;-classpath[路径] 指定 javap 用来查找类的路径。如果设置了该选项，则它将覆盖缺省值或 CLASSPATH 环境变量。目录用冒号分隔。&lt;/li&gt;
+      &lt;li&gt;-bootclasspath[路径] 指定加载自举类所用的路径。缺省情况下，自举类是实现核心 Java 平台的类，位于 jrelib下面。&lt;/li&gt;
+      &lt;li&gt;-extdirs[dirs] 覆盖搜索安装方式扩展的位置。扩展的缺省位置是 jrelibext。&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+</description>
+				<pubDate>Fri, 25 Oct 2019 00:00:00 +0800</pubDate>
+				<link>https://github.com/cosy-sun/java/2019/10/25/Java%E5%91%BD%E4%BB%A4%E6%80%BB%E7%BB%93.html</link>
+				<guid isPermaLink="true">https://github.com/cosy-sun/java/2019/10/25/Java%E5%91%BD%E4%BB%A4%E6%80%BB%E7%BB%93.html</guid>
+			</item>
+		
+			<item>
+				<title>协议</title>
+				<description>&lt;p&gt;#&lt;center&gt;网络协议&lt;/center&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;五层模型&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;应用层&lt;/li&gt;
+      &lt;li&gt;传输层&lt;/li&gt;
+      &lt;li&gt;网络层&lt;/li&gt;
+      &lt;li&gt;链接层&lt;/li&gt;
+      &lt;li&gt;实体层&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;####1.实体层&lt;/p&gt;
+
+&lt;p&gt;把电脑连接起来的物理手段&lt;/p&gt;
+
+&lt;p&gt;主要规定一些电器特性,传送0和1电信号&lt;/p&gt;
+
+&lt;p&gt;####2.链接层&lt;/p&gt;
+
+&lt;p&gt;确定了0和1的分组方式&lt;/p&gt;
+
+&lt;p&gt;#####2.1以太网协议&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;规定电信号0和1的分组方式,
+一组电信号构成一个数据包,
+叫做&quot;帧&quot;,
+由head和data组成
+head中包含发送者和接收者的信息
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;E:/szh/笔记/photo/帧.png&quot; alt=&quot;以太网数据包&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;#####2.3mac地址&lt;/p&gt;
+
+&lt;p&gt;mac地址包含在了head中&lt;/p&gt;
+
+&lt;p&gt;以太网协议依靠mac地址才能准确的送达消息&lt;/p&gt;
+
+&lt;p&gt;在子网络传输&lt;/p&gt;
+
+&lt;p&gt;####3.网络层&lt;/p&gt;
+
+&lt;p&gt;需要确定mac地址是否处在同一个子网络中,如果在,使用”广播方式”,否则使用”路由方式”,&lt;/p&gt;
+
+&lt;p&gt;网络地址可以区分不同的子网络.&lt;/p&gt;
+
+&lt;p&gt;诞生IP协议&lt;/p&gt;
+
+&lt;p&gt;#####3.1IP协议&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;32位构成
+分成四段使用十进制表示,从0.0.0.0到255.255.255.255
+前一部分是网络地址,后一部分是主机.
+通过子网掩码判断前一部分是否是一样的,也就是是否处在同一个网络中. ![ip数据包](E:/szh/笔记/photo/ip数据包.png)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;子网掩码中的网络部分全是1,主机部分是0,类似于11111111.11111111.11111111.00000000&lt;/p&gt;
+
+&lt;p&gt;把此地址和ip地址相与,得到的结果如果相同,那么就是同一个子网络中的.&lt;/p&gt;
+
+&lt;p&gt;####4.传输层&lt;/p&gt;
+
+&lt;p&gt;网络层是建立主机到主机之间的通信,&lt;/p&gt;
+
+&lt;p&gt;而传输层是建立端口到端口之间的通信.&lt;/p&gt;
+
+&lt;p&gt;#####4.1UDP协议&lt;/p&gt;
+
+&lt;p&gt;在数据部分的前面加上端口号就组成了udp协议.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;E:/szh/笔记/photo/udp数据包.png&quot; alt=&quot;udp数据包&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;#####4.2TCP协议&lt;/p&gt;
+
+&lt;p&gt;可以简单理解长有确认机制的UDP协议,可以提高安全性.&lt;/p&gt;
+
+&lt;p&gt;tcp三次握手用于连接,&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;第一次:客户端发送连接请求,等待服务器确认
+第二次:服务器接收到请求,返回确认响应,等待响应回执
+第三次:客户端返回回执
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;tcp四次分手用于断开连接,&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;可以是客户端发起,也可以是服务器端发起,
+第一次:主动方表示没有发送的数据,给被动方发送fin报文段,然后等待
+第二次:被动方接受,然后给主动方发送ack报文段,同意关闭请求
+第三次:被动方请求关闭连接,发送fin报文段
+第四次:主动方接受到fin报文段,返回ack报文,被动方收到ack之后,关闭连接,主动方等待,超时之后,表明被动方已经成功关闭连接,主动方关闭连接.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;tcp数据包和udp数据包一致,主要是在请求头上所包含的字段不同.&lt;/p&gt;
+
+&lt;p&gt;######4.2.1下面是tcp连接的客户端&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;public class TcpClient {
+
+	public static void main(String[] args) {
+		Socket socket = null;
+		try {
+			//获取套接字,直接连接服务器
+			socket = new Socket(&quot;127.0.0.1&quot;, 10000);
+			//获取输出流,准备往服务器发送数据
+			PrintWriter printWriter = new PrintWriter(socket.getOutputStream());
+			//发送的数据
+			String str = &quot;发送到服务器的数据&quot;;
+			//发送
+			printWriter.println(str);
+			printWriter.flush();
+			
+			//获取输入流,接受从服务器返回的数据,
+			InputStream inputStream = socket.getInputStream();
+			byte[] bs = new byte[1024];
+			inputStream.read(bs);
+			String read = new String(bs);
+			System.out.println(&quot;return : &quot;+ read);
+			
+		} catch (UnknownHostException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally {
+			try {
+				socket.close();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		
+		
+	}
+	
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;######4.2.2下面是tcp连接的服务器&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;public class TcpServer {
+
+	public static void main(String[] args) {
+		ServerSocket serverSocket = null;
+		Socket accept = null;
+		try {
+			//监听端口10000
+			serverSocket = new ServerSocket(10000);
+			while (true) {
+				//等待客户端访问
+				accept = serverSocket.accept();
+				System.out.println(&quot;TcpClient进来了&quot;);
+				//获取socket的输入流,读取client传进来的数据
+				InputStream inputStream = accept.getInputStream();
+				BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
+				String readLine = bufferedReader.readLine();
+				System.out.println(&quot;client输入进来的数据是:&quot; + readLine);
+				
+				//处理完client传入的数据之后,再返回相应给client
+				PrintWriter printWriter = new PrintWriter(accept.getOutputStream());
+				printWriter.write(&quot;return something !&quot;);
+				System.out.println(&quot;return something !&quot;);
+				printWriter.flush();
+				
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			try {
+				accept.close();
+				serverSocket.close();
+			}catch(Exception e) {
+				e.printStackTrace();
+			}
+		}
+
+	}
+
+}
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;######4.3.1UDP连接的客户端&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;public class UdpClient {
+
+	public static void main(String[] args) throws Exception{
+		
+		DatagramSocket ds = null;
+        DatagramPacket dp = null;
+        byte[] buf = new byte[1024];
+        String str = new String(&quot;发送到服务器&quot;);
+        dp = new DatagramPacket(str.getBytes(), str.getBytes().length,
+        		InetAddress.getByName(&quot;localhost&quot;), 3000);
+        //发送一些数据包到服务器 , 如果服务器收到了将返回
+        ds = new DatagramSocket();
+        ds.send(dp);
+        
+        ds = new DatagramSocket(10001);
+        dp = new DatagramPacket(buf, 1024);
+        // 接收数据，放入数据包
+        ds.receive(dp);
+        // 从数据包中取出数据
+        String info = new String(dp.getData(),0, dp.getLength());
+        System.out.println(&quot;接收到的信息是：&quot; + info);
+		
+	}
+	
+}
+    
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;######4.3.2UDP连接的服务器&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;public class UdpServer {
+
+	public static void main(String[] args) throws Exception {
+		DatagramSocket datagramSocket = null;
+		//监听端口3000
+		datagramSocket = new DatagramSocket(3000);
+		DatagramPacket dp = new DatagramPacket(new byte[1024], 1024);
+		//将接受到的消息芳在datagrampacket数据包中,
+		datagramSocket.receive(dp);
+		//从数据包中获取到数据,可以使用不同的方法获取到不同的数据
+		byte[] data = dp.getData();
+		String string = new String(data, 0, data.length);
+		System.out.println(&quot;接受到客户端的信息: &quot;+string);
+		//将此字符串返回给客户端
+		String str = &quot;打包一些东西返回给客户端&quot;;
+		//构造方法中的端口号和地址,具体确定了将数据发送到什么地方
+		DatagramPacket datagramPacket = new DatagramPacket(str.getBytes(), str.getBytes().length,
+				InetAddress.getByName(&quot;localhost&quot;), 10001);
+		//发送数据包
+		datagramSocket.send(datagramPacket);
+	}
+
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;####5.应用层&lt;/p&gt;
+
+&lt;p&gt;可以规定应用程序的数据格式,放在tcp数据包中.&lt;/p&gt;
+
+&lt;p&gt;例如ftp,email,http等&lt;/p&gt;
+
+&lt;p&gt;###6.HTTP协议&lt;/p&gt;
+
+&lt;p&gt;####6.1介绍&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;http协议是一种超文本传输协议,
+http是一个应用层协议,由请求和响应构成,是一个标准的客户服务器模型,
+http是一种无状态的协议.同一个客户端本次请求和上次的请求之间没有关系.
+http通常承载于tcp协议之上,有时候承载于tls或ssl协议上,构成了我们常说的https协议.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;####6.2工作流程&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;1.建立tcp套接字连接
+2.发送http请求报文
+3.接受http响应报文
+4.关闭tcp套接字连接 ####6.3请求报文
+
+请求行
+请求头
+空行(回车或者换行符)
+请求体 #####6.3.1请求行
+请求方式:get/post...
+请求资源路径
+http协议版本
+	1.0 请求响应结束,直接断开
+	1.1 请求响应结束,可以再次发送请求,直到超时断开. #####6.3.2请求头
+请求头中的信息都是以键值对出现的: key:value这种形式
+host:接受请求的服务器地址,可以是ip地址,也可以是域名
+user-Agent:发送请求的应用程序
+connection:指定与请求相关的属性,例如keep-alive,连接时间(tcp)
+accept-charset:通知服务端可以发送的编码格式,
+accept-encoding:通知服务端可以发送的数据压缩格式
+accept-language:通知服务端可以发送的语言
+accept:告诉服务器,客户端接受什么类型的数据,,例如:text/plain
+cookie:通过这个属性把客户端的cookie传给服务器
+referer:表示从哪个url过来的
+cache:缓存控制
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;####6.4常见状态码
+	2xx 成功-表示请求已被陈工接受,理解,
+	3xx 重定向-要完成请求必须进行进一步的处理
+	4xx 客户端错误-请求有语法错误或者请求无法实现
+	5xx 服务端错误-服务器未能实现合法的请求&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;200 ok
+302 重定向
+304 上次的文档已经被缓存,可以继续使用
+400 客户端语法错误
+403	服务器收到请求但拒绝服务
+404 请求资源不存在
+500 服务器错误
+503 服务器无法处理当前请求,一段时间之后可能可以.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;####6.5响应报文
+	响应行 
+	响应头
+	空行
+	响应体
+#####6.5.1响应行
+	报文协议和版本
+	状态码和状态描述
+#####6.5.2响应头
+	cache-control:告诉客户端如何控制这个缓存
+	set-cookie 服务端可以设置客户端的cookie
+	…&lt;/p&gt;
+
+&lt;p&gt;####6.6请求方式
+    get:向特定的资源发出请求
+    post:向指定资源提出请求进行处理
+    put:向指定资源位置上传其最新内容
+    delete:请求服务器删除request-url指定的资源
+    trace:回显服务器收到的请求&lt;/p&gt;
+
+&lt;p&gt;http服务器&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;public class HttpServer {
+
+	public static void main(String[] args) throws Exception {
+		ServerSocket serverSocket = new ServerSocket(10000);
+		System.out.println(&quot;等待客户端的访问!&quot;);
+		while (true) {
+			Socket socket = serverSocket.accept();
+			System.out.println(&quot;客户端连接进来了!&quot;);
+			InputStream inputStream = socket.getInputStream();
+			BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
+			char[] c = new char[1024];
+			bufferedReader.read(c);
+			String str = new String(c);
+			String[] split = str.split(&quot;\n&quot;);
+			for (int i = 0; i &amp;lt; split.length; i++) {
+				System.out.print(split[i]);
+				parse(split[i]);
+				System.out.println(&quot;-------------------------&quot;);
+			}
+		}
+
+	}
+
+	private static void parse(String str) {
+		String[] strings = str.split(&quot; &quot;);
+		switch (strings[0]) {
+		case &quot;GET&quot;:
+			System.out.println(&quot;请求方式是get!&quot;);
+			System.out.println(&quot;请求的资源路径是: &quot;+strings[1]);
+			String[] split = strings[2].split(&quot;/&quot;);
+			System.out.println(&quot;协议名是: &quot;+ split[0]);
+			System.out.print(&quot;协议版本是: &quot; + split[1]);
+			break;
+		case &quot;POST&quot;:
+			System.out.println(&quot;请求方式是post!&quot;);
+			break;
+		case &quot;Host:&quot;:
+			System.out.println(&quot;ip地址和端口号&quot;);
+			break;
+		case &quot;User-Agent:&quot;:
+			System.out.println(&quot;user-agent域&quot;);
+			break;
+		case &quot;Accept:&quot;:
+			System.out.println(&quot;客户接受的数据类型&quot;);
+			break;
+		case &quot;Accept-Language:&quot;:
+			System.out.println(&quot;user-agent域&quot;);
+			break;
+		case &quot;Accept-Encoding:&quot;:
+			System.out.println(&quot;user-agent域&quot;);
+			break;
+		case &quot;Connection:&quot;:
+			System.out.println(&quot;user-agent域&quot;);
+			break;
+		case &quot;Upgrade-Insecure-Requests:&quot;:
+			System.out.println(&quot;&quot;);
+		}
+	}
+
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;http请求&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;public class HttpClient {
+
+	private static final String GET = &quot;get&quot;;
+
+	private static final String POST = &quot;post&quot;;
+
+	public static void main(String[] args) throws Exception {
+		// 设置请求的url
+		String spec = &quot;http://www.csii.com.cn/csii/&quot;;
+		// 创建http连接
+		HttpURLConnection httpUrlConnection = (HttpURLConnection) new URL(spec).openConnection();
+		// 进行连接
+		httpUrlConnection.connect();
+		// 设置超时时间
+		httpUrlConnection.setConnectTimeout(5000);
+		// 设置请求类型
+		// httpUrlConnection.setRequestMethod(GET);
+		// 返回响应码
+		int responseCode = httpUrlConnection.getResponseCode();
+		// 返回响应的长度
+		int contentLength = httpUrlConnection.getContentLength();
+		if (responseCode == HttpURLConnection.HTTP_OK) {
+			// 获取输入流
+			InputStream inputStream = httpUrlConnection.getInputStream();
+			BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
+			char[] c = new char[contentLength];
+			// 将 读取 到的字符放在char数组中
+			bufferedReader.read(c);
+			String str = new String(c);
+			System.out.println(str);
+			File file = new File(&quot;com.sun.httprequest.response.txt&quot;);
+			FileWriter fileWriter = new FileWriter(file, true);
+			PrintWriter printWriter = new PrintWriter(fileWriter);
+			printWriter.println(str);//将响应写到文件中
+			printWriter.flush();
+			printWriter.close();
+		}
+
+	}
+
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+</description>
+				<pubDate>Thu, 24 Oct 2019 00:00:00 +0800</pubDate>
+				<link>https://github.com/cosy-sun/java/2019/10/24/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE.html</link>
+				<guid isPermaLink="true">https://github.com/cosy-sun/java/2019/10/24/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE.html</guid>
+			</item>
+		
+			<item>
+				<title>算法</title>
+				<description>&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;冒泡排序&lt;/p&gt;
+
+    &lt;p&gt;两个数比较大小, 较大的数下沉, 较小的数上浮,&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;选择排序&lt;/p&gt;
+
+    &lt;p&gt;未排序序列中找到最大或者最小的元素放到起始位置,循环, 直到所有元素全部排序,&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;插入排序&lt;/p&gt;
+
+    &lt;p&gt;去除第一个元素,默认已经排序,
+  取出下一个元素, 在已经排序的元素序列中从后向前扫描,
+  如果该元素大于新元素,向后移, 重复,
+  将新元素插入该位置,&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;希尔排序&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;归并排序&lt;/p&gt;
+
+    &lt;p&gt;先分割,按照某种规则分割, 然后合并,
+  可以设置临时存储, 然后同时索引合并, 考虑两边有可能多出来的&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;堆排序&lt;/p&gt;
+
+    &lt;p&gt;满足堆的性质, 根据此性质建立堆,&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;计数排序&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;桶排序&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;基数排序&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+</description>
+				<pubDate>Thu, 24 Oct 2019 00:00:00 +0800</pubDate>
+				<link>https://github.com/cosy-sun/java/2019/10/24/%E7%AE%97%E6%B3%95.html</link>
+				<guid isPermaLink="true">https://github.com/cosy-sun/java/2019/10/24/%E7%AE%97%E6%B3%95.html</guid>
+			</item>
+		
+			<item>
+				<title>文件描述符</title>
+				<description>&lt;ul&gt;
+  &lt;li&gt;文件描述符&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;    在linux系统中,一切都是文件,比如c++源文件,视频文件,shell脚本, 可执行文件,包括键盘,鼠标,显示器等硬件设备,&lt;/p&gt;
+
+&lt;p&gt;    一个进程可以打开成百上千的文件,为了表示和区分已经打开的文件,linux会给每个文件分配一个编号,,这个编号就是一个整数,被称为文件描述符&lt;/p&gt;
+
+&lt;p&gt;    一个linux进程启动后,会在内核中创建一个pcb控制块,pcb内部有一个文件描述符表,记录着当前进程所有可用的文件描述符,也就是当前进程打开的文件,&lt;/p&gt;
+
+&lt;p&gt;    进程启动后要占用内存,一部分分配给了文件描述符,另一部分给了打开文件表和i-node表&lt;/p&gt;
+
+&lt;p&gt;    打开文件表和i-node是系统级的, 之后一个, 文件描述符表每个进程都由一个&lt;/p&gt;
+
+&lt;p&gt;    通过文件描述符表可以找到文件指针,通过文件指针,进入打开文件表,该表存储了一下信息: 文件偏移量,状态模式,i-node表指针;通过i-node表指针进入i-node表,i-node表中存储了一下信息: 文件类型, 文件大小, 时间戳, 文件锁&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;同一个进程的不同文件描述符可以指向同一个文件,&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;不同进程可以拥有相同的文件描述符,&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;不同进程的同一个文件描述符可以指向不同的文件(除了0, 1, 2这三个特殊的文件)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;不同进程的不同文件描述符也可以指向同一个文件&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;    当linux运行一个程序时, 它打开三个相应的文件描述符,分表时0, 1, 2 ,
+对应的时标准输入, 标准输出, 标准错误输出&lt;/p&gt;
+
+&lt;h1 id=&quot;javanio中的文件描述符&quot;&gt;javanio中的文件描述符&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Java中的FileDescriptor可以被用来表示开放文件和套接字&lt;/p&gt;
+
+    &lt;p&gt;创建一个socket并通过文件描述符放到serversocketchannel中&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;serversocketchannel的初始化,通过bind()将文件描述符和本地ip地址和制定的port绑定,同时监听这个文件描述符&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;selector创建, 创建一对管道,一个输入管道,一个输出管道,在创建过程中,有通过socket验证是否能正常传输,也即是用来唤醒selector工作的&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;事件注册,将selectionkey的socketchannel的文件描述符放到pollarray中&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;通信,核心方法private native int poll0(long pollAddreee, int numfds, int[] readfds, int[] writefds, int[] exceptfds, long timeout),&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;实现思路是调用c中的select方法,这里的select方法调用的是内核中的sys_select, sys_select首先将第2,3,4个参数指向的fd_set拷贝到尼日河,然后对每个set的描述符调用进行poll,并记录在临时结果中, 如果有事件发生, select会将临时结果写道用户空间并返回,当轮询一编后没有任何事件发生,如果制定了超时时间, select会水淼到超市,睡眠结束之后在轮询一遍, 并将临时结果写道用户空间,然后返回,&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;这里的select就是轮询pollarray中的fd,如果有事件发生, 收集所有发生的事件,然后返回,&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+</description>
+				<pubDate>Thu, 24 Oct 2019 00:00:00 +0800</pubDate>
+				<link>https://github.com/cosy-sun/java/2019/10/24/%E6%96%87%E4%BB%B6%E6%8F%8F%E8%BF%B0%E7%AC%A6.html</link>
+				<guid isPermaLink="true">https://github.com/cosy-sun/java/2019/10/24/%E6%96%87%E4%BB%B6%E6%8F%8F%E8%BF%B0%E7%AC%A6.html</guid>
+			</item>
+		
+			<item>
+				<title>xml and json</title>
+				<description>&lt;h1 id=&quot;xml与json简介及简单对比&quot;&gt;XML与JSON简介及简单对比&lt;/h1&gt;
+&lt;h2 id=&quot;xml简介&quot;&gt;XML简介&lt;/h2&gt;
+&lt;p&gt;XML，可扩展的标识语言（eXtensible Markup Language），1998年2月，W3C正式批准了可扩展标记语言的标准定义，可扩展标记语言可以对文档和数据进行结构化处理，从而能够在部门、客户和供应商之间进行交换，实现动态内容生成，企业集成和应用开发。可扩展标记语言可以使我们能够更准确的搜索，更方便的传送软件组件，更好的描述一些事物。例如电子商务交易等。&lt;/p&gt;
+&lt;h3 id=&quot;xml作用&quot;&gt;XML作用&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;丰富文件（Rich Documents）-自定文件描述并使其更丰富；&lt;/li&gt;
+  &lt;li&gt;属于文件为主的XML技术应用；&lt;/li&gt;
+  &lt;li&gt;标记是用来定义一块数据应该如何呈现；&lt;/li&gt;
+  &lt;li&gt;解释数据（Metadata）-描述其它文件或在线信息；&lt;/li&gt;
+  &lt;li&gt;属于数据为主的XML技术应用；&lt;/li&gt;
+  &lt;li&gt;标记是用来说明一块资料的意义；&lt;/li&gt;
+  &lt;li&gt;组态档案（Configuration Files）-描述软件的组态参数。
+    &lt;h2 id=&quot;json简介&quot;&gt;JSON简介&lt;/h2&gt;
+    &lt;p&gt;JSON(JavaScript Object Notation) 是一种轻量级的数据交换格式。它基于ECMAScript的一个子集。 JSON采用完全独立于语言的文本格式，但是也使用了类似于C语言家族的习惯（包括C、C++、C#、Java、JavaScript、Perl、Python等）。这些特性使JSON成为理想的数据交换语言。 易于人阅读和编写，同时也易于机器解析和生成(一般用于提升网络传输速率)。&lt;/p&gt;
+    &lt;h3 id=&quot;json作用&quot;&gt;JSON作用&lt;/h3&gt;
+  &lt;/li&gt;
+  &lt;li&gt;用于编写基于 JavaScript 应用程序，包括浏览器扩展和网站。&lt;/li&gt;
+  &lt;li&gt;JSON 格式可以用于通过网络连接序列化和传输结构化数据。&lt;/li&gt;
+  &lt;li&gt;主要用于在服务器和 Web 应用程序之间传输数据。&lt;/li&gt;
+  &lt;li&gt;Web 服务和 APIs 可以使用 JSON 格式提供公用数据。&lt;/li&gt;
+  &lt;li&gt;还可以用于现代编程语言中
+    &lt;h2 id=&quot;简单对比&quot;&gt;简单对比&lt;/h2&gt;
+    &lt;h3 id=&quot;xml简单示例&quot;&gt;XML简单示例&lt;/h3&gt;
+    &lt;p&gt;```
+&lt;?xml version=&quot;1.0&quot;?&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+&lt;note&gt;
+&lt;to&gt;Tove&lt;/to&gt;
+&lt;from&gt;Jani&lt;/from&gt;
+&lt;heading&gt;Reminder&lt;/heading&gt;
+&lt;body&gt;Don't forget me this weekend!&lt;/body&gt;
+&lt;/note&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;### JSON简单示例
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;{
+    “book”: [
+        {
+            “id”:”01”,
+            “language”: “Java”,
+            “edition”: “third”,
+            “author”: “Herbert Schildt”
+        },
+        {
+            “id”:”07”,
+            “language”: “C++”,
+            “edition”: “second”,
+            “author”: “E.Balagurusamy”
+    }]
+}&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;优点：
+ - A.数据格式比较简单，易于读写，格式都是压缩的，占用带宽小；
+ - B.易于解析，客户端JavaScript可以简单的通过eval()进行JSON数据的读取；　　
+ - C.支持多种语言，包括ActionScript, C, C#, ColdFusion, Java, JavaScript, Perl, PHP, Python, Ruby等服务器端语言，便于服务器端的解析；　　
+ - D.在PHP世界，已经有PHP-JSON和JSON-PHP出现了，偏于PHP序列化后的程序直接调用，PHP服务器端的对象、数组等能直接生成JSON格式，便于客户端的访问提取；　　
+ - E.因为JSON格式能直接为服务器端代码使用，大大简化了服务器端和客户端的代码开发量，且完成任务不变，并且易于维护。
+
+缺点：
+ - A.没有XML格式这么推广的深入人心和喜用广泛，没有XML那么通用性；　　
+ - B.JSON格式目前在Web Service中推广还属于初级阶段。
+# XML解析方法及对比
+## Dom解析
+### 简介
+　DOM的全称是Document Object Model，也即文档对象模型。在应用程序中，基于DOM的XML分析器将一个XML文档转换成一个对象模型的集合（通常称DOM树），应用程序正是通过对这个对象模型的操作，来实现对XML文档数据的操作。通过DOM接口，应用程序可以在任何时候访问XML文档中的任何一部分数据，因此，这种利用DOM接口的机制也被称作随机访问机制。
+
+　　DOM接口提供了一种通过分层对象模型来访问XML文档信息的方式，这些分层对象模型依据XML的文档结构形成了一棵节点树。无论XML文档中所描述的是什么类型的信息，即便是制表数据、项目列表或一个文档，利用DOM所生成的模型都是节点树的形式。也就是说，DOM强制使用树模型来访问XML文档中的信息。由于XML本质上就是一种分层结构，所以这种描述方法是相当有效的。
+
+　　DOM树所提供的随机访问方式给应用程序的开发带来了很大的灵活性，它可以任意地控制整个XML文档中的内容。然而，由于DOM分析器把整个XML文档转化成DOM树放在了内存中，因此，当文档比较大或者结构比较复杂时，对内存的需求就比较高。而且，对于结构复杂的树的遍历也是一项耗时的操作。所以，DOM分析器对机器性能的要求比较高，实现效率不十分理想。不过，由于DOM分析器所采用的树结构的思想与XML文档的结构相吻合，同时鉴于随机访问所带来的方便，因此，DOM分析器还是有很广泛的使用价值的。
+### 优缺点
+优点：
+
+- 1、形成了树结构，有助于更好的理解、掌握，且代码容易编写。
+
+- 2、解析过程中，树结构保存在内存中，方便修改。
+
+缺点：
+
+- 1、由于文件是一次性读取，所以对内存的耗费比较大。
+
+- 2、如果XML文件比较大，容易影响解析性能且可能会造成内存溢出。
+#### XML文件
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;games&gt;
+	&lt;game id=&quot;1&quot; price=&quot;10.0&quot;&gt;
+		&lt;name&gt;LOL&lt;/name&gt;
+		&lt;author&gt;Riot&lt;/author&gt;
+		&lt;year&gt;2012&lt;/year&gt;
+		&lt;type&gt;MOBA&lt;/type&gt;
+	&lt;/game&gt;
+	&lt;game id=&quot;2&quot;&gt;
+		&lt;name&gt;落地成盒&lt;/name&gt;
+		&lt;author&gt;bh&lt;/author&gt;
+		&lt;year&gt;2017&lt;/year&gt;
+		&lt;type&gt;FPS&lt;/type&gt;
+	&lt;/game&gt;
+	&lt;game id=&quot;3&quot;&gt;
+		&lt;name&gt;斗地主&lt;/name&gt;
+		&lt;author&gt;腾讯&lt;/author&gt;
+		&lt;year&gt;1999&lt;/year&gt;
+		&lt;type&gt;棋牌&lt;/type&gt;
+	&lt;/game&gt;
+&lt;/games&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;#### DOM解析
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;/**&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;DOM解析
+ */
+public class DomParseDemo {
+ public static void main(String[] args) throws Exception {
+     DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
+     DocumentBuilder builder = documentBuilderFactory.newDocumentBuilder();
+     Document document = builder.parse(“src/xml/game.xml”);
+     NodeList nodeList = document.getElementsByTagName(“game”);
+     System.out.println(“一共有” + nodeList.getLength() + “个游戏”);
+     for (int i = 0; i &amp;lt; nodeList.getLength(); i++) {
+         System.out.println(“开始解析第” + (i + 1) + “个游戏”);
+         Node game = nodeList.item(i);
+         NamedNodeMap attrs = game.getAttributes();
+         System.out.println(“第” + (i + 1) + “个游戏有” + attrs.getLength() + “个属性”);
+         for (int j = 0; j &amp;lt; attrs.getLength(); j++) {
+             Node attr = attrs.item(j);
+             System.out.println(“第” + (i + 1) + “个游戏的第” + (j + 1) + “个属性的属性名是” + attr.getNodeName() + “属性值是”
+                     + attr.getNodeValue());
+         }
+         NodeList chileNode = game.getChildNodes();
+         System.out.println(“第” + (i + 1) + “个游戏中有” + chileNode.getLength() + “个子节点”);
+         for (int k = 0; k &amp;lt; chileNode.getLength(); k++) {
+             if (chileNode.item(k).getNodeType() == Node.ELEMENT_NODE) {
+                 System.out.println(“第” + (i + 1) + “个游戏中的第” + (k + 1) + “个节点的节点名是” + chileNode.item(k).getNodeName()
+                         + “节点值是” + chileNode.item(k).getTextContent());
+             }
+         }
+         System.out.println(“第” + (i + 1) + “个游戏解析完毕”);
+         System.out.println();
+     }
+ }
+}
+```
+    &lt;h2 id=&quot;sax解析&quot;&gt;SAX解析&lt;/h2&gt;
+    &lt;h3 id=&quot;简介&quot;&gt;简介&lt;/h3&gt;
+    &lt;p&gt;SAX的全称是Simple APIs for XML，也即XML简单应用程序接口。与DOM不同，SAX提供的访问模式是一种顺序模式，这是一种快速读写XML数据的方式。当使用SAX分析器对XML文档进行分析时，会触发一系列事件，并激活相应的事件处理函数，应用程序通过这些事件处理函数实现对XML文档的访问，因而SAX接口也被称作事件驱动接口。&lt;/p&gt;
+    &lt;h3 id=&quot;优缺点&quot;&gt;优缺点&lt;/h3&gt;
+    &lt;p&gt;优点：&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;1、采用事件驱动模式，对内存耗费比较小。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;2、适用于只处理XML文件中的数据时。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;　　　　缺点：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;1、编码比较麻烦。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;2、很难同时访问XML文件中的多处不同数据。
+    &lt;h4 id=&quot;sax解析-1&quot;&gt;SAX解析&lt;/h4&gt;
+    &lt;p&gt;```
+/**&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;SAX
+ */
+@SuppressWarnings(“unused”)
+public class SAXParserDemo {
+ public static void main(String[] args) throws Exception {
+     SAXParserFactory factory = SAXParserFactory.newInstance();
+     SAXParser saxParser = factory.newSAXParser();
+     saxParser.parse(“src/xml/game.xml”, new ParserHandler());
+ }
+}
+class ParserHandler extends DefaultHandler {
+ private ArrayList&lt;Game&gt; games;
+ int count = 0;
+ private Game game = null;
+ private String value = null;
+ /**
+&lt;/Game&gt;    &lt;ul&gt;
+      &lt;li&gt;标识开始解析
+  */
+ @SuppressWarnings({ “unchecked”, “rawtypes” })
+ @Override
+ public void startDocument() throws SAXException {
+ // TODO Auto-generated method stub
+ System.out.println(“开始解析”);
+ games = new ArrayList();
+ }
+ /**&lt;/li&gt;
+      &lt;li&gt;标识解析结束
+  */
+ @Override
+ public void endDocument() throws SAXException {
+ // TODO Auto-generated method stub
+ System.out.println(“解析结束”);
+ System.out.println(games);
+ }
+ /**&lt;/li&gt;
+      &lt;li&gt;遇到开始标签的时候会调用
+  */
+ @Override
+ public void startElement(String arg0, String arg1, String qName, Attributes attrs) throws SAXException {
+ // TODO Auto-generated method stub
+ if (qName.equals(“game”)) {
+     game = new Game();
+     count++;
+     System.out.println(“开始解析第” + count + “个游戏”);
+     // attrs.getValue(“id”);前提是知道属性名
+     for (int i = 0; i &amp;lt; attrs.getLength(); i++) {
+         System.out.println(“第” + (i + 1) + “个属性的属性名是” + attrs.getQName(i) + “属性值是” + attrs.getValue(i));
+         if (attrs.getQName(i).equals(“id”)) {
+             game.setId(Integer.parseInt(attrs.getValue(i)));
+         }
+     }
+ } else if (!qName.equals(“games”) &amp;amp;&amp;amp; !qName.equals(“game”)) {
+     System.out.print(“节点名是” + qName);
+ }
+ }
+ /**&lt;/li&gt;
+      &lt;li&gt;遇到结束标签的时候会调用
+  */
+ @Override
+ public void endElement(String arg0, String arg1, String qName) throws SAXException {
+ // TODO Auto-generated method stub
+ if (qName.equals(“game”)) {
+     games.add(game);
+     game = null;
+     System.out.println(“第” + count + “个游戏解析结束”);
+     System.out.println();
+ } else if (qName.equals(“name”)) {
+     game.setName(value);
+ } else if (qName.equals(“author”)) {
+     game.setAuthor(value);
+ } else if (qName.equals(“year”)) {
+     game.setYear(Integer.parseInt(value));
+ } else if (qName.equals(“type”)) {
+     game.setType(value);
+ }
+ }
+ /**&lt;/li&gt;
+      &lt;li&gt;碰到节点内容时会回调
+  */
+ @Override
+ public void characters(char[] ch, int start, int length) throws SAXException {
+ // TODO Auto-generated method stub
+ value = new String(ch, start, length);
+ if (!value.trim().equals(“”)) {
+     System.out.print(“节点值是” + value);
+     System.out.println();
+ }
+ }
+}
+class Game {
+ private int id;
+ private String name;
+ private int year;
+ private String type;
+ private String author;
+ public int getId() {
+ return id;
+ }
+ public void setId(int id) {
+ this.id = id;
+ }
+ public String getName() {
+ return name;
+ }
+ public void setName(String name) {
+ this.name = name;
+ }
+ public int getYear() {
+ return year;
+ }
+ public void setYear(int year) {
+ this.year = year;
+ }
+ public String getType() {
+ return type;
+ }
+ public void setType(String type) {
+ this.type = type;
+ }
+ public String getAuthor() {
+ return author;
+ }
+ public void setAuthor(String author) {
+ this.author = author;
+ }
+ @Override
+ public String toString() {
+ // TODO Auto-generated method stub
+ return “id:” + id + “  name:” + name + “  year:” + year + “  author:” + author + “ type:” + type;
+ }
+}
+```
+        &lt;h2 id=&quot;dom4j解析&quot;&gt;Dom4j解析&lt;/h2&gt;
+        &lt;h3 id=&quot;简介-1&quot;&gt;简介&lt;/h3&gt;
+        &lt;p&gt;dom4j是目前在xml解析方面是最优秀的(Hibernate、Sun的JAXM也都使用dom4j来解析XML)，它合并了许多超出基本 XML 文档表示的功能，包括集成的 XPath 支持、XML Schema 支持以及用于大文档或流化文档的基于事件的处理。&lt;/p&gt;
+        &lt;h3 id=&quot;优缺点-1&quot;&gt;优缺点&lt;/h3&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;1、JDOM的一种智能分支，它合并了许多超出基本XML文档表示的功能。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;2、它使用接口和抽象基本类方法。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;3、具有性能优异、灵活性好、功能强大和极端易用的特点。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;4、是一个开放源码的文件
+    &lt;h4 id=&quot;xml文件&quot;&gt;XML文件&lt;/h4&gt;
+    &lt;p&gt;```
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;students&gt;
+	&lt;student id=&quot;1&quot;&gt;
+		&lt;name&gt;tom&lt;/name&gt;
+		&lt;age&gt;20&lt;/age&gt;
+		&lt;address&gt;
+			&lt;city&gt;上海&lt;/city&gt;
+		&lt;/address&gt;
+	&lt;/student&gt;
+	
+	&lt;student id=&quot;2&quot;&gt;
+		&lt;name&gt;lily&lt;/name&gt;
+		&lt;age&gt;30&lt;/age&gt;
+		&lt;address&gt;
+			&lt;city&gt;北京&lt;/city&gt;
+		&lt;/address&gt;
+	&lt;/student&gt;
+	
+&lt;/students&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;#### Dom4j解析
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;public class Dom4jTest {
+	public static void main(String[] args) throws DocumentException {
+		SAXReader reader = new SAXReader();
+		Document doc = reader.read(“src/xml/student.xml”);
+		Element root = doc.getRootElement();
+		@SuppressWarnings(“unchecked”)
+		List&lt;Element&gt; students = root.elements();
+		List&lt;Student&gt; stus = new ArrayList&lt;Student&gt;();
+		for(Element e:students){
+			Student s = new Student();
+			String id = e.attributeValue(&quot;id&quot;);
+			s.setId(Long.parseLong(id));
+			Element name = e.element(&quot;name&quot;);
+			s.setName(name.getText());
+			Element age = e.element(&quot;age&quot;);
+			s.setAge(Integer.parseInt(age.getText()));
+			Element address = e.element(&quot;address&quot;);
+			Element city = address.element(&quot;city&quot;);
+			s.setCity(city.getText());
+			stus.add(s);
+		}
+		for(Student s:stus){
+			System.out.println(s);
+		}
+	}
+}&lt;/Student&gt;&lt;/Student&gt;&lt;/Element&gt;&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# JSON解析
+#### JSON解析
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;public class ParseJsonDemo {
+	public static void main(String[] args) throws JSONException {
+		String s = “{name:张三,age:20,sex:true,number:[131,132],score:{yuwen:100,shuxue:90,lizong:{huaxue:80}}}”;
+		JSONObject jsonObject = new JSONObject(s);
+		StringBuilder stringBuilder = new StringBuilder();&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;	stringBuilder.append(&quot;姓名：&quot; + jsonObject.getString(&quot;name&quot;) + &quot;\n&quot;);
+	JSONArray jsonArray = jsonObject.getJSONArray(&quot;number&quot;);
+	stringBuilder.append(&quot;电话：&quot; + jsonArray.get(0) + &quot;   &quot; + jsonArray.get(1) + &quot;\n&quot;);
+	JSONObject scoreObject = jsonObject.getJSONObject(&quot;score&quot;);
+	stringBuilder.append(&quot;语文：&quot; + scoreObject.getString(&quot;yuwen&quot;) + &quot;\n&quot;);
+	JSONObject lizongObject = scoreObject.getJSONObject(&quot;lizong&quot;);
+	stringBuilder.append(&quot;化学：&quot; + lizongObject.getString(&quot;huaxue&quot;));
+ 
+	System.out.println(stringBuilder.toString());
+} } ```
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+</description>
+				<pubDate>Thu, 24 Oct 2019 00:00:00 +0800</pubDate>
+				<link>https://github.com/cosy-sun/java/2019/10/24/xml%E4%B8%8Ejson%E4%BB%8B%E7%BB%8D%E4%B8%8E%E8%A7%A3%E6%9E%90.html</link>
+				<guid isPermaLink="true">https://github.com/cosy-sun/java/2019/10/24/xml%E4%B8%8Ejson%E4%BB%8B%E7%BB%8D%E4%B8%8E%E8%A7%A3%E6%9E%90.html</guid>
+			</item>
+		
+	</channel>
+</rss>

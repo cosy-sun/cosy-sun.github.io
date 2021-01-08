@@ -1,0 +1,107 @@
+version: '3'
+services:
+  mysql:
+    hostname: mysql
+    image: mysql:5.7
+    container_name: mysql
+    restart: always
+    environment:
+      - MYSQL_ROOT_PASSWORD=123456
+    volumes:
+      - /home/cosy-sun/docker-host/mysql/data:/var/lib/mysql
+      - /home/cosy-sun/docker-host/mysql/conf:/etc/mysql/
+    ports:
+      - "3306:3306"
+  redis:  
+    hostname: redis
+    image: redis:latest
+    container_name: redis
+    restart: always
+    command: redis-server /etc/redis/redis.conf # 启动redis命令
+    environment:
+      - TZ=Asia/Shanghai
+    volumes:
+      - /home/cosy-sun/docker-host/redis/data:/data
+      - /home/cosy-sun/docker-host/redis/conf/redis.conf:/etc/redis/redis.conf
+    ports:
+        - "6379:6379"
+  zoo1:
+    image: zookeeper:latest
+    restart: always
+    container_name: zookeeper
+    volumes:
+      - /home/cosy-sun/docker-host/zk/data:/data
+      - /home/cosy-sun/docker-host/zk/datalog:/datalog
+      - /home/cosy-sun/docker-host/zk/conf:/conf
+    ports:
+      - "2181:2181"
+  rabbitmq:
+    image: rabbitmq:management
+    restart: always
+    container_name: rabbitmq
+    environment:
+      - RABBITMQ_DEFAULT_USER=guest
+      - RABBITMQ_DEFAULT_PASS=guest
+    ports:
+      - "15672:15672"
+      - "5672:5672"
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "200k"
+        max-file: "10"
+  kafka:
+    image: wurstmeister/kafka:latest
+    container_name: kafka
+    restart: always
+    ports:
+      - "9092:9092"
+    environment:
+      KAFKA_ADVERTISED_HOST_NAME: 192.168.56.14
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+    volumes:
+      - /home/cosy-sun/docker-host/kafka:/var/run
+  svn:
+    image: garethflowers/svn-server:latest
+    container_name: svn
+    ports:
+      - "3690:3690"
+    volumes:
+      - /home/cosy-sun/docker-host/svn:/var/opt/svn
+    restart: always
+  oracle11g:
+    image: sath89/oracle-xe-11g:latest
+    container_name: oracle
+    environment:
+      DBCA_TOTAL_MEMORY: 16192
+    volumes:
+      - /home/cosy-sun/docker-host/oracle/data:/u01/app/oracle
+    ports:
+      - "3022:22"
+      - "1521:1521"
+    restart: always
+  nginx:
+    restart: always
+    image: nginx:latest
+    container_name: nginx
+    ports:
+      - 8082:80
+      - 82:80
+      - 445:443
+    volumes:
+      - /home/cosy-sun/docker-host/nginx/conf/nginx.conf:/etc/nginx/nginx.conf
+      - /home/cosy-sun/docker-host/nginx/log:/var/log/nginx
+      - /home/cosy-sun/docker-host/nginx/www:/var/www
+  gitlab:
+    image: gitlab/gitlab-ce:latest
+    container_name: gitlab
+    restart: always
+    hostname: gitlab
+    ports:
+      - "8081:80"
+      - "444:443"
+      - "23:22"
+    volumes:
+      - /home/cosy-sun/docker-host/gitlab/config:/etc/gitlab
+      - /home/cosy-sun/docker-host/gitlab/logs:/var/log/gitlab
+      - /home/cosy-sun/docker-host/gitlab/data:/var/opt/gitlab
