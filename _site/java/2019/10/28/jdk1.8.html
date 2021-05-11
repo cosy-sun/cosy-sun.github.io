@@ -83,6 +83,10 @@
                 
             
                 
+            
+                
+            
+                
                     <li><a href="/linux/2020/05/20/vbox%E6%90%AD%E5%BB%BAubuntu%E7%8E%AF%E5%A2%83.html">vbox</a></li>
                 
             
@@ -141,6 +145,12 @@
                 
             
         
+            
+                
+                    <li><a href="/gitpage/2021/05/11/jekyll.html">jekyll安装</a></li>
+                
+            
+                
             
                 
             
@@ -247,6 +257,10 @@
                 
             
                 
+            
+                
+            
+                
                     <li><a href="/java/2019/10/24/regexps.html">正则</a></li>
                 
             
@@ -269,6 +283,10 @@
                 
             
         
+            
+                
+            
+                
             
                 
             
@@ -341,15 +359,15 @@
     <h1>Last Posts</h1>
     <ul>
         
+          <li><a href="/gitpage/2021/05/11/jekyll.html">jekyll安装</a></li>
+        
           <li><a href="/linux/2020/06/20/docker.html">docker</a></li>
         
           <li><a href="/java/2020/06/19/netty.html">netty</a></li>
         
+          <li><a href="/linux/2020/06/02/docker.html">docker</a></li>
+        
           <li><a href="/linux/2020/05/20/vbox%E6%90%AD%E5%BB%BAubuntu%E7%8E%AF%E5%A2%83.html">vbox</a></li>
-        
-          <li><a href="/hadoop/2019/10/29/hadoop.html">hadoop</a></li>
-        
-          <li><a href="/java/2019/10/28/jdk1.8.html">jdk1.8</a></li>
         
     </ul>
 </div>
@@ -499,22 +517,22 @@
         <p>创建</p>
 
         <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="c1">// 1，校验通过Collection 系列集合提供的stream()或者paralleStream()</span>
-  <span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">list</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;&gt;();</span>
-  <span class="n">Strean</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">stream1</span> <span class="o">=</span> <span class="n">list</span><span class="o">.</span><span class="na">stream</span><span class="o">();</span>
+  <span class="nc">List</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">list</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ArrayList</span><span class="o">&lt;&gt;();</span>
+  <span class="nc">Strean</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">stream1</span> <span class="o">=</span> <span class="n">list</span><span class="o">.</span><span class="na">stream</span><span class="o">();</span>
     
   <span class="c1">// 2.通过Arrays的静态方法stream()获取数组流</span>
-  <span class="n">String</span><span class="o">[]</span> <span class="n">str</span> <span class="o">=</span> <span class="k">new</span> <span class="n">String</span><span class="o">[</span><span class="mi">10</span><span class="o">];</span>
-  <span class="n">Stream</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">stream2</span> <span class="o">=</span> <span class="n">Arrays</span><span class="o">.</span><span class="na">stream</span><span class="o">(</span><span class="n">str</span><span class="o">);</span>
+  <span class="nc">String</span><span class="o">[]</span> <span class="n">str</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">String</span><span class="o">[</span><span class="mi">10</span><span class="o">];</span>
+  <span class="nc">Stream</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">stream2</span> <span class="o">=</span> <span class="nc">Arrays</span><span class="o">.</span><span class="na">stream</span><span class="o">(</span><span class="n">str</span><span class="o">);</span>
     
   <span class="c1">// 3.通过Stream类中的静态方法of</span>
-  <span class="n">Stream</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">stream3</span> <span class="o">=</span> <span class="n">Stream</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="s">"aa"</span><span class="o">,</span><span class="s">"bb"</span><span class="o">,</span><span class="s">"cc"</span><span class="o">);</span>
+  <span class="nc">Stream</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span> <span class="n">stream3</span> <span class="o">=</span> <span class="nc">Stream</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="s">"aa"</span><span class="o">,</span><span class="s">"bb"</span><span class="o">,</span><span class="s">"cc"</span><span class="o">);</span>
     
   <span class="c1">// 4.创建无限流</span>
   <span class="c1">// 迭代</span>
-  <span class="n">Stream</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">stream4</span> <span class="o">=</span> <span class="n">Stream</span><span class="o">.</span><span class="na">iterate</span><span class="o">(</span><span class="mi">0</span><span class="o">,(</span><span class="n">x</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="n">x</span><span class="o">+</span><span class="mi">2</span><span class="o">);</span>
+  <span class="nc">Stream</span><span class="o">&lt;</span><span class="nc">Integer</span><span class="o">&gt;</span> <span class="n">stream4</span> <span class="o">=</span> <span class="nc">Stream</span><span class="o">.</span><span class="na">iterate</span><span class="o">(</span><span class="mi">0</span><span class="o">,(</span><span class="n">x</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="n">x</span><span class="o">+</span><span class="mi">2</span><span class="o">);</span>
 
   <span class="c1">//生成</span>
-  <span class="n">Stream</span><span class="o">.</span><span class="na">generate</span><span class="o">(()</span> <span class="o">-&gt;</span><span class="n">Math</span><span class="o">.</span><span class="na">random</span><span class="o">());</span>
+  <span class="nc">Stream</span><span class="o">.</span><span class="na">generate</span><span class="o">(()</span> <span class="o">-&gt;</span><span class="nc">Math</span><span class="o">.</span><span class="na">random</span><span class="o">());</span>
 </code></pre></div>        </div>
       </li>
       <li>
@@ -527,13 +545,13 @@
     <span class="o">.</span><span class="na">skip</span><span class="o">(</span><span class="mi">4</span><span class="o">)</span>
     <span class="c1">// 需要流中的元素重写hashCode和equals方法</span>
     <span class="o">.</span><span class="na">distinct</span><span class="o">()</span>
-    <span class="o">.</span><span class="na">forEach</span><span class="o">(</span><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">::</span><span class="n">println</span><span class="o">);</span>
+    <span class="o">.</span><span class="na">forEach</span><span class="o">(</span><span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">::</span><span class="n">println</span><span class="o">);</span>
 
 
   <span class="c1">//生成新的流 通过map映射</span>
   <span class="n">emps</span><span class="o">.</span><span class="na">stream</span><span class="o">()</span>
     <span class="o">.</span><span class="na">map</span><span class="o">((</span><span class="n">e</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="n">e</span><span class="o">.</span><span class="na">getAge</span><span class="o">())</span>
-    <span class="o">.</span><span class="na">forEach</span><span class="o">(</span><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">::</span><span class="n">println</span><span class="o">);</span>
+    <span class="o">.</span><span class="na">forEach</span><span class="o">(</span><span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">::</span><span class="n">println</span><span class="o">);</span>
 
 
   <span class="c1">//自然排序  定制排序</span>
@@ -545,7 +563,7 @@
             <span class="k">return</span> <span class="n">e1</span><span class="o">.</span><span class="na">getAge</span><span class="o">().</span><span class="na">compareTo</span><span class="o">(</span><span class="n">e2</span><span class="o">.</span><span class="na">getAge</span><span class="o">());</span>
         <span class="o">}</span>
     <span class="o">})</span>
-    <span class="o">.</span><span class="na">forEach</span><span class="o">(</span><span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">::</span><span class="n">println</span><span class="o">);</span>
+    <span class="o">.</span><span class="na">forEach</span><span class="o">(</span><span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">::</span><span class="n">println</span><span class="o">);</span>
 </code></pre></div>        </div>
       </li>
       <li>

@@ -7,6 +7,49 @@
 		<atom:link href="https://github.com/cosy-sun/feed.xml" rel="self" type="application/rss+xml" />
 		
 			<item>
+				<title>jekyll安装</title>
+				<description>&lt;h1 id=&quot;jekyll安装&quot;&gt;jekyll安装&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;安装ruby&lt;/p&gt;
+
+    &lt;p&gt;安装ruby可能碰到各种坑,  所以直接通过官网https://rubyinstaller.org/downloads/下载带devkit的安装包, 可以使用官方推荐版本,&lt;/p&gt;
+
+    &lt;p&gt;推荐版本中带有devkit, ruby, msys2, 完了之后会提示安装msys2, 选择3, 自动安装&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;安装jekyll&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;gem update&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;gem install bundler jekyll&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;bundle update&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;jekyll -v&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;jekyll serve 如果无法启动, 使用 bundle exec jekyll serve&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;默认使用utf-8编码&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+</description>
+				<pubDate>Tue, 11 May 2021 00:00:00 +0800</pubDate>
+				<link>https://github.com/cosy-sun/gitpage/2021/05/11/jekyll.html</link>
+				<guid isPermaLink="true">https://github.com/cosy-sun/gitpage/2021/05/11/jekyll.html</guid>
+			</item>
+		
+			<item>
 				<title>docker</title>
 				<description>&lt;h1 id=&quot;docker&quot;&gt;docker&lt;/h1&gt;
 
@@ -175,6 +218,166 @@
 				<pubDate>Fri, 19 Jun 2020 00:00:00 +0800</pubDate>
 				<link>https://github.com/cosy-sun/java/2020/06/19/netty.html</link>
 				<guid isPermaLink="true">https://github.com/cosy-sun/java/2020/06/19/netty.html</guid>
+			</item>
+		
+			<item>
+				<title>docker</title>
+				<description>&lt;h1 id=&quot;docker&quot;&gt;docker&lt;/h1&gt;
+
+&lt;h2 id=&quot;docker镜像&quot;&gt;docker镜像&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;拉取镜像: docker pull name:tag&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;查看镜像: docker images&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;添加标签: docker tag oldname newname&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;查看镜像详细信息: docker inspect name:tag&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;删除镜像: docker rmi name&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;创建镜像&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;      1. 使用已存在的镜像创建, 打开存在的容器, 进行修改 
+       docker commit
+         
+  2. 基于本地模板导入
+
+      docker import
+        
+  3. 基于dockerfile创建
+
+      创建dockerfile, 然后使用docker build -t name:tag .
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;导出镜像: docker save -o mysql.tar mysql:latest&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;导入镜像: docker load -i mysql.tar&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;上传镜像: docker push name:tag&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;docker容器&quot;&gt;docker容器&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;启动, 停止, 重启容器, docker start name&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;创建容器 docker create&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;创建并启动容器 docker run -d -p port:port –name name -v /…:/… images.name&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;进入容器: docker exec -it name /bin/bash&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;删除容器: docker rm&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;导出容器: docker export&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;导入容器: docker import&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;查看容器: docker container inspect mysql&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;查看容器进程: docker top mysql&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;dockerfile&quot;&gt;dockerfile&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;配置指令&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;ARG  定义变量&lt;/li&gt;
+      &lt;li&gt;FROM  指定基础镜像&lt;/li&gt;
+      &lt;li&gt;LABLE  添加元数据标签&lt;/li&gt;
+      &lt;li&gt;EXPOSE 声明镜像内服务监听的端口&lt;/li&gt;
+      &lt;li&gt;ENB 指定环境变量&lt;/li&gt;
+      &lt;li&gt;ENTRYPOINT 指定镜像默认入口命令&lt;/li&gt;
+      &lt;li&gt;VOLUME [“/data”] 创建一个数据挂载点&lt;/li&gt;
+      &lt;li&gt;user 指定运行容器的用户名和uid&lt;/li&gt;
+      &lt;li&gt;workdir 为后续的run命令配置工作目录&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;操作指令&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;run&lt;/li&gt;
+      &lt;li&gt;cmd&lt;/li&gt;
+      &lt;li&gt;add src dest&lt;/li&gt;
+      &lt;li&gt;copy src dest&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;docker数据管理&quot;&gt;docker数据管理&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;创建数据卷&lt;/p&gt;
+
+    &lt;p&gt;docker volume create -d local test&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;绑定数据卷, 除了使用volume子命令来管理数据卷, 还可以在创建容器的时候将本机本地的任意路径挂载到容器内作为数据卷,&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;-mount&lt;/p&gt;
+
+        &lt;ul&gt;
+          &lt;li&gt;volume 普通数据卷&lt;/li&gt;
+          &lt;li&gt;bind 绑定数据卷&lt;/li&gt;
+          &lt;li&gt;tmpfs 临时数据卷, 只存在于内存中&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;p&gt;docker run -d -p  3306:3306 –name mysql-cosy-sun –mount type=bind,source=web/app,destination=/opt/web mysql&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;数据卷容器&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;创建数据卷容器 docker run -it -v /dbdata –name dbdata ubuntu&lt;/li&gt;
+      &lt;li&gt;挂载数据卷容器 docker run -it –volumes-from dbdata –name db1 ubuntu&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;docker-compose&quot;&gt;docker-compose&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;apt install docker-compose&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;[docker-compose模板文件](../assets/self/docker-compose.yml “”)&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+</description>
+				<pubDate>Tue, 02 Jun 2020 00:00:00 +0800</pubDate>
+				<link>https://github.com/cosy-sun/linux/2020/06/02/docker.html</link>
+				<guid isPermaLink="true">https://github.com/cosy-sun/linux/2020/06/02/docker.html</guid>
 			</item>
 		
 			<item>
@@ -683,22 +886,22 @@ echo done!
         &lt;p&gt;创建&lt;/p&gt;
 
         &lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;c1&quot;&gt;// 1，校验通过Collection 系列集合提供的stream()或者paralleStream()&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;list&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ArrayList&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;gt;();&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;Strean&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;stream1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;stream&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
+  &lt;span class=&quot;nc&quot;&gt;List&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;list&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;ArrayList&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;gt;();&lt;/span&gt;
+  &lt;span class=&quot;nc&quot;&gt;Strean&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;stream1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;stream&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;();&lt;/span&gt;
     
   &lt;span class=&quot;c1&quot;&gt;// 2.通过Arrays的静态方法stream()获取数组流&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;str&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;];&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;Stream&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;stream2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Arrays&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;stream&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;nc&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[]&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;str&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;];&lt;/span&gt;
+  &lt;span class=&quot;nc&quot;&gt;Stream&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;stream2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Arrays&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;stream&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
     
   &lt;span class=&quot;c1&quot;&gt;// 3.通过Stream类中的静态方法of&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;Stream&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;stream3&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Stream&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;of&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;aa&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;bb&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;cc&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;nc&quot;&gt;Stream&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;String&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;stream3&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Stream&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;of&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;aa&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;bb&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;cc&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
     
   &lt;span class=&quot;c1&quot;&gt;// 4.创建无限流&lt;/span&gt;
   &lt;span class=&quot;c1&quot;&gt;// 迭代&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;Stream&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Integer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;stream4&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Stream&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;iterate&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;nc&quot;&gt;Stream&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;Integer&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;stream4&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Stream&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;iterate&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
 
   &lt;span class=&quot;c1&quot;&gt;//生成&lt;/span&gt;
-  &lt;span class=&quot;n&quot;&gt;Stream&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;generate&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Math&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;random&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;());&lt;/span&gt;
+  &lt;span class=&quot;nc&quot;&gt;Stream&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;generate&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(()&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;Math&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;random&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;());&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
       &lt;/li&gt;
       &lt;li&gt;
@@ -711,13 +914,13 @@ echo done!
     &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;skip&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
     &lt;span class=&quot;c1&quot;&gt;// 需要流中的元素重写hashCode和equals方法&lt;/span&gt;
     &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;distinct&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;forEach&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;forEach&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
 
 
   &lt;span class=&quot;c1&quot;&gt;//生成新的流 通过map映射&lt;/span&gt;
   &lt;span class=&quot;n&quot;&gt;emps&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;stream&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
     &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getAge&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;())&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;forEach&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;forEach&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
 
 
   &lt;span class=&quot;c1&quot;&gt;//自然排序  定制排序&lt;/span&gt;
@@ -729,7 +932,7 @@ echo done!
             &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;e1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getAge&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;().&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;compareTo&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;e2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;getAge&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;());&lt;/span&gt;
         &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
     &lt;span class=&quot;o&quot;&gt;})&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;forEach&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;forEach&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;System&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;out&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;println&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;);&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
       &lt;/li&gt;
       &lt;li&gt;
@@ -1384,471 +1587,6 @@ cache:缓存控制
 				<pubDate>Thu, 24 Oct 2019 00:00:00 +0800</pubDate>
 				<link>https://github.com/cosy-sun/java/2019/10/24/%E7%AE%97%E6%B3%95.html</link>
 				<guid isPermaLink="true">https://github.com/cosy-sun/java/2019/10/24/%E7%AE%97%E6%B3%95.html</guid>
-			</item>
-		
-			<item>
-				<title>文件描述符</title>
-				<description>&lt;ul&gt;
-  &lt;li&gt;文件描述符&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;    在linux系统中,一切都是文件,比如c++源文件,视频文件,shell脚本, 可执行文件,包括键盘,鼠标,显示器等硬件设备,&lt;/p&gt;
-
-&lt;p&gt;    一个进程可以打开成百上千的文件,为了表示和区分已经打开的文件,linux会给每个文件分配一个编号,,这个编号就是一个整数,被称为文件描述符&lt;/p&gt;
-
-&lt;p&gt;    一个linux进程启动后,会在内核中创建一个pcb控制块,pcb内部有一个文件描述符表,记录着当前进程所有可用的文件描述符,也就是当前进程打开的文件,&lt;/p&gt;
-
-&lt;p&gt;    进程启动后要占用内存,一部分分配给了文件描述符,另一部分给了打开文件表和i-node表&lt;/p&gt;
-
-&lt;p&gt;    打开文件表和i-node是系统级的, 之后一个, 文件描述符表每个进程都由一个&lt;/p&gt;
-
-&lt;p&gt;    通过文件描述符表可以找到文件指针,通过文件指针,进入打开文件表,该表存储了一下信息: 文件偏移量,状态模式,i-node表指针;通过i-node表指针进入i-node表,i-node表中存储了一下信息: 文件类型, 文件大小, 时间戳, 文件锁&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;同一个进程的不同文件描述符可以指向同一个文件,&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;不同进程可以拥有相同的文件描述符,&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;不同进程的同一个文件描述符可以指向不同的文件(除了0, 1, 2这三个特殊的文件)&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;不同进程的不同文件描述符也可以指向同一个文件&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;    当linux运行一个程序时, 它打开三个相应的文件描述符,分表时0, 1, 2 ,
-对应的时标准输入, 标准输出, 标准错误输出&lt;/p&gt;
-
-&lt;h1 id=&quot;javanio中的文件描述符&quot;&gt;javanio中的文件描述符&lt;/h1&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;Java中的FileDescriptor可以被用来表示开放文件和套接字&lt;/p&gt;
-
-    &lt;p&gt;创建一个socket并通过文件描述符放到serversocketchannel中&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;serversocketchannel的初始化,通过bind()将文件描述符和本地ip地址和制定的port绑定,同时监听这个文件描述符&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;selector创建, 创建一对管道,一个输入管道,一个输出管道,在创建过程中,有通过socket验证是否能正常传输,也即是用来唤醒selector工作的&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;事件注册,将selectionkey的socketchannel的文件描述符放到pollarray中&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;通信,核心方法private native int poll0(long pollAddreee, int numfds, int[] readfds, int[] writefds, int[] exceptfds, long timeout),&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;
-        &lt;p&gt;实现思路是调用c中的select方法,这里的select方法调用的是内核中的sys_select, sys_select首先将第2,3,4个参数指向的fd_set拷贝到尼日河,然后对每个set的描述符调用进行poll,并记录在临时结果中, 如果有事件发生, select会将临时结果写道用户空间并返回,当轮询一编后没有任何事件发生,如果制定了超时时间, select会水淼到超市,睡眠结束之后在轮询一遍, 并将临时结果写道用户空间,然后返回,&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;这里的select就是轮询pollarray中的fd,如果有事件发生, 收集所有发生的事件,然后返回,&lt;/p&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-</description>
-				<pubDate>Thu, 24 Oct 2019 00:00:00 +0800</pubDate>
-				<link>https://github.com/cosy-sun/java/2019/10/24/%E6%96%87%E4%BB%B6%E6%8F%8F%E8%BF%B0%E7%AC%A6.html</link>
-				<guid isPermaLink="true">https://github.com/cosy-sun/java/2019/10/24/%E6%96%87%E4%BB%B6%E6%8F%8F%E8%BF%B0%E7%AC%A6.html</guid>
-			</item>
-		
-			<item>
-				<title>xml and json</title>
-				<description>&lt;h1 id=&quot;xml与json简介及简单对比&quot;&gt;XML与JSON简介及简单对比&lt;/h1&gt;
-&lt;h2 id=&quot;xml简介&quot;&gt;XML简介&lt;/h2&gt;
-&lt;p&gt;XML，可扩展的标识语言（eXtensible Markup Language），1998年2月，W3C正式批准了可扩展标记语言的标准定义，可扩展标记语言可以对文档和数据进行结构化处理，从而能够在部门、客户和供应商之间进行交换，实现动态内容生成，企业集成和应用开发。可扩展标记语言可以使我们能够更准确的搜索，更方便的传送软件组件，更好的描述一些事物。例如电子商务交易等。&lt;/p&gt;
-&lt;h3 id=&quot;xml作用&quot;&gt;XML作用&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;丰富文件（Rich Documents）-自定文件描述并使其更丰富；&lt;/li&gt;
-  &lt;li&gt;属于文件为主的XML技术应用；&lt;/li&gt;
-  &lt;li&gt;标记是用来定义一块数据应该如何呈现；&lt;/li&gt;
-  &lt;li&gt;解释数据（Metadata）-描述其它文件或在线信息；&lt;/li&gt;
-  &lt;li&gt;属于数据为主的XML技术应用；&lt;/li&gt;
-  &lt;li&gt;标记是用来说明一块资料的意义；&lt;/li&gt;
-  &lt;li&gt;组态档案（Configuration Files）-描述软件的组态参数。
-    &lt;h2 id=&quot;json简介&quot;&gt;JSON简介&lt;/h2&gt;
-    &lt;p&gt;JSON(JavaScript Object Notation) 是一种轻量级的数据交换格式。它基于ECMAScript的一个子集。 JSON采用完全独立于语言的文本格式，但是也使用了类似于C语言家族的习惯（包括C、C++、C#、Java、JavaScript、Perl、Python等）。这些特性使JSON成为理想的数据交换语言。 易于人阅读和编写，同时也易于机器解析和生成(一般用于提升网络传输速率)。&lt;/p&gt;
-    &lt;h3 id=&quot;json作用&quot;&gt;JSON作用&lt;/h3&gt;
-  &lt;/li&gt;
-  &lt;li&gt;用于编写基于 JavaScript 应用程序，包括浏览器扩展和网站。&lt;/li&gt;
-  &lt;li&gt;JSON 格式可以用于通过网络连接序列化和传输结构化数据。&lt;/li&gt;
-  &lt;li&gt;主要用于在服务器和 Web 应用程序之间传输数据。&lt;/li&gt;
-  &lt;li&gt;Web 服务和 APIs 可以使用 JSON 格式提供公用数据。&lt;/li&gt;
-  &lt;li&gt;还可以用于现代编程语言中
-    &lt;h2 id=&quot;简单对比&quot;&gt;简单对比&lt;/h2&gt;
-    &lt;h3 id=&quot;xml简单示例&quot;&gt;XML简单示例&lt;/h3&gt;
-    &lt;p&gt;```
-&lt;?xml version=&quot;1.0&quot;?&gt;&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-&lt;note&gt;
-&lt;to&gt;Tove&lt;/to&gt;
-&lt;from&gt;Jani&lt;/from&gt;
-&lt;heading&gt;Reminder&lt;/heading&gt;
-&lt;body&gt;Don't forget me this weekend!&lt;/body&gt;
-&lt;/note&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;### JSON简单示例
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;{
-    “book”: [
-        {
-            “id”:”01”,
-            “language”: “Java”,
-            “edition”: “third”,
-            “author”: “Herbert Schildt”
-        },
-        {
-            “id”:”07”,
-            “language”: “C++”,
-            “edition”: “second”,
-            “author”: “E.Balagurusamy”
-    }]
-}&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;优点：
- - A.数据格式比较简单，易于读写，格式都是压缩的，占用带宽小；
- - B.易于解析，客户端JavaScript可以简单的通过eval()进行JSON数据的读取；　　
- - C.支持多种语言，包括ActionScript, C, C#, ColdFusion, Java, JavaScript, Perl, PHP, Python, Ruby等服务器端语言，便于服务器端的解析；　　
- - D.在PHP世界，已经有PHP-JSON和JSON-PHP出现了，偏于PHP序列化后的程序直接调用，PHP服务器端的对象、数组等能直接生成JSON格式，便于客户端的访问提取；　　
- - E.因为JSON格式能直接为服务器端代码使用，大大简化了服务器端和客户端的代码开发量，且完成任务不变，并且易于维护。
-
-缺点：
- - A.没有XML格式这么推广的深入人心和喜用广泛，没有XML那么通用性；　　
- - B.JSON格式目前在Web Service中推广还属于初级阶段。
-# XML解析方法及对比
-## Dom解析
-### 简介
-　DOM的全称是Document Object Model，也即文档对象模型。在应用程序中，基于DOM的XML分析器将一个XML文档转换成一个对象模型的集合（通常称DOM树），应用程序正是通过对这个对象模型的操作，来实现对XML文档数据的操作。通过DOM接口，应用程序可以在任何时候访问XML文档中的任何一部分数据，因此，这种利用DOM接口的机制也被称作随机访问机制。
-
-　　DOM接口提供了一种通过分层对象模型来访问XML文档信息的方式，这些分层对象模型依据XML的文档结构形成了一棵节点树。无论XML文档中所描述的是什么类型的信息，即便是制表数据、项目列表或一个文档，利用DOM所生成的模型都是节点树的形式。也就是说，DOM强制使用树模型来访问XML文档中的信息。由于XML本质上就是一种分层结构，所以这种描述方法是相当有效的。
-
-　　DOM树所提供的随机访问方式给应用程序的开发带来了很大的灵活性，它可以任意地控制整个XML文档中的内容。然而，由于DOM分析器把整个XML文档转化成DOM树放在了内存中，因此，当文档比较大或者结构比较复杂时，对内存的需求就比较高。而且，对于结构复杂的树的遍历也是一项耗时的操作。所以，DOM分析器对机器性能的要求比较高，实现效率不十分理想。不过，由于DOM分析器所采用的树结构的思想与XML文档的结构相吻合，同时鉴于随机访问所带来的方便，因此，DOM分析器还是有很广泛的使用价值的。
-### 优缺点
-优点：
-
-- 1、形成了树结构，有助于更好的理解、掌握，且代码容易编写。
-
-- 2、解析过程中，树结构保存在内存中，方便修改。
-
-缺点：
-
-- 1、由于文件是一次性读取，所以对内存的耗费比较大。
-
-- 2、如果XML文件比较大，容易影响解析性能且可能会造成内存溢出。
-#### XML文件
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
-&lt;games&gt;
-	&lt;game id=&quot;1&quot; price=&quot;10.0&quot;&gt;
-		&lt;name&gt;LOL&lt;/name&gt;
-		&lt;author&gt;Riot&lt;/author&gt;
-		&lt;year&gt;2012&lt;/year&gt;
-		&lt;type&gt;MOBA&lt;/type&gt;
-	&lt;/game&gt;
-	&lt;game id=&quot;2&quot;&gt;
-		&lt;name&gt;落地成盒&lt;/name&gt;
-		&lt;author&gt;bh&lt;/author&gt;
-		&lt;year&gt;2017&lt;/year&gt;
-		&lt;type&gt;FPS&lt;/type&gt;
-	&lt;/game&gt;
-	&lt;game id=&quot;3&quot;&gt;
-		&lt;name&gt;斗地主&lt;/name&gt;
-		&lt;author&gt;腾讯&lt;/author&gt;
-		&lt;year&gt;1999&lt;/year&gt;
-		&lt;type&gt;棋牌&lt;/type&gt;
-	&lt;/game&gt;
-&lt;/games&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;#### DOM解析
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;/**&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;DOM解析
- */
-public class DomParseDemo {
- public static void main(String[] args) throws Exception {
-     DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
-     DocumentBuilder builder = documentBuilderFactory.newDocumentBuilder();
-     Document document = builder.parse(“src/xml/game.xml”);
-     NodeList nodeList = document.getElementsByTagName(“game”);
-     System.out.println(“一共有” + nodeList.getLength() + “个游戏”);
-     for (int i = 0; i &amp;lt; nodeList.getLength(); i++) {
-         System.out.println(“开始解析第” + (i + 1) + “个游戏”);
-         Node game = nodeList.item(i);
-         NamedNodeMap attrs = game.getAttributes();
-         System.out.println(“第” + (i + 1) + “个游戏有” + attrs.getLength() + “个属性”);
-         for (int j = 0; j &amp;lt; attrs.getLength(); j++) {
-             Node attr = attrs.item(j);
-             System.out.println(“第” + (i + 1) + “个游戏的第” + (j + 1) + “个属性的属性名是” + attr.getNodeName() + “属性值是”
-                     + attr.getNodeValue());
-         }
-         NodeList chileNode = game.getChildNodes();
-         System.out.println(“第” + (i + 1) + “个游戏中有” + chileNode.getLength() + “个子节点”);
-         for (int k = 0; k &amp;lt; chileNode.getLength(); k++) {
-             if (chileNode.item(k).getNodeType() == Node.ELEMENT_NODE) {
-                 System.out.println(“第” + (i + 1) + “个游戏中的第” + (k + 1) + “个节点的节点名是” + chileNode.item(k).getNodeName()
-                         + “节点值是” + chileNode.item(k).getTextContent());
-             }
-         }
-         System.out.println(“第” + (i + 1) + “个游戏解析完毕”);
-         System.out.println();
-     }
- }
-}
-```
-    &lt;h2 id=&quot;sax解析&quot;&gt;SAX解析&lt;/h2&gt;
-    &lt;h3 id=&quot;简介&quot;&gt;简介&lt;/h3&gt;
-    &lt;p&gt;SAX的全称是Simple APIs for XML，也即XML简单应用程序接口。与DOM不同，SAX提供的访问模式是一种顺序模式，这是一种快速读写XML数据的方式。当使用SAX分析器对XML文档进行分析时，会触发一系列事件，并激活相应的事件处理函数，应用程序通过这些事件处理函数实现对XML文档的访问，因而SAX接口也被称作事件驱动接口。&lt;/p&gt;
-    &lt;h3 id=&quot;优缺点&quot;&gt;优缺点&lt;/h3&gt;
-    &lt;p&gt;优点：&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;1、采用事件驱动模式，对内存耗费比较小。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;2、适用于只处理XML文件中的数据时。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;　　　　缺点：&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;1、编码比较麻烦。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;2、很难同时访问XML文件中的多处不同数据。
-    &lt;h4 id=&quot;sax解析-1&quot;&gt;SAX解析&lt;/h4&gt;
-    &lt;p&gt;```
-/**&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;SAX
- */
-@SuppressWarnings(“unused”)
-public class SAXParserDemo {
- public static void main(String[] args) throws Exception {
-     SAXParserFactory factory = SAXParserFactory.newInstance();
-     SAXParser saxParser = factory.newSAXParser();
-     saxParser.parse(“src/xml/game.xml”, new ParserHandler());
- }
-}
-class ParserHandler extends DefaultHandler {
- private ArrayList&lt;Game&gt; games;
- int count = 0;
- private Game game = null;
- private String value = null;
- /**
-&lt;/Game&gt;    &lt;ul&gt;
-      &lt;li&gt;标识开始解析
-  */
- @SuppressWarnings({ “unchecked”, “rawtypes” })
- @Override
- public void startDocument() throws SAXException {
- // TODO Auto-generated method stub
- System.out.println(“开始解析”);
- games = new ArrayList();
- }
- /**&lt;/li&gt;
-      &lt;li&gt;标识解析结束
-  */
- @Override
- public void endDocument() throws SAXException {
- // TODO Auto-generated method stub
- System.out.println(“解析结束”);
- System.out.println(games);
- }
- /**&lt;/li&gt;
-      &lt;li&gt;遇到开始标签的时候会调用
-  */
- @Override
- public void startElement(String arg0, String arg1, String qName, Attributes attrs) throws SAXException {
- // TODO Auto-generated method stub
- if (qName.equals(“game”)) {
-     game = new Game();
-     count++;
-     System.out.println(“开始解析第” + count + “个游戏”);
-     // attrs.getValue(“id”);前提是知道属性名
-     for (int i = 0; i &amp;lt; attrs.getLength(); i++) {
-         System.out.println(“第” + (i + 1) + “个属性的属性名是” + attrs.getQName(i) + “属性值是” + attrs.getValue(i));
-         if (attrs.getQName(i).equals(“id”)) {
-             game.setId(Integer.parseInt(attrs.getValue(i)));
-         }
-     }
- } else if (!qName.equals(“games”) &amp;amp;&amp;amp; !qName.equals(“game”)) {
-     System.out.print(“节点名是” + qName);
- }
- }
- /**&lt;/li&gt;
-      &lt;li&gt;遇到结束标签的时候会调用
-  */
- @Override
- public void endElement(String arg0, String arg1, String qName) throws SAXException {
- // TODO Auto-generated method stub
- if (qName.equals(“game”)) {
-     games.add(game);
-     game = null;
-     System.out.println(“第” + count + “个游戏解析结束”);
-     System.out.println();
- } else if (qName.equals(“name”)) {
-     game.setName(value);
- } else if (qName.equals(“author”)) {
-     game.setAuthor(value);
- } else if (qName.equals(“year”)) {
-     game.setYear(Integer.parseInt(value));
- } else if (qName.equals(“type”)) {
-     game.setType(value);
- }
- }
- /**&lt;/li&gt;
-      &lt;li&gt;碰到节点内容时会回调
-  */
- @Override
- public void characters(char[] ch, int start, int length) throws SAXException {
- // TODO Auto-generated method stub
- value = new String(ch, start, length);
- if (!value.trim().equals(“”)) {
-     System.out.print(“节点值是” + value);
-     System.out.println();
- }
- }
-}
-class Game {
- private int id;
- private String name;
- private int year;
- private String type;
- private String author;
- public int getId() {
- return id;
- }
- public void setId(int id) {
- this.id = id;
- }
- public String getName() {
- return name;
- }
- public void setName(String name) {
- this.name = name;
- }
- public int getYear() {
- return year;
- }
- public void setYear(int year) {
- this.year = year;
- }
- public String getType() {
- return type;
- }
- public void setType(String type) {
- this.type = type;
- }
- public String getAuthor() {
- return author;
- }
- public void setAuthor(String author) {
- this.author = author;
- }
- @Override
- public String toString() {
- // TODO Auto-generated method stub
- return “id:” + id + “  name:” + name + “  year:” + year + “  author:” + author + “ type:” + type;
- }
-}
-```
-        &lt;h2 id=&quot;dom4j解析&quot;&gt;Dom4j解析&lt;/h2&gt;
-        &lt;h3 id=&quot;简介-1&quot;&gt;简介&lt;/h3&gt;
-        &lt;p&gt;dom4j是目前在xml解析方面是最优秀的(Hibernate、Sun的JAXM也都使用dom4j来解析XML)，它合并了许多超出基本 XML 文档表示的功能，包括集成的 XPath 支持、XML Schema 支持以及用于大文档或流化文档的基于事件的处理。&lt;/p&gt;
-        &lt;h3 id=&quot;优缺点-1&quot;&gt;优缺点&lt;/h3&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;1、JDOM的一种智能分支，它合并了许多超出基本XML文档表示的功能。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;2、它使用接口和抽象基本类方法。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;3、具有性能优异、灵活性好、功能强大和极端易用的特点。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;4、是一个开放源码的文件
-    &lt;h4 id=&quot;xml文件&quot;&gt;XML文件&lt;/h4&gt;
-    &lt;p&gt;```
-&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;students&gt;
-	&lt;student id=&quot;1&quot;&gt;
-		&lt;name&gt;tom&lt;/name&gt;
-		&lt;age&gt;20&lt;/age&gt;
-		&lt;address&gt;
-			&lt;city&gt;上海&lt;/city&gt;
-		&lt;/address&gt;
-	&lt;/student&gt;
-	
-	&lt;student id=&quot;2&quot;&gt;
-		&lt;name&gt;lily&lt;/name&gt;
-		&lt;age&gt;30&lt;/age&gt;
-		&lt;address&gt;
-			&lt;city&gt;北京&lt;/city&gt;
-		&lt;/address&gt;
-	&lt;/student&gt;
-	
-&lt;/students&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;#### Dom4j解析
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;public class Dom4jTest {
-	public static void main(String[] args) throws DocumentException {
-		SAXReader reader = new SAXReader();
-		Document doc = reader.read(“src/xml/student.xml”);
-		Element root = doc.getRootElement();
-		@SuppressWarnings(“unchecked”)
-		List&lt;Element&gt; students = root.elements();
-		List&lt;Student&gt; stus = new ArrayList&lt;Student&gt;();
-		for(Element e:students){
-			Student s = new Student();
-			String id = e.attributeValue(&quot;id&quot;);
-			s.setId(Long.parseLong(id));
-			Element name = e.element(&quot;name&quot;);
-			s.setName(name.getText());
-			Element age = e.element(&quot;age&quot;);
-			s.setAge(Integer.parseInt(age.getText()));
-			Element address = e.element(&quot;address&quot;);
-			Element city = address.element(&quot;city&quot;);
-			s.setCity(city.getText());
-			stus.add(s);
-		}
-		for(Student s:stus){
-			System.out.println(s);
-		}
-	}
-}&lt;/Student&gt;&lt;/Student&gt;&lt;/Element&gt;&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# JSON解析
-#### JSON解析
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;public class ParseJsonDemo {
-	public static void main(String[] args) throws JSONException {
-		String s = “{name:张三,age:20,sex:true,number:[131,132],score:{yuwen:100,shuxue:90,lizong:{huaxue:80}}}”;
-		JSONObject jsonObject = new JSONObject(s);
-		StringBuilder stringBuilder = new StringBuilder();&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;	stringBuilder.append(&quot;姓名：&quot; + jsonObject.getString(&quot;name&quot;) + &quot;\n&quot;);
-	JSONArray jsonArray = jsonObject.getJSONArray(&quot;number&quot;);
-	stringBuilder.append(&quot;电话：&quot; + jsonArray.get(0) + &quot;   &quot; + jsonArray.get(1) + &quot;\n&quot;);
-	JSONObject scoreObject = jsonObject.getJSONObject(&quot;score&quot;);
-	stringBuilder.append(&quot;语文：&quot; + scoreObject.getString(&quot;yuwen&quot;) + &quot;\n&quot;);
-	JSONObject lizongObject = scoreObject.getJSONObject(&quot;lizong&quot;);
-	stringBuilder.append(&quot;化学：&quot; + lizongObject.getString(&quot;huaxue&quot;));
- 
-	System.out.println(stringBuilder.toString());
-} } ```
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-</description>
-				<pubDate>Thu, 24 Oct 2019 00:00:00 +0800</pubDate>
-				<link>https://github.com/cosy-sun/java/2019/10/24/xml%E4%B8%8Ejson%E4%BB%8B%E7%BB%8D%E4%B8%8E%E8%A7%A3%E6%9E%90.html</link>
-				<guid isPermaLink="true">https://github.com/cosy-sun/java/2019/10/24/xml%E4%B8%8Ejson%E4%BB%8B%E7%BB%8D%E4%B8%8E%E8%A7%A3%E6%9E%90.html</guid>
 			</item>
 		
 	</channel>

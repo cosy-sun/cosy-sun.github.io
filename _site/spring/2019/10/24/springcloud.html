@@ -83,6 +83,10 @@
                 
             
                 
+            
+                
+            
+                
                     <li><a href="/linux/2020/05/20/vbox%E6%90%AD%E5%BB%BAubuntu%E7%8E%AF%E5%A2%83.html">vbox</a></li>
                 
             
@@ -141,6 +145,12 @@
                 
             
         
+            
+                
+                    <li><a href="/gitpage/2021/05/11/jekyll.html">jekyll安装</a></li>
+                
+            
+                
             
                 
             
@@ -247,6 +257,10 @@
                 
             
                 
+            
+                
+            
+                
                     <li><a href="/java/2019/10/24/regexps.html">正则</a></li>
                 
             
@@ -269,6 +283,10 @@
                 
             
         
+            
+                
+            
+                
             
                 
             
@@ -341,15 +359,15 @@
     <h1>Last Posts</h1>
     <ul>
         
+          <li><a href="/gitpage/2021/05/11/jekyll.html">jekyll安装</a></li>
+        
           <li><a href="/linux/2020/06/20/docker.html">docker</a></li>
         
           <li><a href="/java/2020/06/19/netty.html">netty</a></li>
         
+          <li><a href="/linux/2020/06/02/docker.html">docker</a></li>
+        
           <li><a href="/linux/2020/05/20/vbox%E6%90%AD%E5%BB%BAubuntu%E7%8E%AF%E5%A2%83.html">vbox</a></li>
-        
-          <li><a href="/hadoop/2019/10/29/hadoop.html">hadoop</a></li>
-        
-          <li><a href="/java/2019/10/28/jdk1.8.html">jdk1.8</a></li>
         
     </ul>
 </div>
@@ -561,10 +579,10 @@
         </ul>
       </li>
       <li>源码解析
-        <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="n">LookupService</span>
-      <span class="n">EurekaClinet</span>
-          <span class="n">DiscoveryClient</span>
-          <span class="nf">EurekaDiscoveryClient</span><span class="o">(</span><span class="err">同时实现了</span><span class="n">org</span><span class="o">.</span><span class="na">springframework</span><span class="o">.</span><span class="na">clouD</span><span class="o">.</span><span class="na">client</span><span class="o">.</span><span class="na">discovery</span><span class="o">.</span><span class="na">DiscoveryClient</span><span class="o">)</span>
+        <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nc">LookupService</span>
+      <span class="nc">EurekaClinet</span>
+          <span class="nc">DiscoveryClient</span>
+          <span class="nf">EurekaDiscoveryClient</span><span class="o">(</span><span class="n">同时实现了org</span><span class="o">.</span><span class="na">springframework</span><span class="o">.</span><span class="na">clouD</span><span class="o">.</span><span class="na">client</span><span class="o">.</span><span class="na">discovery</span><span class="o">.</span><span class="na">DiscoveryClient</span><span class="o">)</span>
 </code></pre></div>        </div>
         <ul>
           <li>
@@ -703,16 +721,16 @@
       <li>
         <p>源码分析</p>
 
-        <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="n">LoadBalancerAutoConfiguration</span><span class="err">自动化配置类</span><span class="o">,</span>
-  <span class="n">LoadBalancerInterceptor</span>  <span class="err">拦截器</span><span class="o">,</span><span class="err">拦截请求</span><span class="o">,</span><span class="err">实现客户端负载均衡</span>
-  <span class="n">restTemplateCustomizer</span> <span class="err">添加拦截器</span>
+        <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nc">LoadBalancerAutoConfiguration自动化配置类</span><span class="o">,</span>
+  <span class="nc">LoadBalancerInterceptor</span>  <span class="n">拦截器</span><span class="o">,</span><span class="n">拦截请求</span><span class="o">,</span><span class="n">实现客户端负载均衡</span>
+  <span class="n">restTemplateCustomizer</span> <span class="n">添加拦截器</span>
         
-  <span class="n">LoadBalanceRInterceptor</span><span class="err">将一个</span><span class="n">restTemplate</span><span class="err">变成客户端负载均衡的</span>
-  <span class="err">拦截器具体的实现是</span><span class="n">ribbonloadBalancerClient</span><span class="err">的</span><span class="n">execute</span><span class="err">方法</span>
-  <span class="n">getServer</span><span class="err">根据</span><span class="n">serviceId</span>  <span class="err">获取具体的服务实例</span><span class="o">,</span> <span class="err">然后根据某种算法</span><span class="o">,</span><span class="err">挑选一个具体的服务实例</span>
-  <span class="err">整合</span><span class="n">ribbon</span><span class="err">的时候默认实现是</span><span class="n">zoneawareloadbalancer</span><span class="err">实现负载均衡器</span><span class="o">(</span><span class="err">通过</span><span class="n">ribbonclientconfiguration</span><span class="err">可知</span><span class="o">)</span>
-  <span class="n">serviceinstance</span>  <span class="err">包括了服务治理系统中每个实例需要的信息</span><span class="o">,</span> <span class="err">比如</span><span class="n">serviceid</span><span class="o">,</span> <span class="n">host</span><span class="o">,</span> <span class="n">port</span>
-  <span class="n">ribbonloadbalancerclient</span><span class="err">实现</span><span class="n">reconstructuri</span><span class="err">的时候</span><span class="o">,</span><span class="err">通过</span><span class="n">serviceinstance</span><span class="err">的</span><span class="n">host</span><span class="err">和</span><span class="n">port</span><span class="err">构建了一个</span><span class="n">server</span><span class="err">来给</span><span class="n">reconstructuriwithserver</span><span class="err">使用</span><span class="o">,</span> <span class="err">整合</span><span class="n">host</span><span class="err">和</span><span class="n">port</span><span class="err">得到最终的请求</span><span class="n">uri</span>
+  <span class="nc">LoadBalanceRInterceptor将一个restTemplate变成客户端负载均衡的</span>
+  <span class="n">拦截器具体的实现是ribbonloadBalancerClient的execute方法</span>
+  <span class="n">getServer根据serviceId</span>  <span class="n">获取具体的服务实例</span><span class="o">,</span> <span class="n">然后根据某种算法</span><span class="o">,</span><span class="n">挑选一个具体的服务实例</span>
+  <span class="n">整合ribbon的时候默认实现是zoneawareloadbalancer实现负载均衡器</span><span class="o">(</span><span class="n">通过ribbonclientconfiguration可知</span><span class="o">)</span>
+  <span class="n">serviceinstance</span>  <span class="n">包括了服务治理系统中每个实例需要的信息</span><span class="o">,</span> <span class="n">比如serviceid</span><span class="o">,</span> <span class="n">host</span><span class="o">,</span> <span class="n">port</span>
+  <span class="n">ribbonloadbalancerclient实现reconstructuri的时候</span><span class="o">,</span><span class="n">通过serviceinstance的host和port构建了一个server来给reconstructuriwithserver使用</span><span class="o">,</span> <span class="n">整合host和port得到最终的请求uri</span>
         
         
 
@@ -808,15 +826,15 @@
           <li>
             <p>创建HustrixCommand 或者  HystrixObservableCommand对象</p>
 
-            <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="n">HystrixObservable</span>
-  <span class="n">HystrixInvokableInfo</span>
-      <span class="n">AbstractCommand</span>
-          <span class="n">HystrixCommand</span>
-              <span class="nf">execute</span><span class="o">()</span><span class="err">同步执行</span><span class="o">,</span><span class="err">从依赖的服务返回一个单一的结果对象</span><span class="o">,</span><span class="err">或是发生错误的时候抛出异常</span>
-              <span class="n">queue</span><span class="o">()</span><span class="err">异步执行</span><span class="o">,</span><span class="err">返回一个</span><span class="n">Future</span><span class="err">对象</span><span class="o">,</span><span class="err">其中包含了服务执行结束时要返回的单一结果对象</span>
-          <span class="n">HystrixObservableCommand</span>
-              <span class="nf">observe</span><span class="o">()</span><span class="err">返回</span><span class="n">observable</span><span class="err">对象</span><span class="o">,</span><span class="err">他代表了操作的多个结果</span><span class="o">,</span> <span class="err">他是一个</span><span class="n">hot</span> <span class="n">observable</span>
-              <span class="nf">toObservable</span><span class="o">()</span><span class="err">同上</span><span class="o">,</span><span class="err">返回一个</span><span class="n">cold</span> <span class="n">observable</span>
+            <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nc">HystrixObservable</span>
+  <span class="nc">HystrixInvokableInfo</span>
+      <span class="nc">AbstractCommand</span>
+          <span class="nc">HystrixCommand</span>
+              <span class="nf">execute</span><span class="o">()</span><span class="n">同步执行</span><span class="o">,</span><span class="n">从依赖的服务返回一个单一的结果对象</span><span class="o">,</span><span class="n">或是发生错误的时候抛出异常</span>
+              <span class="n">queue</span><span class="o">()</span><span class="n">异步执行</span><span class="o">,</span><span class="n">返回一个Future对象</span><span class="o">,</span><span class="n">其中包含了服务执行结束时要返回的单一结果对象</span>
+          <span class="nc">HystrixObservableCommand</span>
+              <span class="nf">observe</span><span class="o">()</span><span class="n">返回observable对象</span><span class="o">,</span><span class="n">他代表了操作的多个结果</span><span class="o">,</span> <span class="n">他是一个hot</span> <span class="n">observable</span>
+              <span class="nf">toObservable</span><span class="o">()</span><span class="n">同上</span><span class="o">,</span><span class="n">返回一个cold</span> <span class="n">observable</span>
 </code></pre></div>            </div>
           </li>
           <li>
@@ -887,7 +905,7 @@
               */</span>
           <span class="o">}</span>
       <span class="o">}</span><span class="c1">//详细实现</span>
-      <span class="kd">public</span> <span class="n">NoOpCircuit</span> <span class="kd">implements</span> <span class="o">...</span><span class="na">Breaker</span><span class="o">{}</span><span class="c1">//允许所有请求, 并且断路器状态始终闭合</span>
+      <span class="kd">public</span> <span class="nc">NoOpCircuit</span> <span class="kd">implements</span> <span class="o">...</span><span class="na">Breaker</span><span class="o">{}</span><span class="c1">//允许所有请求, 并且断路器状态始终闭合</span>
 </code></pre></div>        </div>
       </li>
       <li>
@@ -906,18 +924,18 @@
           <li>
             <p>继承hystrixcommand类</p>
 
-            <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">public</span> <span class="kd">class</span> <span class="nc">UserCommand</span> <span class="kd">extends</span> <span class="n">HystrixCommand</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;{</span>
+            <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="kd">public</span> <span class="kd">class</span> <span class="nc">UserCommand</span> <span class="kd">extends</span> <span class="nc">HystrixCommand</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;{</span>
 
-  <span class="kd">private</span> <span class="n">String</span> <span class="n">name</span><span class="o">;</span>
+  <span class="kd">private</span> <span class="nc">String</span> <span class="n">name</span><span class="o">;</span>
 	
-  <span class="kd">public</span> <span class="nf">UserCommand</span><span class="o">(</span><span class="n">String</span> <span class="n">name</span><span class="o">)</span> <span class="o">{</span>
-      <span class="kd">super</span><span class="o">(</span><span class="n">HystrixCommandGroupKey</span><span class="o">.</span><span class="na">Factory</span><span class="o">.</span><span class="na">asKey</span><span class="o">(</span><span class="s">"ExampleGroupKey"</span><span class="o">));</span>
+  <span class="kd">public</span> <span class="nf">UserCommand</span><span class="o">(</span><span class="nc">String</span> <span class="n">name</span><span class="o">)</span> <span class="o">{</span>
+      <span class="kd">super</span><span class="o">(</span><span class="nc">HystrixCommandGroupKey</span><span class="o">.</span><span class="na">Factory</span><span class="o">.</span><span class="na">asKey</span><span class="o">(</span><span class="s">"ExampleGroupKey"</span><span class="o">));</span>
       <span class="k">this</span><span class="o">.</span><span class="na">name</span> <span class="o">=</span> <span class="n">name</span><span class="o">;</span>
   <span class="o">}</span>
 	
   <span class="nd">@Override</span>
-  <span class="kd">protected</span> <span class="n">String</span> <span class="nf">run</span><span class="o">()</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
-      <span class="k">return</span> <span class="n">Thread</span><span class="o">.</span><span class="na">currentThread</span><span class="o">().</span><span class="na">getName</span><span class="o">()+</span><span class="s">"  "</span> <span class="o">+</span> <span class="n">name</span><span class="o">;</span>
+  <span class="kd">protected</span> <span class="nc">String</span> <span class="nf">run</span><span class="o">()</span> <span class="kd">throws</span> <span class="nc">Exception</span> <span class="o">{</span>
+      <span class="k">return</span> <span class="nc">Thread</span><span class="o">.</span><span class="na">currentThread</span><span class="o">().</span><span class="na">getName</span><span class="o">()+</span><span class="s">"  "</span> <span class="o">+</span> <span class="n">name</span><span class="o">;</span>
   <span class="o">}</span>
     
 </code></pre></div>            </div>
@@ -931,52 +949,52 @@
   </li>
 </ul>
 
-<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">同步方式</span>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">同步方式</span>
 <span class="nd">@Service</span>
 <span class="kd">public</span> <span class="kd">class</span> <span class="nc">FallBackService</span> <span class="o">{</span>
 
 	<span class="nd">@Autowired</span>
-	<span class="kd">private</span> <span class="n">RestTemplate</span> <span class="n">template</span><span class="o">;</span>
+	<span class="kd">private</span> <span class="nc">RestTemplate</span> <span class="n">template</span><span class="o">;</span>
 	
 	<span class="nd">@HystrixCommand</span><span class="o">(</span><span class="n">fallbackMethod</span> <span class="o">=</span> <span class="s">"fallBackCall"</span><span class="o">)</span>
-	<span class="kd">public</span> <span class="n">String</span> <span class="nf">service</span><span class="o">()</span> <span class="o">{</span>
-		<span class="k">return</span> <span class="n">template</span><span class="o">.</span><span class="na">getForEntity</span><span class="o">(</span><span class="s">"http://boot-9001/he"</span><span class="o">,</span> <span class="n">String</span><span class="o">.</span><span class="na">class</span><span class="o">).</span><span class="na">getBody</span><span class="o">();</span>
+	<span class="kd">public</span> <span class="nc">String</span> <span class="nf">service</span><span class="o">()</span> <span class="o">{</span>
+		<span class="k">return</span> <span class="n">template</span><span class="o">.</span><span class="na">getForEntity</span><span class="o">(</span><span class="s">"http://boot-9001/he"</span><span class="o">,</span> <span class="nc">String</span><span class="o">.</span><span class="na">class</span><span class="o">).</span><span class="na">getBody</span><span class="o">();</span>
 	<span class="o">}</span>
 	
-	<span class="kd">public</span> <span class="n">String</span> <span class="nf">fallBackCall</span><span class="o">()</span> <span class="o">{</span>
+	<span class="kd">public</span> <span class="nc">String</span> <span class="nf">fallBackCall</span><span class="o">()</span> <span class="o">{</span>
 		<span class="k">return</span> <span class="s">"error, serivce not exists!"</span><span class="o">;</span>
 	<span class="o">}</span>
 	
 <span class="o">}</span>
 
-<span class="err">异步方式</span>
+<span class="n">异步方式</span>
 
 <span class="nd">@HystrixCommand</span>
-	<span class="kd">public</span> <span class="n">Future</span><span class="o">&lt;</span><span class="n">User</span><span class="o">&gt;</span> <span class="nf">getUserByIdAsync</span><span class="o">(</span><span class="kt">long</span> <span class="n">id</span><span class="o">)</span> <span class="o">{</span>
-		<span class="k">return</span> <span class="k">new</span> <span class="n">com</span><span class="o">.</span><span class="na">netflix</span><span class="o">.</span><span class="na">hystrix</span><span class="o">.</span><span class="na">contrib</span><span class="o">.</span><span class="na">javanica</span><span class="o">.</span><span class="na">command</span><span class="o">.</span><span class="na">AsyncResult</span><span class="o">&lt;</span><span class="n">User</span><span class="o">&gt;()</span> <span class="o">{</span>
+	<span class="kd">public</span> <span class="nc">Future</span><span class="o">&lt;</span><span class="nc">User</span><span class="o">&gt;</span> <span class="nf">getUserByIdAsync</span><span class="o">(</span><span class="kt">long</span> <span class="n">id</span><span class="o">)</span> <span class="o">{</span>
+		<span class="k">return</span> <span class="k">new</span> <span class="n">com</span><span class="o">.</span><span class="na">netflix</span><span class="o">.</span><span class="na">hystrix</span><span class="o">.</span><span class="na">contrib</span><span class="o">.</span><span class="na">javanica</span><span class="o">.</span><span class="na">command</span><span class="o">.</span><span class="na">AsyncResult</span><span class="o">&lt;</span><span class="nc">User</span><span class="o">&gt;()</span> <span class="o">{</span>
 
 			<span class="nd">@Override</span>
-			<span class="kd">public</span> <span class="n">User</span> <span class="nf">invoke</span><span class="o">()</span> <span class="o">{</span>
-				<span class="k">return</span> <span class="n">temp</span><span class="o">.</span><span class="na">getForObject</span><span class="o">(</span><span class="s">"http://boot-9001:9102/he"</span><span class="o">,</span> <span class="n">User</span><span class="o">.</span><span class="na">class</span><span class="o">,</span><span class="n">id</span><span class="o">);</span>
+			<span class="kd">public</span> <span class="nc">User</span> <span class="nf">invoke</span><span class="o">()</span> <span class="o">{</span>
+				<span class="k">return</span> <span class="n">temp</span><span class="o">.</span><span class="na">getForObject</span><span class="o">(</span><span class="s">"http://boot-9001:9102/he"</span><span class="o">,</span> <span class="nc">User</span><span class="o">.</span><span class="na">class</span><span class="o">,</span><span class="n">id</span><span class="o">);</span>
 			<span class="o">}</span>
 			
 		<span class="o">};</span>
 	<span class="o">}</span>
 	
-<span class="err">除了使用同步和异步方式</span><span class="o">,</span> <span class="err">还可以使用响应式的执行方式</span><span class="o">,</span><span class="n">observe</span><span class="o">()</span> <span class="err">或者</span><span class="n">toobserve</span><span class="o">(),</span><span class="err">这两个方式都会返回一个</span><span class="n">observable</span><span class="err">对象</span><span class="o">,</span><span class="n">observe</span><span class="err">会在调用的使用立即执行</span><span class="o">,</span> <span class="n">toobserve</span><span class="err">式等所有的订阅者都订阅之后才会执行</span><span class="o">,</span>
+<span class="n">除了使用同步和异步方式</span><span class="o">,</span> <span class="n">还可以使用响应式的执行方式</span><span class="o">,</span><span class="n">observe</span><span class="o">()</span> <span class="n">或者toobserve</span><span class="o">(),</span><span class="n">这两个方式都会返回一个observable对象</span><span class="o">,</span><span class="n">observe会在调用的使用立即执行</span><span class="o">,</span> <span class="n">toobserve式等所有的订阅者都订阅之后才会执行</span><span class="o">,</span>
 
-<span class="n">hystrixcommand</span><span class="err">只能发射一次</span><span class="o">,</span> <span class="err">所以需要</span><span class="n">hystriobservablecommand</span><span class="o">,</span>
+<span class="n">hystrixcommand只能发射一次</span><span class="o">,</span> <span class="n">所以需要hystriobservablecommand</span><span class="o">,</span>
 
-<span class="n">hystrixcommand</span><span class="err">注解在实现响应执行的时候</span><span class="o">,</span> <span class="err">可以通过设置属性</span>
-<span class="n">observableexecutionmode</span> <span class="o">=</span> <span class="n">observableexecutionmode</span><span class="o">.</span><span class="na">eager</span>  <span class="err">使用</span><span class="n">observ</span><span class="err">执行</span>
-<span class="n">observableexecutionmode</span> <span class="o">=</span> <span class="n">observableexecutionmode</span><span class="o">.</span><span class="na">lazy</span>   <span class="err">使用</span><span class="n">toobserv</span><span class="err">执行</span>
+<span class="n">hystrixcommand注解在实现响应执行的时候</span><span class="o">,</span> <span class="n">可以通过设置属性</span>
+<span class="n">observableexecutionmode</span> <span class="o">=</span> <span class="n">observableexecutionmode</span><span class="o">.</span><span class="na">eager</span>  <span class="n">使用observ执行</span>
+<span class="n">observableexecutionmode</span> <span class="o">=</span> <span class="n">observableexecutionmode</span><span class="o">.</span><span class="na">lazy</span>   <span class="n">使用toobserv执行</span>
 
-<span class="nd">@HystrixCommand</span><span class="o">(</span><span class="n">observableExecutionMode</span><span class="o">=</span><span class="n">ObservableExecutionMode</span><span class="o">.</span><span class="na">EAGER</span><span class="o">)</span>
-<span class="kd">public</span> <span class="n">Observable</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span>  <span class="nf">getUserbyid</span><span class="o">()</span> <span class="o">{</span>
-		<span class="k">return</span> <span class="n">Observable</span><span class="o">.</span><span class="na">create</span><span class="o">(</span><span class="k">new</span> <span class="n">Observable</span><span class="o">.</span><span class="na">OnSubscribe</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;()</span> <span class="o">{</span>
+<span class="nd">@HystrixCommand</span><span class="o">(</span><span class="n">observableExecutionMode</span><span class="o">=</span><span class="nc">ObservableExecutionMode</span><span class="o">.</span><span class="na">EAGER</span><span class="o">)</span>
+<span class="kd">public</span> <span class="nc">Observable</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;</span>  <span class="nf">getUserbyid</span><span class="o">()</span> <span class="o">{</span>
+		<span class="k">return</span> <span class="nc">Observable</span><span class="o">.</span><span class="na">create</span><span class="o">(</span><span class="k">new</span> <span class="nc">Observable</span><span class="o">.</span><span class="na">OnSubscribe</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">&gt;()</span> <span class="o">{</span>
 
 			<span class="nd">@Override</span>
-			<span class="kd">public</span> <span class="kt">void</span> <span class="nf">call</span><span class="o">(</span><span class="n">Subscriber</span><span class="o">&lt;?</span> <span class="kd">super</span> <span class="n">String</span><span class="o">&gt;</span> <span class="n">t</span><span class="o">)</span> <span class="o">{</span>
+			<span class="kd">public</span> <span class="kt">void</span> <span class="nf">call</span><span class="o">(</span><span class="nc">Subscriber</span><span class="o">&lt;?</span> <span class="kd">super</span> <span class="nc">String</span><span class="o">&gt;</span> <span class="n">t</span><span class="o">)</span> <span class="o">{</span>
 				
 				
 			<span class="o">}</span>
@@ -1300,7 +1318,7 @@
             <p>自定义路由映射规则</p>
 
             <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nd">@Bean</span>
-  <span class="kd">public</span> <span class="n">PatternServiceRouteMapper</span> <span class="nf">generaterRoute</span><span class="o">()</span> <span class="o">{</span>
+  <span class="kd">public</span> <span class="nc">PatternServiceRouteMapper</span> <span class="nf">generaterRoute</span><span class="o">()</span> <span class="o">{</span>
   	<span class="c1">//例如 service-v1,servie-v2, 可以生成前缀v1/service/, v2/service/</span>
   	<span class="k">return</span> <span class="k">new</span> <span class="nf">PatternServiceRouteMapper</span><span class="o">(</span><span class="s">"(?&lt;name&gt;^.+)-(?&lt;version&gt;v.+$)"</span><span class="o">,</span> <span class="s">"$(v        ersion/$(name))"</span><span class="o">);</span>
   <span class="o">}</span>
@@ -1415,7 +1433,7 @@
 
             <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nd">@refreshscope</span>
   <span class="nd">@configurationproperties</span><span class="o">(</span><span class="s">"zuul"</span><span class="o">)</span>
-  <span class="kd">public</span> <span class="n">ZuulProperties</span> <span class="nf">zuulProperties</span><span class="o">(){</span>
+  <span class="kd">public</span> <span class="nc">ZuulProperties</span> <span class="nf">zuulProperties</span><span class="o">(){</span>
       <span class="k">return</span> <span class="k">new</span> <span class="nf">ZuulProperties</span><span class="o">();</span>
   <span class="o">}</span>
 </code></pre></div>            </div>
@@ -1769,13 +1787,13 @@
             </ul>
 
             <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="nd">@Bean</span>
-  <span class="nd">@InboundChannelAdapter</span><span class="o">(</span><span class="n">value</span> <span class="o">=</span> <span class="n">SinkSender</span><span class="o">.</span><span class="na">SinkOutput</span><span class="o">.</span><span class="na">output</span><span class="o">,</span><span class="n">poller</span> <span class="o">=</span> <span class="nd">@Poller</span><span class="o">(</span><span class="n">fixedDelay</span> <span class="o">=</span> <span class="s">"2000"</span><span class="o">))</span>
-  <span class="kd">public</span> <span class="n">MessageSource</span><span class="o">&lt;</span><span class="n">Date</span><span class="o">&gt;</span> <span class="nf">timerMessageSource</span><span class="o">()</span> <span class="o">{</span>
-  	<span class="k">return</span> <span class="o">()-&gt;</span> <span class="k">new</span> <span class="n">GenericMessage</span><span class="o">&lt;&gt;(</span><span class="k">new</span> <span class="n">Date</span><span class="o">());</span>
+  <span class="nd">@InboundChannelAdapter</span><span class="o">(</span><span class="n">value</span> <span class="o">=</span> <span class="nc">SinkSender</span><span class="o">.</span><span class="na">SinkOutput</span><span class="o">.</span><span class="na">output</span><span class="o">,</span><span class="n">poller</span> <span class="o">=</span> <span class="nd">@Poller</span><span class="o">(</span><span class="n">fixedDelay</span> <span class="o">=</span> <span class="s">"2000"</span><span class="o">))</span>
+  <span class="kd">public</span> <span class="nc">MessageSource</span><span class="o">&lt;</span><span class="nc">Date</span><span class="o">&gt;</span> <span class="nf">timerMessageSource</span><span class="o">()</span> <span class="o">{</span>
+  	<span class="k">return</span> <span class="o">()-&gt;</span> <span class="k">new</span> <span class="nc">GenericMessage</span><span class="o">&lt;&gt;(</span><span class="k">new</span> <span class="nc">Date</span><span class="o">());</span>
   <span class="o">}</span>
 	        
-  <span class="nd">@Transformer</span><span class="o">(</span><span class="n">inputChannel</span> <span class="o">=</span> <span class="n">Sink</span><span class="o">.</span><span class="na">INPUT</span><span class="o">,</span> <span class="n">outputChannel</span> <span class="o">=</span> <span class="n">Sink</span><span class="o">.</span><span class="na">INPUT</span><span class="o">)</span>
-  <span class="kd">public</span> <span class="n">Object</span> <span class="nf">transformer</span><span class="o">(</span><span class="n">Date</span> <span class="n">date</span><span class="o">)</span> <span class="o">{</span>
+  <span class="nd">@Transformer</span><span class="o">(</span><span class="n">inputChannel</span> <span class="o">=</span> <span class="nc">Sink</span><span class="o">.</span><span class="na">INPUT</span><span class="o">,</span> <span class="n">outputChannel</span> <span class="o">=</span> <span class="nc">Sink</span><span class="o">.</span><span class="na">INPUT</span><span class="o">)</span>
+  <span class="kd">public</span> <span class="nc">Object</span> <span class="nf">transformer</span><span class="o">(</span><span class="nc">Date</span> <span class="n">date</span><span class="o">)</span> <span class="o">{</span>
   	<span class="k">return</span> <span class="k">new</span> <span class="nf">SimpleDateFormat</span><span class="o">(</span><span class="s">"yyyyMMdd"</span><span class="o">).</span><span class="na">format</span><span class="o">(</span><span class="n">date</span><span class="o">);</span>
   <span class="o">}</span>
 </code></pre></div>            </div>

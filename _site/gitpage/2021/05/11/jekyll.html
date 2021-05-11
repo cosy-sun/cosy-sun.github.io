@@ -413,105 +413,47 @@
             <div class="col-md-9">
                 
 <div class="well article">
-        <h2><a href="/java/2019/10/25/Java%E5%91%BD%E4%BB%A4%E6%80%BB%E7%BB%93.html">javaCommand</a></h2>
+        <h2><a href="/gitpage/2021/05/11/jekyll.html">jekyll安装</a></h2>
         <span class="post-date">
             
-            October-25-2019
+            May-11-2021
         </span>
         <hr style="border-top:1px solid #28323C;"/>
     
     <div class="post-content">
-    <ul>
+    <h1 id="jekyll安装">jekyll安装</h1>
+
+<ul>
   <li>
-    <p>java</p>
+    <p>安装ruby</p>
+
+    <p>安装ruby可能碰到各种坑,  所以直接通过官网https://rubyinstaller.org/downloads/下载带devkit的安装包, 可以使用官方推荐版本,</p>
+
+    <p>推荐版本中带有devkit, ruby, msys2, 完了之后会提示安装msys2, 选择3, 自动安装</p>
+  </li>
+  <li>
+    <p>安装jekyll</p>
 
     <ul>
       <li>
-        <p>-cp和-classpath命令,</p>
-
-        <p>有classpath环境变量设置, 覆盖默认设置
-  有-cp设置, 覆盖上面两个,
-  有-jar参数, 覆盖上面两个</p>
+        <p>gem update</p>
       </li>
       <li>
-        <p>-D<property>=value, 设置参数</property></p>
+        <p>gem install bundler jekyll</p>
       </li>
-    </ul>
-  </li>
-  <li>javac</li>
-  <li>jar</li>
-  <li>javadoc</li>
-  <li>
-    <p>jps</p>
-
-    <ul>
-      <li>-q, 只输出lvmid, 省略主类的名称</li>
-      <li>-m, 输出主类启动时的参数</li>
-      <li>-l, 输出主类的全类名, 如果时jar包, 输出全路径</li>
-      <li>-v, 输出启动jvm的参数</li>
-    </ul>
-  </li>
-  <li>
-    <p>jstat, 监视虚拟机的运行状态</p>
-
-    <ul>
-      <li>-class, 监视类装载、卸载数量、总空间以及类装载所耗费的时间。</li>
-      <li>-gc, 监视Java堆状况，包括Eden区、两个Survivor区、老年区、元数据等的容量、已用空间，GC时间合计等信息。
-        <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>     S0C，S1C，EC，OC，MC，CCSC：S0，S1，Eden，老年代，Metaspace和压缩类空间大小；S0U    
-     S1U，EU，OU，MU，CCSU：S0，S1，Eden，老年代，Metaspace和压缩类空间已经使用的大小；
-     YGC，YGCT，FGC，FGCT：Young GC和Full GC的次数和耗时；
-     GCT：垃圾回收的耗时。
-</code></pre></div>        </div>
+      <li>
+        <p>bundle update</p>
+      </li>
+      <li>
+        <p>jekyll -v</p>
+      </li>
+      <li>
+        <p>jekyll serve 如果无法启动, 使用 bundle exec jekyll serve</p>
       </li>
     </ul>
   </li>
   <li>
-    <p>jmap, 命令用于生成堆转储快照（heapdump或dump文件)</p>
-
-    <ul>
-      <li>-dump, jmap -dump:[live],format=b,file=dump.bin 3500
-        <ul>
-          <li>live, 是否值dump出存货的对象</li>
-          <li>format, 格式,</li>
-          <li>file, 文件名</li>
-        </ul>
-      </li>
-      <li>heap, java堆详细信息</li>
-      <li>histo, 对象统计信息, 包括类,</li>
-      <li>F, dump没有响应,强制生成dump文件,</li>
-    </ul>
-  </li>
-  <li>
-    <p>jhat demp文件, 用来分析dump文件, 同时生成一个http端口, 可以通过浏览器查看分析结果,</p>
-  </li>
-  <li>
-    <p>jstack, 用来生成虚拟机当前时刻的线程快照</p>
-
-    <ul>
-      <li>-F	当正常输出的请求不被响应时，强制输出线程堆栈</li>
-      <li>-l	除堆栈外，显示关于锁的附加信息</li>
-      <li>-m	如果调用到本地方法的话，可以显示C/C++的堆栈</li>
-    </ul>
-  </li>
-  <li>
-    <p>javap, 查看生成的java字节码, 反汇编器,(不常用)</p>
-
-    <ul>
-      <li>-help 输出 javap 的帮助信息。</li>
-      <li>-l 输出行及局部变量表。</li>
-      <li>-b 确保与 JDK 1.1 javap 的向后兼容性。</li>
-      <li>-public 只显示 public 类及成员。</li>
-      <li>-protected 只显示 protected 和 public 类及成员。</li>
-      <li>-package 只显示包、protected 和 public 类及成员。这是缺省设置。</li>
-      <li>-private 显示所有类和成员。</li>
-      <li>-J[flag] 直接将 flag 传给运行时系统。</li>
-      <li>-s 输出内部类型签名。</li>
-      <li>-c 输出类中各方法的未解析的代码，即构成 Java 字节码的指令。</li>
-      <li>-verbose 输出堆栈大小、各方法的 locals 及 args 数,以及class文件的编译版本</li>
-      <li>-classpath[路径] 指定 javap 用来查找类的路径。如果设置了该选项，则它将覆盖缺省值或 CLASSPATH 环境变量。目录用冒号分隔。</li>
-      <li>-bootclasspath[路径] 指定加载自举类所用的路径。缺省情况下，自举类是实现核心 Java 平台的类，位于 jrelib下面。</li>
-      <li>-extdirs[dirs] 覆盖搜索安装方式扩展的位置。扩展的缺省位置是 jrelibext。</li>
-    </ul>
+    <p>默认使用utf-8编码</p>
   </li>
 </ul>
 
@@ -525,7 +467,7 @@
       
          
             <li class="icon-style"><a href="/categories.html">
-                java <span>(12)</span>
+                gitpage <span>(1)</span>
                 
             </a></li>
         
@@ -541,7 +483,7 @@
          
             <li class="icon-style">
                 <a href="/tags.html">
-                java <span>(12)</span>
+                gitpage <span>(1)</span>
                 
                 </a>
             </li>
@@ -556,10 +498,8 @@
 </div>
 <div class="pagination">
     
-    <a class="btn btn-default" href="/java/2019/10/28/jdk1.8.html" class="next">Next</a>
     
-    
-    <a class="btn btn-default" href="/java/2019/10/24/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE.html" class="previous">Pre</a>
+    <a class="btn btn-default" href="/linux/2020/06/20/docker.html" class="previous">Pre</a>
     
 </div>
             </div>
